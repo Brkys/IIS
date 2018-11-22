@@ -83,17 +83,6 @@
                 <div class="title m-b-md">
                     Laravel je picovina jak zvon!
                 </div>
-                <p>
-                    <?php   
-                        try{
-                            DB::connection()->getPdo();
-                            echo("DB is connected!");
-                        }
-                        catch (Exception $e){
-                            die("Could not connect to the database.  Please check your configuration. error:");
-                        }
-                    ?>
-                </p>
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
