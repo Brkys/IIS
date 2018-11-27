@@ -29,7 +29,7 @@
 <script >
 $('#modal-target').on('click', function(ev) {
 
-		$('#iframe').attr('src', 'www.seznam.cz');
+		$('#iframe').attr('src', $(this).attr('href'));
 		$('#loginModal').modal({
 		
 		});
@@ -62,7 +62,7 @@ $('#modal-target').on('click', function(ev) {
     		<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#">Registrovat se</a>
 			</span>
-      		<button class="btn btn-outline-success my-2 my-sm-0" id="modal-target" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
+      		<button class="btn btn-outline-success my-2 my-sm-0" href="www.seznam.cz" id="modal-target" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
 	</nav>
 
