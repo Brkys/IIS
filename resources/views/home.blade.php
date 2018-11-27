@@ -26,15 +26,6 @@
 	</div>
 </div>
 
-<script >
-$('#modal-target').on('click', function(ev) {
-
-		$('#iframe').attr('src', $(this).attr('href'));
-		$('#loginModal').modal({
-		
-		});
-	});
-</script>
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +53,7 @@ $('#modal-target').on('click', function(ev) {
     		<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#">Registrovat se</a>
 			</span>
-      		<button class="btn btn-outline-success my-2 my-sm-0" href="www.seznam.cz" id="modal-target" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
+      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
 	</nav>
 
