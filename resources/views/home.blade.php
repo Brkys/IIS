@@ -17,7 +17,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modal_login">Detail</h4>
+				<h4 class="modal-title" id="modal_login">Login</h4>
 			</div>
 			<div class="modal-body" id="modal_body">
 				<iframe id='iframe'></iframe>
@@ -25,6 +25,16 @@
 		</div>
 	</div>
 </div>
+
+<script >
+$('.modal-target').on('click', function(ev) {
+
+		$('#iframe').attr('src', 'www.seznam.cz');
+		$('#loginModal').modal({
+		
+		});
+	});
+</script>
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
