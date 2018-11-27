@@ -14,4 +14,9 @@ class TestController extends Controller
         return view('test');
     }
 
+    public function index()
+    {
+        return view('test');
+    }
+
 }
