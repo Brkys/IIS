@@ -11,21 +11,6 @@
 </head>
 <body background="black">
 
-	<!-- Modal window --> 
-<	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modal_login">Login</h4>
-			</div>
-			<div class="modal-body" id="modal_body">
-				<iframe id='iframe'></iframe>
-			</div>
-		</div>
-	</div>
-</div>
-
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +41,22 @@
       		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
 	</nav>
+
+
+	<!-- Modal window --> 
+	<	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="modal_login">Login</h4>
+			</div>
+			<div class="modal-body" id="modal_body">
+			</div>
+		</div>
+	</div>
+</div>
+
 
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
