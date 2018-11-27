@@ -49,7 +49,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="modal_login">Login</h5>
-				
+
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
@@ -59,12 +59,26 @@
 				<label>Heslo</label>
 				<input type="password" name="password" id="password" class="form-control" />
 				<br/>
-				<button type="button" name="login_btn" id="login_btn" class="btn btn-success">Login</button>
+				<button type="button" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
 			</div>
 		</div>
 	</div>
 </div>
 
+<script>
+$(document).ready(function(){
+	$('#login_btn').click(funtion(){
+		var username = $('#username').val();
+		var password = $('#password').val();
+		if(username != '' && password != ''){
+			
+		}
+		else{
+			alert("Chybne jmeno nebo heslo!")
+		}
+	});
+});
+</script>
 
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
