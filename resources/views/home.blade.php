@@ -48,8 +48,9 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h5 class="modal-title" id="modal_login">Login</h5>
+				
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h5 class="modal-title" id="modal_login">Login</h4>
 			</div>
 			<div class="modal-body" id="modal_body">
 				<label>Uživatelské jméno</label>
