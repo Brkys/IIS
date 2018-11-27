@@ -73,8 +73,9 @@ $(document).ready(function(){
 		if(username != '' && password != ''){
 			
 		}
-		else{
-			alert("Chybne jmeno nebo heslo!")
+		else
+		{
+			alert("Chybne jmeno nebo heslo!");
 		}
 	});
 });
