@@ -49,7 +49,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modal_login">Login</h4>
+				<h5 class="modal-title" id="modal_login">Login</h4>
 			</div>
 			<div class="modal-body" id="modal_body">
 				<label>Uživatelské jméno</label>
@@ -58,7 +58,7 @@
 				<label>Heslo</label>
 				<input type="password" name="password" id="password" class="form-control" />
 				<br/>
-				<button type="button" name="login_btn" id="login_btn" class="btn btn-succes">Login</button>
+				<button type="button" name="login_btn" id="login_btn" class="btn btn-success">Login</button>
 			</div>
 		</div>
 	</div>
