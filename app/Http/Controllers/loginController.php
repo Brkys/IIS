@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 class loginController extends Controller
 {
  
-    public function test()
+    public function index(Request $req)
     {
+        $username = $req->input('username');
+        $password = $req->input('password');
+        if($username == 'ok' && $password == 'ok')
+        {
+            return view('home');
+        }
         return view('test');
     }
 
@@ -17,8 +23,4 @@ class loginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('test');
-    }
 }
