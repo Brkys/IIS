@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="cz">
 <head>
-	<title>Route Test</title>
+	<title>Mafie</title>
 
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
@@ -39,12 +39,12 @@
     		<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#" data-toggle="modal" data-target="#registerModal">Registrovat se</a>
 			</span>
-      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
+      		<button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
 	</nav>
 
 
-	<!-- Modal window --> 
+	<!-- Modal login --> 
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -54,13 +54,16 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
+  				<form action="logUser" method="post">
                     <label>Uživatelské jméno</label>
                     <input type="text" name="username" id="username" class="form-control"/>
                     <br/>
                     <label>Heslo</label>
                     <input type="password" name="password" id="password" class="form-control" />
+					<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <br/>
-                    <button type="button" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
+                    <button type="submit" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
+				</form>
 			</div>
 		</div>
 	</div>
