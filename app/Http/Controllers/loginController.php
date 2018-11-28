@@ -15,7 +15,10 @@ class loginController extends Controller
         {
             return view('home');
         }
-        return view('test');
+        else{
+
+            return view('test')->with('username', $username, 'pwd', $password);
+        }
     }
 
     /**
