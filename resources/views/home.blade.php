@@ -28,7 +28,7 @@
 	      		</li>
 				  @if(isset($data))
 				  <li class="nav-item">
-  					<a class="nav-link" href="">Neco</a>
+  					<a class="nav-link" href=""><?php echo($data) ?></a>
 				  </li>
 				  @endif
 	      		<li class="nav-item dropdown">
