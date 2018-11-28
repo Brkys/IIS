@@ -9,6 +9,6 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        return view('home');
+        return view('home', 'name' => $req->input('username'), 'pwd' => $req->input('password'));
     }
 }
