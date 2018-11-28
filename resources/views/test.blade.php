@@ -54,13 +54,15 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
-				<label>Uživatelské jméno</label>
-				<input type="text" name="username" id="username" class="form-control"/>
-				<br/>
-				<label>Heslo</label>
-				<input type="password" name="password" id="password" class="form-control" />
-				<br/>
-				<button type="button" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
+                <form method="POST" action="{{ route('login') }}">
+                    <label>Uživatelské jméno</label>
+                    <input type="text" name="username" id="username" class="form-control"/>
+                    <br/>
+                    <label>Heslo</label>
+                    <input type="password" name="password" id="password" class="form-control" />
+                    <br/>
+                    <button type="button" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
+                </form>
 			</div>
 		</div>
 	</div>
@@ -131,7 +133,6 @@
 
 
 @if(!empty(Session::get('openLogin')) && Session::get('openLogin') == true)
-<h1>Hello there!</h1>
 <script>
 $(document).ready(function() {
 $("#loginModal").modal('show');
