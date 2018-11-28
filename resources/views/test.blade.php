@@ -124,7 +124,8 @@
     </div>
 </div>
 
-@if (session('openLogin'))
+@if(isset(openLogin))
+<h1>Hello there!</h1>
 <script>
 $("#loginModal").modal('show');
 </script>
