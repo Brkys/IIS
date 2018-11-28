@@ -30,7 +30,7 @@ class LoginController extends Controller
     public function index()
     {
     
-        return view('test');
+        return view('test');    
     }
 
     /**
