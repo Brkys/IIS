@@ -54,7 +54,6 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
-                <form method="POST" action="{{ route('login') }}">
                     <label>Uživatelské jméno</label>
                     <input type="text" name="username" id="username" class="form-control"/>
                     <br/>
@@ -62,7 +61,6 @@
                     <input type="password" name="password" id="password" class="form-control" />
                     <br/>
                     <button type="button" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
-                </form>
 			</div>
 		</div>
 	</div>
