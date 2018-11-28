@@ -17,7 +17,7 @@ class loginController extends Controller
         }
         else{
 
-            return view('test')->with('username', $username, 'pwd', $password);
+            return view('test');//->with('username', $username, 'pwd', $password);
         }
     }
 
