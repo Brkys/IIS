@@ -10,21 +10,6 @@ class loginController extends Controller
     public function index()
     {
         return view('test');
-        /*$username = $req->input('username');
-        $password = $req->input('password');
-        if($username == 'ok' && $password == 'ok')
-        {
-            return view('home');
-        }
-        else{
-
-            return view('test');//->with('username', $username, 'pwd', $password);
-        }*/
-    }
-
-    public function test()
-    {
-        return view('test');
     }
 
     /**
