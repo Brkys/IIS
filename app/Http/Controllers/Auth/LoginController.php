@@ -27,10 +27,14 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    public function login()
+    {
+        return view('test');    
+    }
+
     public function index()
     {
-    
-        return view('test');    
+        return view('test');
     }
 
     /**
