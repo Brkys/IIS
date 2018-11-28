@@ -112,7 +112,7 @@
  
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-outline btn-success">
+                            <button type="submit" class="btn btn-outline-success">
                                 Register
                             </button>
                         </div>
@@ -124,21 +124,11 @@
     </div>
 </div>
 
+@if (session('openLogin'))
 <script>
-$(document).ready(function(){
-	$('#login_btn').click(funtion(){
-		var username = $('#username').val();
-		var password = $('#password').val();
-		if(username != '' && password != ''){
-			
-		}
-		else
-		{
-			alert("Chybne jmeno nebo heslo!");
-		}
-	});
-});
+$("#loginModal").modal('show');
 </script>
+@endif
 
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

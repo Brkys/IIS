@@ -20,3 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/test', 'TestController@test');
+
+Route::get('/login', function(){
+    return redirect('test')->with('openLogin');
+});
