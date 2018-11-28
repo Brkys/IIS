@@ -37,7 +37,7 @@
 	      		</li>
 	    	</ul>
     		<span class="navbar-text my-2 my-sm-0 pr-1">
-			    <a class="btn btn-sm my-2 my-sm-0" href="#">Registrovat se</a>
+			    <a class="btn btn-sm my-2 my-sm-0" href="#" data-targer="#registerModal">Registrovat se</a>
 			</span>
       		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
@@ -45,7 +45,7 @@
 
 
 	<!-- Modal window --> 
-	<	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -64,6 +64,64 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Modal register -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="registerModalLabel">Register</h4>
+            </div>
+            <div class="modal-body">
+ 
+                <form id="formRegister" class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+ 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Name</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="name">
+                            <small class="help-block"></small>
+                        </div>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email">
+                            <small class="help-block"></small>
+                        </div>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Password</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password">
+                            <small class="help-block"></small>
+                        </div>
+                    </div>
+ 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Confirm Password</label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password_confirmation">
+                        </div>
+                    </div>
+ 
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <button type="submit" class="btn btn-primary">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </form>                       
+ 
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>

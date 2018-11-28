@@ -69,4 +69,18 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function register(Request $request){
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            this->throwValidationException(
+                $request, $validator;
+            );
+        }
+
+        $this->create($request->all());
+
+        return response->json();
+    }
 }
