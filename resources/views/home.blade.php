@@ -26,7 +26,11 @@
 	   	    	<li class="nav-item">
 	     		   <a class="nav-link" href="#">Novinky</a>
 	      		</li>
-				  
+				  @if(isset($data))
+				  <li class="nav-item">
+  					<a class="nav-link" href="">{{ $data }}</a>
+				  </li>
+				  @endif
 	      		<li class="nav-item dropdown">
 	        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
 	        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
