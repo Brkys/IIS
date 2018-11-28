@@ -54,13 +54,13 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
-  				<form action="loginU" method="post">
+  				<form action="test" method="post">
                     <label>Uživatelské jméno</label>
                     <input type="text" name="username" id="username" class="form-control"/>
                     <br/>
                     <label>Heslo</label>
                     <input type="password" name="password" id="password" class="form-control" />
-					<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+					@csrf
                     <br/>
                     <button type="submit" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
 				</form>
