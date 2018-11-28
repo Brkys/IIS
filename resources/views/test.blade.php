@@ -37,7 +37,7 @@
 	      		</li>
 	    	</ul>
     		<span class="navbar-text my-2 my-sm-0 pr-1">
-			    <a class="btn btn-sm my-2 my-sm-0" href="#" data-targer="#registerModal">Registrovat se</a>
+			    <a class="btn btn-sm my-2 my-sm-0" href="#" data-toggle="modal" data-target="#registerModal">Registrovat se</a>
 			</span>
       		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
 		</div>
