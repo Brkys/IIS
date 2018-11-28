@@ -10,6 +10,6 @@ class loginController extends Controller
     public function login(Request $req)
     {
         $data = array('name' => $req->input('username'), 'pwd' => $req->input('password'));
-        return view('home');
+        return view('home')->with('data', $data);
     }
 }
