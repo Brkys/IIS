@@ -124,11 +124,11 @@
     </div>
 </div>
 
-@if(session('openLogin'))
+@if(!empty(Session::get('openLogin')) && Session::get('openLogin') == true)
 <h1>Hello there!</h1>
 <script>
 $(document).ready(function() {
-$("#loginModal").modal();
+$("#loginModal").modal('show');
 });
 </script>
 @endif
