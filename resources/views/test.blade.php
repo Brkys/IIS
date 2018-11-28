@@ -127,7 +127,9 @@
 @if(session('openLogin'))
 <h1>Hello there!</h1>
 <script>
+$(function() {
 $("#loginModal").modal();
+});
 </script>
 @endif
 
