@@ -54,8 +54,8 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body" id="modal_body">
-  				<form action="form" method="post">
-				  
+  				<form action="login" method="post">
+
                     <label>Uživatelské jméno</label>
                     <input type="text" name="username" id="username" class="form-control"/>
                     <br/>
