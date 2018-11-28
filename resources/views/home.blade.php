@@ -28,7 +28,7 @@
 	      		</li>
 				  @if(isset($data))
 				  <li class="nav-item">
-  					<a class="nav-link" href="">{{ $data }}</a>
+  					<a class="nav-link" href="">Neco</a>
 				  </li>
 				  @endif
 	      		<li class="nav-item dropdown">
