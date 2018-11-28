@@ -23,6 +23,8 @@ Route::get('/test', 'TestController@test');
 
 Route::get('/loginU', 'LoginController@index')->name('index');
 
+Auth::routes();
+
 Route::get('/login', function(){
     return redirect('home')->with('openLogin', true);
 });
