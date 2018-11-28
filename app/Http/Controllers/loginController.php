@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class loginController extends Controller
 {
  
-    public function index()
+    public function test()
     {
         return view('test');
     }
@@ -17,4 +17,8 @@ class loginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return view('test');
+    }
 }
