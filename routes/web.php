@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/test', 'TestController@test');
 
-Route::get('/login', 'LoginController@login');
+Route::get('/loginU', 'LoginController@login');
 
 Route::get('/login', function(){
     return redirect('home')->with('openLogin', true);
