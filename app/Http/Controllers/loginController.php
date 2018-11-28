@@ -9,7 +9,7 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        $data = $req->input('username')
+        $data = $req->input('username');
         return view('home')->with('data', $data);
     }
 }
