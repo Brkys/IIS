@@ -9,7 +9,8 @@ class loginController extends Controller
  
     public function index(Request $req)
     {
-        $username = $req->input('username');
+        return view('test');
+        /*$username = $req->input('username');
         $password = $req->input('password');
         if($username == 'ok' && $password == 'ok')
         {
@@ -18,7 +19,7 @@ class loginController extends Controller
         else{
 
             return view('test');//->with('username', $username, 'pwd', $password);
-        }
+        }*/
     }
 
     /**
