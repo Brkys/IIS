@@ -14,5 +14,6 @@
 @if(isset($username) && isset($pwd))
 <p> jmeno: {{ $username }} </p>
 <p> heslo: {{ $pwd }}</p>
+@endif
 </body>
 </html>
