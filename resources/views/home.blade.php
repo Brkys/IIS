@@ -52,8 +52,10 @@
 	</nav>
 
 	<?php 
-	if(DB::connection()->getDatabaseName() ){
-		echo "connected successfully to database ".DB::connection()->getDatabaseName();
+	try {
+		DB::connection()->getPdo();
+	} catch (\Exception $e) {
+		die("Could not connect to the database.  Please check your configuration. error:" . $e );
 	}
 	php>
 
