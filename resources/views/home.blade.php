@@ -137,7 +137,7 @@
 </div>
 
 
-<img src="../images/header.jpg" width="50%" height="100%">
+<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
 
 
 
