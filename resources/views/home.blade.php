@@ -139,7 +139,7 @@
 <!-- Content of page -->
 <div>
 	<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
-	<div class="fade-in h1" style="top: 500px">
+	<div class="fade-in h1" style="margin-bottom: 500px">
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
 		per me si va tra la perduta gente. <br>
