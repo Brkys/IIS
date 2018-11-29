@@ -11,24 +11,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-
-
-<!-- Content of page -->
-<div>
-	<div class="fade-in" >
-		Per me si va ne la città dolente, <br>
-		per me si va ne l'eterno dolore, <br>
-		per me si va tra la perduta gente. <br>
-		Giustizia mosse il mio alto fattore; <br>
-		fecemi la divina podestate, <br>
-		la somma sapïenza e 'l primo amore. <br>
-		Dinanzi a me non fuor cose create <br>
-		se non etterne, e io etterno duro. <br>
-		Lasciate ogne speranza, voi ch'intrate
-	</div>
-</div>
-
-
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -152,6 +134,23 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+<!-- Content of page -->
+<div class="root">
+	<div class="fade-in" >
+		Per me si va ne la città dolente, <br>
+		per me si va ne l'eterno dolore, <br>
+		per me si va tra la perduta gente. <br>
+		Giustizia mosse il mio alto fattore; <br>
+		fecemi la divina podestate, <br>
+		la somma sapïenza e 'l primo amore. <br>
+		Dinanzi a me non fuor cose create <br>
+		se non etterne, e io etterno duro. <br>
+		Lasciate ogne speranza, voi ch'intrate
+	</div>
 </div>
 
 	<!-- Bootstrap javascript -->
