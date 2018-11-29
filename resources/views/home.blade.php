@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body background="black">
-<div id="root"> 
+<div id="root"></div> 
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -150,7 +150,5 @@ $("#loginModal").modal('show');
 });
 </script>
 @endif
-
-</div>
 </body>
 </html>
