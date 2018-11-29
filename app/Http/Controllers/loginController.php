@@ -23,6 +23,6 @@ class loginController extends Controller
         }
 
         //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
-        return view('home')->with('data', $data);
+        return view('home');
     }
 }
