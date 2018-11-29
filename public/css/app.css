@@ -3,8 +3,6 @@ body {
 }
 
 .root {
-	width: 500;
-	height: 500;
 	background-image: url("../images/header.jpg");
 	background-size: 50%, 100%;
 	background-repeat: no-repeat;
