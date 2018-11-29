@@ -52,6 +52,22 @@
 
 
 
+	<!-- Content of page -->
+	<div class="root">
+		<!--<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;"-->
+		<div class="fade-in h1" >
+			Per me si va ne la città dolente, <br>
+			per me si va ne l'eterno dolore, <br>
+			per me si va tra la perduta gente. <br>
+			Giustizia mosse il mio alto fattore; <br>
+			fecemi la divina podestate, <br>
+			la somma sapïenza e 'l primo amore. <br>
+			Dinanzi a me non fuor cose create <br>
+			se non etterne, e io etterno duro. <br>
+			Lasciate ogne speranza, voi ch'intrate
+		</div>
+	</div>
+
 	<!-- Modal login --> 
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
 	<div class="modal-dialog">
@@ -134,22 +150,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- Content of page -->
-<div class="root">
-	<!--<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;"-->
-	<div class="fade-in h1" >
-		Per me si va ne la città dolente, <br>
-		per me si va ne l'eterno dolore, <br>
-		per me si va tra la perduta gente. <br>
-		Giustizia mosse il mio alto fattore; <br>
-		fecemi la divina podestate, <br>
-		la somma sapïenza e 'l primo amore. <br>
-		Dinanzi a me non fuor cose create <br>
-		se non etterne, e io etterno duro. <br>
-		Lasciate ogne speranza, voi ch'intrate
-	</div>
 </div>
 
 	<!-- Bootstrap javascript -->
