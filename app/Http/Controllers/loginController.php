@@ -12,8 +12,9 @@ class loginController extends Controller
     public function login(Request $req)
     {
         $model = new userModel();
+        $model = $model::all();
         DB::connection()->getPdo();
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
-        return view('home')->with('data', $data);
+        return view('home')->with('data', $model);
     }
 }
