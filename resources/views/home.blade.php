@@ -137,7 +137,7 @@
 </div>
 
 <!-- Content of page -->
-<div class="container">
+<div>
 	<div style="height: 70px;"></div>
 	<div class="fade-in h3" >
 		Per me si va ne la città dolente, <br>
