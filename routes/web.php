@@ -28,5 +28,5 @@ Route::get('/login', function(){
 });
 
 Route::get('/news', function() {
-	return redirect('news');
+	return view('news');
 });
