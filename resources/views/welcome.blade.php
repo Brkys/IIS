@@ -79,6 +79,14 @@
                 </div>
             @endif
 
+            <?php
+            try {
+                DB::connection()->getPdo();
+            } catch (\Exception $e) {
+                die("Could not connect to the database.  Please check your configuration. error:" . $e );
+            }
+            php>
+
             <div class="content">
                 <div class="title m-b-md">
                     Laravel je picovina jak zvon!
