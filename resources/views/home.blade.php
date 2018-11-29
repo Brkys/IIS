@@ -137,7 +137,7 @@
 </div>
 
 <!-- Content of page -->
-<div style="height: 100%">
+<div>
 	<div class="fade-in" >
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
