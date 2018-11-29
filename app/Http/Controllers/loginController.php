@@ -11,7 +11,7 @@ class loginController extends Controller
     {
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
 
-        $login = DB::table('users')->where(['name' => $data['username'], 'password' => $data['pwd']])->get();
+        $login = DB::table('users')->get();
         return view('home')->with('data', $data);
     }
 }
