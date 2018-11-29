@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/test', 'TestController@test');
+
+Route::post('/login', 'loginController@login');
+
+Route::get('/login', function(){
+    return redirect('home')->with('openLogin', true);
 });
