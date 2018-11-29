@@ -11,7 +11,10 @@ class loginController extends Controller
     {
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
 
-        $login = DB::table('users')->get();
-        return view('home')->with('data', $data);
+        if(DB::connection()->getDatabaseName() ){
+            echo "connected successfully to database ".DB::connection()->getDatabaseName();
+            return view('home')->with('data', $data);
+        }
+        
     }
 }
