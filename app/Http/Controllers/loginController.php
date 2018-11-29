@@ -21,8 +21,8 @@ class loginController extends Controller
                 $data = $mod;
             }
         }*/
-        
-        $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
+
+        //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
         return view('home')->with('data', $data);
     }
 }
