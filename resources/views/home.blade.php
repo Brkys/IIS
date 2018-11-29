@@ -137,9 +137,10 @@
 </div>
 
 <!-- Content of page -->
-<div>
-	<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
-	<div class="fade-in h1" style="margin-bottom: 500px">
+<div class="container">
+	<div class="row">
+	<img src="../images/header.jpg" class="col-sm" width="50%" height="100%" style="margin-top: 50px;">
+	<div class="fade-in h1 col-sm" style="">
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
 		per me si va tra la perduta gente. <br>
@@ -149,6 +150,7 @@
 		Dinanzi a me non fuor cose create <br>
 		se non etterne, e io etterno duro. <br>
 		Lasciate ogne speranza, voi ch'intrate
+	</div>
 	</div>
 </div>
 
