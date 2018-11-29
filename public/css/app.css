@@ -7,11 +7,6 @@ body {
 	to {opacity: 1}
 }
 
-.root {
-	position: relative;
-	margin-top: 20px;
-}
-
 .fade-in {
 	opacity: 0;
 	animation: fadeIn 2s ease-in forwards;
@@ -22,4 +17,5 @@ body {
 #navbar {
 	position: fixed;
 	width: 100%;
+	z-index: 80;
 }
