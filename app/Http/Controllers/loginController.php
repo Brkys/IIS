@@ -17,7 +17,9 @@ class loginController extends Controller
         $data = -1;
         $model = $model::all();
         foreach ($model as $key => $value) {
-            
+            if($value['name'] == $name){
+                
+            }
         }
 
         //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
