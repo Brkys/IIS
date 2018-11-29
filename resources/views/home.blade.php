@@ -51,6 +51,12 @@
 		</div>
 	</nav>
 
+	<?php 
+	if(DB::connection()->getDatabaseName() ){
+		echo "connected successfully to database ".DB::connection()->getDatabaseName();
+	}
+	php>
+
 
 	<!-- Modal login --> 
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
