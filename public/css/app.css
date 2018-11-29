@@ -9,7 +9,7 @@ body {
 
 .fade-in {
 	opacity: 0;
-	animation: fadeIn 2s fowards;
+	animation: fadeIn 2s ease-in;
 	color: white !important
 }
 
