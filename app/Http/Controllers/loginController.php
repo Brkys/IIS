@@ -14,10 +14,11 @@ class loginController extends Controller
         $model = new userModel();
         $name = $req->input('username');
         $pwd = $req->input('password');
-        $data = -1;
+        $loginCorrect = false;
         $model = $model::all();
-        foreach ($model as $key => $value) {
+        forech ($model as $key => $value) {
             if($value->name == $name && $value->password == $pwd){
+                $loginCorrect = true;
                 $data = $name;
             }
         }
