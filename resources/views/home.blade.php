@@ -138,7 +138,7 @@
 
 <!-- Content of page -->
 <div style="height: 100%">
-	<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
+	<!--<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;"-->
 	<div class="fade-in" >
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
