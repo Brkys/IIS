@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\userModel;
-use App\User;
-use DB;
+//use DB;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
@@ -12,7 +11,7 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        $model = new User();
+        $model = new userModel();
         $model = $model::where('username');
         DB::connection()->getPdo();
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
