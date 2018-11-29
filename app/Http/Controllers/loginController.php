@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\userModel;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
@@ -10,7 +10,8 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        try {
+        $model = new userModel();
+        /*try {
             DB::connection()->getPdo();
             if(DB::connection()->getDatabaseName()){
                 echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
@@ -19,7 +20,7 @@ class loginController extends Controller
             }
         } catch (\Exception $e) {
             die("Could not open connection to database server.  Please check your configuration.");
-        }
+        }*/
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
         return view('home')->with('data', $data);
     }
