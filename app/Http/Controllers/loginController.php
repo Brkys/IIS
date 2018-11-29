@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\userModel;
+use DB;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
