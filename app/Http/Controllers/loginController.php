@@ -17,7 +17,7 @@ class loginController extends Controller
         $data = -1;
         $model = $model::all();
         forech $model as $mod{
-            echo($mod['name']);
+            echo($mod);
         }
         $data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
         return view('home')->with('data', $data);
