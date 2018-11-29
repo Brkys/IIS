@@ -16,11 +16,9 @@ class loginController extends Controller
         $pwd = $req->input('password');
         $data = -1;
         $model = $model::all();
-        /*foreach $model as $mod{
-            if($mod->name == $name && $mod->password == $pwd){
-                $data = $mod;
-            }
-    }*/
+        foreach ($model as $key => $value) {
+            
+        }
 
         //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
         return view('home')->with('data', $data);
