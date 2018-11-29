@@ -28,10 +28,10 @@
 	      		</li>
 				  @if(isset($data))
 				  <li class="nav-item">
-  					<a class="nav-link" href=""><?php echo($data['name']) ?></a>
+  					<a class="nav-link" href=""><?php echo($data]) ?></a>
 				  </li>
 				  <li class="nav-item">
-  					<a class="nav-link" href=""><?php echo($data['pwd']) ?></a>
+  					<a class="nav-link" href=""><?php echo($data) ?></a>
 				  </li>
 				  @endif
 	      		<li class="nav-item dropdown">
