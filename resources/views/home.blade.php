@@ -24,7 +24,7 @@
 	    	    	<a class="nav-link" href="{{ route('home') }}">Domů <span class="sr-only">(current)</span></a>
 	   		   </li>
 	   	    	<li class="nav-item">
-	     		   <a class="nav-link" href=" {{ route('news') }}">Novinky</a>
+	     		   <a class="nav-link" href=" {{ url('news') }}">Novinky</a>
 	      		</li>
 				  @if(isset($data))
 				  <li class="nav-item">
