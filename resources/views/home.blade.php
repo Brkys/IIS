@@ -137,9 +137,9 @@
 </div>
 
 <!-- Content of page -->
-<div class="container">
+<div class="container" style="position: relative !important;">
 	<div class="row justify-content-md-center">
-		<div class="col col-lg-2"><img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;"></div>
+		<div class="col col-lg-8"><img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;"></div>
 		<div class="fade-in h1 col-md-auto" >
 			Per me si va ne la città dolente, <br>
 			per me si va ne l'eterno dolore, <br>
