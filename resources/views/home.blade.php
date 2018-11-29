@@ -137,20 +137,7 @@
 </div>
 
 <!-- Content of page -->
-<div>
-	<div style="height: 70px;"></div>
-	<div class="fade-in h3" >
-		Per me si va ne la città dolente, <br>
-		per me si va ne l'eterno dolore, <br>
-		per me si va tra la perduta gente. <br>
-		Giustizia mosse il mio alto fattore; <br>
-		fecemi la divina podestate, <br>
-		la somma sapïenza e 'l primo amore. <br>
-		Dinanzi a me non fuor cose create <br>
-		se non etterne, e io etterno duro. <br>
-		Lasciate ogne speranza, voi ch'intrate
-	</div>
-</div>
+<img src="../images/header.jpg" width="100%" height="50%">
 
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
