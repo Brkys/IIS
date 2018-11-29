@@ -138,7 +138,8 @@
 
 <!-- Content of page -->
 <div class="container">
-	<div class="fade-in h1" style="margin-top: 50px;" >
+	<div style="height: 50px;"></div>
+	<div class="fade-in h1" >
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
 		per me si va tra la perduta gente. <br>
