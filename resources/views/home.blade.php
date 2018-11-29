@@ -139,7 +139,6 @@
 <!-- Content of page -->
 <div class="container">
 	<div style="height: 70px;"></div>
-	<div class="img">
 	<div class="fade-in h3" >
 		Per me si va ne la città dolente, <br>
 		per me si va ne l'eterno dolore, <br>
@@ -150,7 +149,6 @@
 		Dinanzi a me non fuor cose create <br>
 		se non etterne, e io etterno duro. <br>
 		Lasciate ogne speranza, voi ch'intrate
-	</div>
 	</div>
 </div>
 
