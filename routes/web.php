@@ -26,3 +26,7 @@ Route::post('/login', 'loginController@login');
 Route::get('/login', function(){
     return redirect('home')->with('openLogin', true);
 });
+
+Route::get('/news', function() {
+	return redirect('news');
+});

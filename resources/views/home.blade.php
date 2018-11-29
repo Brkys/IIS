@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body background="black">
-
+<div id="root">
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
 	    	    	<a class="nav-link" href="{{ route('home') }}">Domů <span class="sr-only">(current)</span></a>
 	   		   </li>
 	   	    	<li class="nav-item">
-	     		   <a class="nav-link" href="#">Novinky</a>
+	     		   <a class="nav-link" href=" {{ route('news' )}}">Novinky</a>
 	      		</li>
 				  @if(isset($data))
 				  <li class="nav-item">
@@ -151,6 +151,6 @@ $("#loginModal").modal('show');
 </script>
 @endif
 
-
+</div>
 </body>
 </html>
