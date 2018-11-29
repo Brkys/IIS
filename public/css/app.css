@@ -10,8 +10,9 @@ body {
 .root {
 	background-image: url("../images/header.jpg");
 	background-repeat: no-repeat;
-	height: 100%;
-	width: 100%;
+	background-size: 50%, 100%;
+	height: contain;
+	width: auto;
 	position: relative;
 }
 
