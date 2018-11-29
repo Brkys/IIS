@@ -54,10 +54,15 @@
 	
 	<?php
             try {
-                DB::connection()->getPdo();
-            } catch (\Exception $e) {
-                die("Could not connect to the database.  Please check your configuration. error:" . $e );
-            }
+				DB::connection()->getPdo();
+				if(DB::connection()->getDatabaseName()){
+					echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+				}else{
+					die("Could not find the database. Please check your configuration.");
+				}
+			} catch (\Exception $e) {
+				die("Could not open connection to database server.  Please check your configuration.");
+			}
     ?>
 
 
