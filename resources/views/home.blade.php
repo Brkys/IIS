@@ -72,7 +72,7 @@
   				<form action="login" method="post">
 
                     <label>Uživatelské jméno</label>
-                    <input type="text" name="username" id="username" class="form-control" value={{ if(isset($errors[0])) $errors[0] }}/>
+                    <input type="text" name="username" id="username" class="form-control" value="{{ if(isset($errors[0])) $errors[0] }}"/>
                     <br/>
                     <label>Heslo</label>
                     <input type="password" name="password" id="password" class="form-control" />
