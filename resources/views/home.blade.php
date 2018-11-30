@@ -79,6 +79,7 @@
     					</div>	
 					@endif
                     <button type="submit" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
+					<button name="register_btn" id="register_btn" class="btn btn-outline-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Nemáte účet?</button>
 				</form>
 			</div>
 		</div>
