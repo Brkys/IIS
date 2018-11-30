@@ -15,14 +15,15 @@ class userModel extends Model
      * @param Builder $query - nutne jako prvni parametr - predava se automaticky
      * @param string $name
      * @param string $pwd
-     * @return boolean $found
+     * @return mixed $found
      */
     public function scopeFindUser($query, $name, $pwd){
         $found = false;
         $result = $this::all();
         foreach ($result as $key => $value) {
             if($value->name == $name && $value->password == $pwd){
-                $found = true;
+                $found = $value;
+                break;
             }
         }
         return $found;

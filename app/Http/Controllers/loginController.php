@@ -17,12 +17,12 @@ class loginController extends Controller
         $name = $req->input('username');
         $pwd = $req->input('password');
         $found = userModel::FindUser($name, $pwd);
-        if($found === true){
+        if($found){
             session_start();
             $_SESSION['loggedIn'] = true;
-           // $_SESSION['id'] = $value->id;
-            //$_SESSION['username'] = $value->name;
-            /*$_SESSION['permission'] = $value->permission;*/
+            /*$_SESSION['id'] = $value->id;
+            $_SESSION['username'] = $value->name;
+            $_SESSION['permission'] = $value->permission;*/
             return redirect('home');
         }
         //login se nepodaril
