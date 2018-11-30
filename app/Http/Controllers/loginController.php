@@ -14,7 +14,7 @@ class loginController extends Controller
         $name = $req->input('username');
         $pwd = $req->input('password');
         $found = userModel::FindUser($name, $pwd);
-        if($found){
+        if($found === true){
             session_start();
             $_SESSION['logedIn'] = true;
             $_SESSION['id'] = $value->id;

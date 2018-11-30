@@ -25,6 +25,6 @@ class userModel extends Model
                 break;
             }
         }
-        return $found;
+        return "not found";
     }
 }
