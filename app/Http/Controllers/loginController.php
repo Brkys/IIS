@@ -17,11 +17,11 @@ class loginController extends Controller
         $model = $model::all();
         foreach ($model as $key => $value) {
             if($value->name == $name && $value->password == $pwd){
-               /* session_start();
+                session_start();
                 $_SESSION['logedIn'] = true;
                 $_SESSION['id'] = $value->id;
                 $_SESSION['username'] = $value->name;
-                return redirect('home');*/
+                return redirect('home');
             }
         }
         //login se nepodaril
