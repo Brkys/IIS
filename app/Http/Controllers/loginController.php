@@ -13,16 +13,14 @@ class loginController extends Controller
         $model = new userModel();
         $name = $req->input('username');
         $pwd = $req->input('password');
-        $loginCorrect = false;
-        $model = $model::all();
-        foreach ($model as $key => $value) {
-            if($value->name == $name && $value->password == $pwd){
-                session_start();
-                $_SESSION['logedIn'] = true;
-                $_SESSION['id'] = $value->id;
-                $_SESSION['username'] = $value->name;
-                return redirect('home');
-            }
+        $found = $model->findUser($name, $pwd);
+        if($found){
+            session_start();
+            $_SESSION['logedIn'] = true;
+            $_SESSION['id'] = $value->id;
+            $_SESSION['username'] = $value->name;
+            $_SESSION['permission'] = $value->permission;
+            return redirect('home');
         }
         //login se nepodaril
         return redirect('home')->with(['openLogin' => true]);
