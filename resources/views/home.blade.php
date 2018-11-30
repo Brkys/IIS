@@ -46,7 +46,7 @@
 			    <a class="btn btn-sm my-2 my-sm-0" href="#">Můj účet</a>
 			</span>
 			<form action="logout" method="post">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="button">Odhlásit se</button>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Odhlásit se</button>
 			</form>
 			@endif
 		</div>
