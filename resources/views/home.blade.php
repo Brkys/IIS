@@ -26,15 +26,6 @@
 	   	    	<li class="nav-item">
 	     		   <a class="nav-link" href="#">Novinky</a>
 	      		</li>
-				  @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 	      		<li class="nav-item dropdown">
 	        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
 	        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,16 +64,20 @@
 
                     <label>Uživatelské jméno</label>
                     <input type="text" name="username" id="username" class="form-control"/>
-					@if(isset($errors[0]))
-					<ul>
-					<li>{{ $errors[0] }}</li>
-					</ul>
-					@endif
                     <br/>
                     <label>Heslo</label>
                     <input type="password" name="password" id="password" class="form-control" />
 					@csrf
                     <br/>
+					@if ($errors->any())
+    					<div class="alert alert-danger">
+        					<ul>
+            					@foreach ($errors->all() as $error)
+                					<li>{{ $error }}</li>
+            					@endforeach
+        					</ul>
+    					</div>	
+					@endif
                     <button type="submit" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
 				</form>
 			</div>
