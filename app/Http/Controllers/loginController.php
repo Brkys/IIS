@@ -24,10 +24,6 @@ class loginController extends Controller
                 return redirect('home');*/
             }
         }
-
-
-        
-        //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
-        return view('home')->with('notLogged', true);
+        return redirect('home')->with('notLogged', true);
     }
 }
