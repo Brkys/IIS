@@ -39,5 +39,6 @@ class loginController extends Controller
         session_start();
         $_SESSION = array();
         session_destroy();
+        return redirect('home')->with(['openLogin' => true]);
     }
 }
