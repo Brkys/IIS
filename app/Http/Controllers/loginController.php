@@ -14,7 +14,7 @@ class loginController extends Controller
      */
     public function login(Request $req)
     {
-        $validator = Validator::make($req->all(), [
+        $validator = $req->validate([
             'username' => 'required|max:255',
             'password' => 'required'
         ]);
