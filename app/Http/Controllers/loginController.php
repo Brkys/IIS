@@ -25,6 +25,6 @@ class loginController extends Controller
             }
         }
         //login se nepodaril
-        return redirect('home')->with(['openLogin' => true]]);
+        return redirect('home')->with(['openLogin' => true]);
     }
 }
