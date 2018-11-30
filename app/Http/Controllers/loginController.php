@@ -34,7 +34,7 @@ class loginController extends Controller
         return redirect('home')->with(['openLogin' => true]);
     }
 
-    public function logout()
+    public function logout(Request $req)
     {
         session_start();
         $_SESSION = array();
