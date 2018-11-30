@@ -45,7 +45,7 @@
 			<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#">Můj účet</a>
 			</span>
-			<button class="btn btn-outline-success my-2 my-sm-0" type="button" action="logout" method="post">Odhlásit se</button>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="button" href="{{ url('/logout') }}" method="post">Odhlásit se</button>
 			@endif
 		</div>
 	</nav>
