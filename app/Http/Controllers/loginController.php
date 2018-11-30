@@ -20,9 +20,9 @@ class loginController extends Controller
         if($found === true){
             session_start();
             $_SESSION['loggedIn'] = true;
-            /*$_SESSION['id'] = $value->id;
+            $_SESSION['id'] = $value->id;
             $_SESSION['username'] = $value->name;
-            $_SESSION['permission'] = $value->permission;*/
+            $_SESSION['permission'] = $value->permission;
             return redirect('home');
         }
         //login se nepodaril
