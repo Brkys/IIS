@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\userModel;
 //use DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class loginController extends Controller
 {
