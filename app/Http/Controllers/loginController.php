@@ -22,7 +22,7 @@ class loginController extends Controller
             $_SESSION['loggedIn'] = true;
             $_SESSION['id'] = $value->id;
             $_SESSION['username'] = $value->name;
-            $_SESSION['permission'] = $value->permission;
+           // $_SESSION['permission'] = $value->permission;
             return redirect('home');
         }
         //login se nepodaril

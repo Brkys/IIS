@@ -47,11 +47,11 @@
     		<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#" data-toggle="modal" data-target="#registerModal">Registrovat se</a>
 			</span>
-			<!--@if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)-->
+			@if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)
       		<button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
-			<!--@else
+			@else
 			<button class="btn btn-outline-success my-2 my-sm-0" type="button">Odhlásit se</button>
-			@endif-->
+			@endif
 		</div>
 	</nav>
 
