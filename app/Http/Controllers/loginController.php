@@ -33,4 +33,11 @@ class loginController extends Controller
         //login se nepodaril
         return redirect('home')->with(['openLogin' => true]);
     }
+
+    public function logout()
+    {
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+    }
 }
