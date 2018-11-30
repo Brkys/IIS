@@ -22,6 +22,6 @@ class userModel extends Model
         foreach ($result as $key => $value) {
             $found++;
         }
-        return $found;
+        return $name;
     }
 }
