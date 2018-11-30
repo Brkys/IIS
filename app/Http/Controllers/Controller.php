@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
-{
+{   
+    protected $username = 'name';
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

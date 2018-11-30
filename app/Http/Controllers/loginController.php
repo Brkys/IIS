@@ -15,6 +15,7 @@ class loginController extends Controller
         $model = new userModel();
         $name = $req->input('username');
         $pwd = $req->input('password');
+        $user = $req->only('username', 'password');
         $loginCorrect = false;
         $model = $model::all();
        /* foreach ($model as $key => $value) {
@@ -22,7 +23,7 @@ class loginController extends Controller
                 $loginCorrect = true;
             }
         }*/
-        if(/Auth::attempt($model)){
+        if(/Auth::attempt($user)){
             return 'Is logged in';
             return view('/');
         }
