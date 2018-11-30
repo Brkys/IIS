@@ -16,7 +16,7 @@ class userModel extends Model
      * @param string $pwd
      * @return boolean $found
      */
-    public function findUser($name, $pwd){
+    public function scopeFindUser($name, $pwd){
         $found = false;
         $result = userModel::all();
         foreach ($result as $key => $value) {
