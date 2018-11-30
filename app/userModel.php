@@ -17,14 +17,11 @@ class userModel extends Model
      * @return boolean $found
      */
     public function scopeFindUser($name, $pwd){
-        $found = false;
+        $found = 0;
         $result = $this::all();
         foreach ($result as $key => $value) {
-            if($value->name == $name && $value->password == $pwd){
-                $found = true;
-                break;
-            }
+            $found++;
         }
-        return "not found";
+        return $found;
     }
 }
