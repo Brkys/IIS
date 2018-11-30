@@ -26,6 +26,6 @@ class loginController extends Controller
         }
 
         //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
-        return view('home')->with('openLogin');
+        return view('home')->with('openLogin', true);
     }
 }
