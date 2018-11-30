@@ -14,14 +14,16 @@ class loginController extends Controller
      */
     public function login(Request $req)
     {
+        //validace dat - v pripade chyby dojde automaticky k presmerovani zpet na stranku, odkud prisel pozadavek
         $validator = $req->validate([
             'username' => 'required|max:255',
             'password' => 'required'
         ]);
-
+        
         $name = $req->input('username');
         $pwd = $req->input('password');
         $found = userModel::FindUser($name, $pwd);
+        //uzivtel nalezen
         if($found){
             session_start();
             $_SESSION['loggedIn'] = true;
