@@ -18,7 +18,7 @@ class userModel extends Model
      */
     public function scopeFindUser($name, $pwd){
         $found = false;
-        $result = userModel::all();
+        $result = $this::all();
         foreach ($result as $key => $value) {
             if($value->name == $name && $value->password == $pwd){
                 $found = true;
