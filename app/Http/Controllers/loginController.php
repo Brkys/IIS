@@ -24,6 +24,6 @@ class loginController extends Controller
                 return redirect('home');*/
             }
         }
-        return redirect('home')->with('notLogged', true);
+        return redirect()->route('home')->with('notLogged', true);
     }
 }
