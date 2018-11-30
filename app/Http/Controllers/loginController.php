@@ -10,9 +10,10 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
+        
         $name = $req->input('username');
         $pwd = $req->input('password');
-        $found = userModel::findUser($name, $pwd);
+        $found = userModel::FindUser($name, $pwd);
         if($found){
             session_start();
             $_SESSION['logedIn'] = true;
