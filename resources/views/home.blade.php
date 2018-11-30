@@ -135,6 +135,7 @@
                             <button type="submit" class="btn btn-outline-success">
                                 Register
                             </button>
+							<button name="register_btn" id="register_btn" class="btn btn-outline-primary" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Mám účet</button>
                         </div>
                     </div>
                 </form>                       
