@@ -65,10 +65,10 @@
   				<form action="login" method="post">
 
                     <label>Uživatelské jméno</label>
-                    <input type="text" name="username" id="username" class="form-control"/>
+                    <input type="text" name="username" id="username" placeholder="Toto pole je povinné" class="form-control"/>
                     <br/>
                     <label>Heslo</label>
-                    <input type="password" name="password" id="password" class="form-control" />
+                    <input type="password" name="password" id="password" placeholder="Toto pole je povinné" class="form-control" />
 					@csrf
                     <br/>
 					@if ($errors->any())
