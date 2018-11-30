@@ -10,7 +10,7 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        
+
         $name = $req->input('username');
         $pwd = $req->input('password');
         $found = userModel::FindUser($name, $pwd);
@@ -23,6 +23,7 @@ class loginController extends Controller
             return redirect('home');
         }
         //login se nepodaril
-        return redirect('home')->with(['openLogin' => true]);
+        return view('home')->with('data', $found);
+      //  return redirect('home')->with(['openLogin' => true]);
     }
 }
