@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\userModel;
-//use DB;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class loginController extends Controller
 {
@@ -15,20 +13,19 @@ class loginController extends Controller
         $model = new userModel();
         $name = $req->input('username');
         $pwd = $req->input('password');
-        $user = $req->only('username', 'password');
         $loginCorrect = false;
         $model = $model::all();
-       /* foreach ($model as $key => $value) {
+        foreach ($model as $key => $value) {
             if($value->name == $name && $value->password == $pwd){
-                $loginCorrect = true;
+                /*session_start();
+                $_SESSION['logedIn'] = true;
+                $_SESSION['id'] = $value->id;
+                $_SESSION['username'] = $value->name;
+                return redirect('home');*/
             }
-        }*/
-        if(/Auth::attempt($user)){
-            return 'Is logged in';
-            return view('/');
         }
 
         //$data = array("name" => $req->input('username'), "pwd" => $req->input('password'));
-        return view('home');
+        return view('login');
     }
 }
