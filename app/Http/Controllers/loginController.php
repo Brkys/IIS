@@ -19,9 +19,8 @@ class loginController extends Controller
         $found = userModel::FindUser($name, $pwd);
         if($found === true){
             session_start();
-            
-            /*$_SESSION['loggedIn'] = true;
-            $_SESSION['id'] = $value->id;
+            $_SESSION['loggedIn'] = true;
+            /*$_SESSION['id'] = $value->id;
             $_SESSION['username'] = $value->name;
             $_SESSION['permission'] = $value->permission;*/
             return redirect('home');
