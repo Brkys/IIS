@@ -45,7 +45,9 @@
 			<span class="navbar-text my-2 my-sm-0 pr-1">
 			    <a class="btn btn-sm my-2 my-sm-0" href="#">Můj účet</a>
 			</span>
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit" action="logout" method="post">Odhlásit se</button>
+			<form action="logout" method="post">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="button">Odhlásit se</button>
+			</form>
 			@endif
 		</div>
 	</nav>
