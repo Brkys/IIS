@@ -26,14 +26,15 @@
 	   	    	<li class="nav-item">
 	     		   <a class="nav-link" href="#">Novinky</a>
 	      		</li>
-				  @if(isset($data))
-				  <li class="nav-item">
-  					<a class="nav-link" href=""><?php echo($data) ?></a>
-				  </li>
-				  <li class="nav-item">
-  					<a class="nav-link" href=""><?php echo($data) ?></a>
-				  </li>
-				  @endif
+				  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 	      		<li class="nav-item dropdown">
 	        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
 	        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
