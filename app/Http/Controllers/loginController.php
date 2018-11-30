@@ -14,6 +14,11 @@ class loginController extends Controller
      */
     public function login(Request $req)
     {
+        $validatedData = $req->validate([
+            'username' => 'required|max:255',
+            'password' => 'required'
+        ]);
+
         $name = $req->input('username');
         $pwd = $req->input('password');
         $found = userModel::FindUser($name, $pwd);
