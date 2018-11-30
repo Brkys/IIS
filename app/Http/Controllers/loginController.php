@@ -10,7 +10,7 @@ class loginController extends Controller
  
     public function login(Request $req)
     {
-        $model = new userModel();
+        $model = new userModel();           //vytvoreni nove instance modelu 
         $name = $req->input('username');
         $pwd = $req->input('password');
         $loginCorrect = false;

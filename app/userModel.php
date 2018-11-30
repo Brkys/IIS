@@ -12,6 +12,7 @@ class userModel extends Model
     protected $table = 'users';
 
     public function findUser($id, $pwd){
+        userModel::all();
         
     }
 }
