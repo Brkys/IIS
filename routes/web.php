@@ -21,12 +21,17 @@ Auth::routes();
 
 Route::get('/test', 'TestController@test');
 
+Route::get('/login', function(){
+    return redirect('home')->with('openLogin', true);
+});
+
 Route::post('/login', 'loginController@login');
 
 Route::get('/logout', 'loginController@logout');
 
+/*Route::get('/register', function(){
+    return redirect('home')->with('va')
+})*/
+
 Route::post('/register', 'registerController@register');
 
-Route::get('/login', function(){
-    return redirect('home')->with('openLogin', true);
-});
