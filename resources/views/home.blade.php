@@ -153,6 +153,16 @@
                         <label class="col-md-4 control-label">Zopakovat heslo</label>
                             <input required type="password" class="form-control" value="{{old('password_confirmation')}}" name="password_confirmation">
                     </div>
+
+					@if ($errors->any()) && isset($registerNotValid)
+    					<div class="alert alert-danger">
+        					<ul>
+            					@foreach ($errors->all() as $error)
+                					<li>{{ $error }}</li>
+            					@endforeach
+        					</ul>
+    					</div>	
+					@endif
  
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
