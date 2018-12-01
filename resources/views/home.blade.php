@@ -112,7 +112,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text">YYYY-MM-DD</span>
 								</div>
-								<input placeholder="Nepovinné YYYY-MM-DD" type="text" class="form-control" name="birthdate">
+								<input placeholder="Nepovinné" type="text" class="form-control" name="birthdate">
 							</div>
                     </div>
 
