@@ -51,10 +51,9 @@ class registerController extends Controller
         }
 
         $password = $req->input('password');
-        $passwordConfirm = $req->input('password_confirmation');
         $validatorPwd = Validator::make($req->only('password'), $rules, $validatorMessagesCzech);
         if($validatorPwd->fails()) {
-            $password = $passwordConfirm = '';
+            $password = '';
         }
 
         $email = $req->input('email');
@@ -70,10 +69,10 @@ class registerController extends Controller
             'password' => $password,
             'email'    => $email);
 
-        $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
+        /*$validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validator)->with('registerNotValid', true);
-        }
+        }*/
         
         return redirect('home');
     }
