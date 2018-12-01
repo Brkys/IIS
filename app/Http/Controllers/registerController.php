@@ -31,12 +31,14 @@ class registerController extends Controller
             'email.email'        => "Toto není platný formát e-mailu.",
             'password.confirmed' => "Hesla se neshodují."
         ); 
-    
+        
+        $fullName = $req->input('fullname');
         $validatorFullName = Validator::make($req->only('fullname'), $rules, $validatorMessagesCzech);
-
         if($validatorFullName->fails()) {
-            return redirect('home')->withErrors($validatorFullName)->with('registerNotValid', true)->withInput();
+            
         }
+
+        //return redirect('home')->withErrors($validator)->with('registerNotValid', true)->withInput();
         
         return redirect('home');
     }
