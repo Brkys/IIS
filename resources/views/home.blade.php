@@ -167,11 +167,18 @@
 @if((!empty(Session::get('openLogin')) && Session::get('openLogin') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) ||!empty(Session::get('validationFail')) && Session::get('validationFail') == true)
 <script>
 $(document).ready(function() {
-$("#loginModal").modal('show');
+	$("#loginModal").modal('show');
 });
 </script>
 @endif
 
+@if(!empty(Session::get('registerValid')) && Session::get('registerValit') == false)
+<script>
+$(document).ready(function () {
+	$("#registerMIdal").modal('show');
+});
+</script>
+@endif
 
 </body>
 </html>
