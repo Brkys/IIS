@@ -44,7 +44,7 @@ class registerController extends Controller
             if($validatorDate->fails()) {
                 $date = '';
             }
-        } 
+        }
 
         $username = $req->input('username');
         $validatorUsername = Validator::make($req->only('username'), $rules, $validatorMessagesCzech);
