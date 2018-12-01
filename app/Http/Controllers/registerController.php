@@ -85,17 +85,17 @@ class registerController extends Controller
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
         }
         
-        register();
+        return $this->register($req);
     }
 
-    public function register(){
-          //$newUser = new userModel;
-        //$newUser->name = $req->input('username');
-        //$newUser->full_name = $req->input('fullname');
-        //$newUser->birth_date = $req->input('date');
-        //$newUser->email = $req->input('email');
-       // $newUser->password = Hash::make($req->input('password'));
-       // $newUser->save();
+    public function register(Request $req){
+        $newUser = new userModel();
+        $newUser->name = $req->input('username');
+        $newUser->full_name = $req->input('fullname');
+        $newUser->birth_date = $req->input('date');
+        $newUser->email = $req->input('email');
+        $newUser->password = Hash::make($req->input('password'));
+        $newUser->save();
 
         return redirect('home');
     }
