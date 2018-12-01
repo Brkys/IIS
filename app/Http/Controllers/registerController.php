@@ -62,8 +62,18 @@ class registerController extends Controller
         if($validatorEmail->fails()) {
             $email = '';
         }
-        
-        //return redirect('home')->withErrors($validator)->with('registerNotValid', true)->withInput();
+
+        $validationResult = array(
+            'fullname' => $fullName,
+            'username' => $username, 
+            'date'     => $date,
+            'password' => $password,
+            'email'    => $email);
+
+        $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
+        if($validatorFinal->fails()) {
+            return redirect('home')->withErrors($validator)->with('registerNotValid', true);
+        }
         
         return redirect('home');
     }
