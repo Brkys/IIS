@@ -33,5 +33,5 @@ Route::get('/register', function(){
     return redirect('home')->with('registerNotValid', true);
 });
 
-Route::post('/register', 'registerController@register');
+Route::post('/register', 'registerController@validateRegister');
 
