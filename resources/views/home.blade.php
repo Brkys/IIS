@@ -111,21 +111,21 @@
 					<div class="form-group">
                         <label class="col-md-4 control-label">Datum narození</label>
                         <div class="col-md-6">
-                            <input placeholder="Nepovinné YYYY-MM-DD" type="text" class="form-control" name="birthdate">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">YYYY-MM-DD</span>
+								</div>
+								<input placeholder="Nepovinné YYYY-MM-DD" type="text" class="form-control" name="birthdate">
+							</div>
                         </div>
                     </div>
 
 
 
                     <div class="form-group">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">YYYY-MM-DD</span>
-							</div>
-							<label class="col-md-4 control-label">Uživatelské jméno</label>
-							<div class="col-md-6">
-								<input required placeholder="Toto pole je povinné" type="text" class="form-control" name="username">
-							</div>
+						<label class="col-md-4 control-label">Uživatelské jméno</label>
+						<div class="col-md-6">
+							<input required placeholder="Toto pole je povinné" type="text" class="form-control" name="username">
 						</div>
                     </div>
  
