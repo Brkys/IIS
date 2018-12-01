@@ -29,9 +29,9 @@ Route::post('/login', 'loginController@login');
 
 Route::get('/logout', 'loginController@logout');
 
-/*Route::get('/register', function(){
-    return redirect('home')->with('va')
-})*/
+Route::get('/register', function(){
+    return redirect('home')->with('registerNotValid', true);
+});
 
 Route::post('/register', 'registerController@register');
 
