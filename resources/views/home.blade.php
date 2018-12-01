@@ -103,51 +103,44 @@
  
 					<div class="form-group">
                         <label class="col-md-4 control-label">Jméno a příjmení</label>
-                        <div class="col-md-6">
                             <input required placeholder="Toto pole je povinné" type="text" class="form-control" name="fullname">
-                        </div>
                     </div>
 
 					<div class="form-group">
                         <label class="col-md-4 control-label">Datum narození</label>
-                        <div class="col-md-6">
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text">YYYY-MM-DD</span>
 								</div>
 								<input placeholder="Nepovinné YYYY-MM-DD" type="text" class="form-control" name="birthdate">
 							</div>
-                        </div>
                     </div>
 
 
 
                     <div class="form-group">
 						<label class="col-md-4 control-label">Uživatelské jméno</label>
-						<div class="col-md-6">
 							<input required placeholder="Toto pole je povinné" type="text" class="form-control" name="username">
-						</div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">E-Mail</label>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control" name="email">
-                        </div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">mail@example.com</span>
+							</div>
+                            <input placeholder = "Nepovinné" type="email" class="form-control" name="email"> 
+						</div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">Heslo</label>
-                        <div class="col-md-6">
                             <input type="password" class="form-control" name="password">
-                        </div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">Zopakovat heslo</label>
-                        <div class="col-md-6">
                             <input type="password" class="form-control" name="password_confirmation">
-                        </div>
                     </div>
  
                     <div class="form-group">
