@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\userModel;
 use Illuminate\Http\Request;
+use Validator;
 
 class loginController extends Controller
 {
@@ -22,9 +23,14 @@ class loginController extends Controller
             'username.required' => "Vyplňte, prosím, uživatelské jméno", 
             'password.required' => "Vyplňte, prosím, heslo."
         ); 
+
+        $validator = Validator::make($req->all(), [
+            'username' => 'required|max:255',
+            'password' => 'required'
+        ]);
         
         //validace dat - v pripade chyby dojde automaticky k presmerovani zpet na stranku, odkud prisel pozadavek
-        $this->validate($req, $rules, $validatorMessagesCzech);
+        //$this->validate($req, $rules, $validatorMessagesCzech);
         
         $name = $req->input('username');
         $pwd = $req->input('password');
