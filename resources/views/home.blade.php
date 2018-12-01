@@ -13,13 +13,16 @@
 <body background="black">
 
 @php
-	if(!isset($registerInput)){
+	if(empty(Session::get('registerInput'))){
 		$registerInput = array(
 			'fullname' => '',
             'username' => '', 
             'date'     => '',
             'password' => '',
             'email'    => '');
+	}
+	else{
+		$registerInput = Session::get('registerInput');
 	}
 @endphp
 
@@ -82,7 +85,7 @@
                     <input required type="password" name="password" id="password" placeholder="Toto pole je povinné" class="form-control" />
 					@csrf
                     <br/>
-					@if ($errors->any() && !isset($registerNotValid))
+					@if ($errors->any() && empty(Session::get('$registerNotValid')))
     					<div class="alert alert-danger">
         					<ul>
             					@foreach ($errors->all() as $error)
@@ -154,7 +157,7 @@
                             <input required type="password" class="form-control" value="{{old('password_confirmation')}}" name="password_confirmation">
                     </div>
 
-					@if ($errors->any() && isset($registerNotValid))
+					@if ($errors->any() && !empty(Session::get('$registerNotValid')))
     					<div class="alert alert-danger">
         					<ul>
             					@foreach ($errors->all() as $error)
