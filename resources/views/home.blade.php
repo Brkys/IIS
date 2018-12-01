@@ -128,7 +128,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text">YYYY-MM-DD</span>
 								</div>
-								<input placeholder="Nepovinné" type="text" value="{{$registerInput['date']}}" class="form-control" name="birthdate">
+								<input  type="text" value="{{$registerInput['date']}}" class="form-control" name="birthdate">
 							</div>
                     </div>
 
@@ -145,18 +145,18 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text">mail@example.com</span>
 							</div>
-                            <input placeholder = "Nepovinné" type="email" class="form-control" value="{{$registerInput['email']}}" name="email"> 
+                            <input type="email" class="form-control" value="{{$registerInput['email']}}" name="email"> 
 						</div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">Heslo</label>
-                            <input required type="password" class="form-control" value="{{$registerInput['password']}}" name="password">
+                            <input required placeholder="Toto pole je povinné" type="password" class="form-control" value="{{$registerInput['password']}}" name="password">
                     </div>
 					
                     <div class="form-group">
                         <label class="col-md-4 control-label">Zopakovat heslo</label>
-                            <input required type="password" class="form-control" value="{{$registerInput['password']}}" name="password_confirmation">
+                            <input required placeholder="Toto pole je povinné" type="password" class="form-control" value="{{$registerInput['password']}}" name="password_confirmation">
                     </div>
 
 					@if ($errors->any() && !empty(Session::get('registerNotValid')))
