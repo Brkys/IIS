@@ -171,7 +171,7 @@ $(document).ready(function() {
 </script>
 @endif
 
-@if(!empty(Session::get('registerValid')) && Session::get('registerValid') == false)
+@if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true)
 <script>
 $(document).ready(function () {
 	$("#registerModal").modal('show');
