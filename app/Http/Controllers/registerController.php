@@ -47,7 +47,7 @@ class registerController extends Controller
         }
 
         $username = $req->input('username');
-        $validatorUsername = Validator::make($req->only('username'), 'username' => 'required|max:255', $validatorMessagesCzech);
+        $validatorUsername = Validator::make($req->only('username'), ['username' => 'required|max:255'], $validatorMessagesCzech);
         if($validatorUsername->fails()) {
             $username = '';
         }
