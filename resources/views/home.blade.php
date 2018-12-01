@@ -103,7 +103,7 @@
  
 					<div class="form-group">
                         <label class="col-md-4 control-label">Jméno a příjmení</label>
-                            <input required placeholder="Toto pole je povinné" type="text" class="form-control" name="fullname">
+                            <input required placeholder="Toto pole je povinné" value="{{old('fullname')}}" type="text" class="form-control" name="fullname">
                     </div>
 
 					<div class="form-group">
