@@ -13,7 +13,7 @@
 <body>
 @if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)
 @php 
-return view('home');
+return redirect('home');
 @endphp
 @endif
 </body>
