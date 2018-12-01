@@ -69,7 +69,7 @@ class registerController extends Controller
             'password' => $password,
             'email'    => $email);
 
-        /*$validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
+        $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validator)->with('registerNotValid', true);
         }*/
