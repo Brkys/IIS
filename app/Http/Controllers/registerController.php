@@ -18,7 +18,7 @@ class registerController extends Controller
         $rules = array(
             'fullname' => 'required|max:80',
             'date'     => 'date_format:Y-m-d',
-            'username' => 'required|max:255|unique',
+            'username' => 'required|max:255',
             'email'    => 'email',
             'password' => 'required|max:255|confirmed'
         );
