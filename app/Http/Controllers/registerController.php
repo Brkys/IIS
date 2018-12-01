@@ -39,9 +39,11 @@ class registerController extends Controller
         }
 
         $date = $req->input('date');
-        $validatorDate = Validator::make($req->only('date'), $rules, $validatorMessagesCzech);
-        if($validatorDate->fails()) {
-            $date = '';
+        if($date != ''){
+            $validatorDate = Validator::make($req->only('date'), $rules, $validatorMessagesCzech);
+            if($validatorDate->fails()) {
+                $date = '';
+            }
         }
 
         $username = $req->input('username');
@@ -57,9 +59,11 @@ class registerController extends Controller
         }
 
         $email = $req->input('email');
-        $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
-        if($validatorEmail->fails()) {
-            $email = '';
+        if($email != ''){
+            $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
+            if($validatorEmail->fails()) {
+                $email = '';
+            }
         }
 
         $validationResult = array(
