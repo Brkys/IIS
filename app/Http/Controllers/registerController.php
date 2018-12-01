@@ -64,7 +64,7 @@ class registerController extends Controller
             if($validatorEmail->fails()) {
                 $email = '';
             }
-        }
+        } else unset($rules['email']);
 
         $validationResult = array(
             'fullname' => $fullName,
