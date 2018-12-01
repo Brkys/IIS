@@ -32,11 +32,11 @@ class registerController extends Controller
             'password.confirmed' => "Hesla se neshodují."
         ); 
     
-        $validator = Validator::make($req->all(), $rules, $validatorMessagesCzech);
+      /*  $validator = Validator::make($req->all(), $rules, $validatorMessagesCzech);
 
         if($validator->fails()) {
             return redirect('home')->withErrors($validator)->with('registerValid' false)->withInput();   
-        }
+        }*/
         
         return redirect('home');
     }
