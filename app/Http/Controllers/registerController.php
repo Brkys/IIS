@@ -35,9 +35,34 @@ class registerController extends Controller
         $fullName = $req->input('fullname');
         $validatorFullName = Validator::make($req->only('fullname'), $rules, $validatorMessagesCzech);
         if($validatorFullName->fails()) {
-            
+            $fullname = '';
         }
 
+        $date = $req->input('date');
+        $validatorDate = Validator::make($req->only('date'), $rules, $validatorMessagesCzech);
+        if($validatorDate->fails()) {
+            $date = '';
+        }
+
+        $username = $req->input('username');
+        $validatorUsername = Validator::make($req->only('username'), $rules, $validatorMessagesCzech);
+        if($validatorUsername->fails()) {
+            $username = '';
+        }
+
+        $password = $req->input('password');
+        $passwordConfirm = $req->input('password_confirmation');
+        $validatorPwd = Validator::make($req->only('password'), $rules, $validatorMessagesCzech);
+        if($validatorPwd->fails()) {
+            $password = $passwordConfirm = '';
+        }
+
+        $email = $req->input('email');
+        $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
+        if($validatorEmail->fails()) {
+            $email = '';
+        }
+        
         //return redirect('home')->withErrors($validator)->with('registerNotValid', true)->withInput();
         
         return redirect('home');
