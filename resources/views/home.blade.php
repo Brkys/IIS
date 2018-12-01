@@ -164,7 +164,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-@if((!empty(Session::get('openLogin')) && Session::get('openLogin') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) || $errors->any())
+@if((!empty(Session::get('openLogin')) && Session::get('openLogin') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) ||!empty(Session::get('validationFail')) && Session::get('validationFail') == true)
 <script>
 $(document).ready(function() {
 $("#loginModal").modal('show');

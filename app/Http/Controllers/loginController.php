@@ -24,11 +24,11 @@ class loginController extends Controller
             'password.required' => "Vyplňte, prosím, heslo."
         ); 
 
-        $validator = Validator::make($req->all(), [
-            'username' => 'required|max:255',
-            'password' => 'required'
-        ]);
+        $validator = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         
+        if($validator->fails()) {
+            return redirect('home')->withErrors($validator)->with('validationFail', true);
+        }
         //validace dat - v pripade chyby dojde automaticky k presmerovani zpet na stranku, odkud prisel pozadavek
         //$this->validate($req, $rules, $validatorMessagesCzech);
         
