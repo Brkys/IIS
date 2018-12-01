@@ -98,8 +98,8 @@
             </div>
             <div class="modal-body">
  
-                <form id="formRegister" class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <form id="formRegister" class="form-horizontal" role="form" method="post" action="register">
+                    @csrf
  
 					<div class="form-group">
                         <label class="col-md-4 control-label">Jméno a příjmení</label>
@@ -135,12 +135,12 @@
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">Heslo</label>
-                            <input type="password" class="form-control" name="password">
+                            <input required type="password" class="form-control" name="password">
                     </div>
- 
+					
                     <div class="form-group">
                         <label class="col-md-4 control-label">Zopakovat heslo</label>
-                            <input type="password" class="form-control" name="password_confirmation">
+                            <input required type="password" class="form-control" name="password_confirmation">
                     </div>
  
                     <div class="form-group">

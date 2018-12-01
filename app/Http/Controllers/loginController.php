@@ -19,6 +19,7 @@ class loginController extends Controller
             'username' => 'required|max:255',
             'password' => 'required'
         );
+        
         $validatorMessagesCzech = array(
             'username.required' => "Vyplňte, prosím, uživatelské jméno", 
             'password.required' => "Vyplňte, prosím, heslo."
@@ -29,8 +30,6 @@ class loginController extends Controller
         if($validator->fails()) {
             return redirect('home')->withErrors($validator)->with('validationFail', true);
         }
-        //validace dat - v pripade chyby dojde automaticky k presmerovani zpet na stranku, odkud prisel pozadavek
-        //$this->validate($req, $rules, $validatorMessagesCzech);
         
         $name = $req->input('username');
         $pwd = $req->input('password');
