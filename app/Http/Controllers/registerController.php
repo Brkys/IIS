@@ -79,6 +79,14 @@ class registerController extends Controller
             'password' => $password,
             'email'    => $email);
 
+            $rules = array(
+                'fullname' => 'required|max:80',
+                'date'     => 'date_format:Y-m-d',
+                'username' => 'required|max:255',
+                'email'    => 'email',
+                'password' => 'required|max:255|confirmed'
+            );
+
         $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
