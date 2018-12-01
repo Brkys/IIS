@@ -25,7 +25,7 @@ Route::post('/login', 'loginController@login');
 
 Route::get('/logout', 'loginController@logout');
 
-Route::get('/register', 'registerController@register');
+Route::post('/register', 'registerController@register');
 
 Route::get('/login', function(){
     return redirect('home')->with('openLogin', true);
