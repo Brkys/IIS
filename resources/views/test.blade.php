@@ -12,9 +12,7 @@
 </head>
 <body>
 @if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)
-@php 
-return redirect('home');
-@endphp
+<?php return view('home'); ?>
 @endif
 </body>
 </html>
