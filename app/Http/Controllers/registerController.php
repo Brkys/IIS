@@ -68,9 +68,6 @@ class registerController extends Controller
                 $email = '';
             }
         }
-        else {
-            unset($rules['email']);
-        }
 
         $validationResult = array(
             'fullname' => $fullName,
@@ -78,14 +75,6 @@ class registerController extends Controller
             'date'     => $date,
             'password' => $password,
             'email'    => $email);
-
-            $rules = array(
-                'fullname' => 'required|max:80',
-                'date'     => 'date_format:Y-m-d',
-                'username' => 'required|max:255',
-                'email'    => 'email',
-                'password' => 'required|max:255|confirmed'
-            );
 
         $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         if($validatorFinal->fails()) {
