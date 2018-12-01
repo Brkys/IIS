@@ -44,7 +44,7 @@ class registerController extends Controller
             if($validatorDate->fails()) {
                 $date = '';
             }
-        }
+        } else unset($rules['date']);
 
         $username = $req->input('username');
         $validatorUsername = Validator::make($req->only('username'), $rules, $validatorMessagesCzech);
@@ -59,12 +59,13 @@ class registerController extends Controller
         }
 
         $email = $req->input('email');
-        if($email != ''){
+        if($email != '')){
             $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
             if($validatorEmail->fails()) {
                 $email = '';
             }
         }
+        else unset($rules['email']);
 
         $validationResult = array(
             'fullname' => $fullName,
