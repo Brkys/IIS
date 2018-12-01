@@ -40,7 +40,7 @@ class registerController extends Controller
 
         $date = $req->input('date');
         if($date != ''){
-            $validatorDate = Validator::make($req->only('date'), $rules, $validatorMessagesCzech);
+            $validatorDate = Validator::make($req->only('date'), ['date' => 'date_format:Y-m-d'], $validatorMessagesCzech);
             if($validatorDate->fails()) {
                 $date = '';
             }
@@ -53,14 +53,14 @@ class registerController extends Controller
         }
 
         $password = $req->input('password');
-        $validatorPwd = Validator::make($req->only('password'), $rules, $validatorMessagesCzech);
+        $validatorPwd = Validator::make($req->only('password'), ['password' => 'required|max:255|confirmed'], $validatorMessagesCzech);
         if($validatorPwd->fails()) {
             $password = '';
         }
 
         $email = $req->input('email');
         if($email != ''){
-            $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
+            $validatorEmail = Validator::make($req->only('email'), ['email' => 'email'], $validatorMessagesCzech);
             if($validatorEmail->fails()) {
                 $email = '';
             }
@@ -73,9 +73,7 @@ class registerController extends Controller
             'password' => $password,
             'email'    => $email);
         
-        if($username == ''){
-            $validationResult['fullname'] = $username;
-        }
+        
         $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
         if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
