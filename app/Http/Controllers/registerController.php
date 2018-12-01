@@ -45,9 +45,6 @@ class registerController extends Controller
                 $date = '';
             }
         } 
-        else {
-            
-        }
 
         $username = $req->input('username');
         $validatorUsername = Validator::make($req->only('username'), $rules, $validatorMessagesCzech);
