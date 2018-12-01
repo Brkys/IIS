@@ -85,10 +85,10 @@ class registerController extends Controller
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
         }
         
-        register($req);
+        register();
     }
 
-    public function register(Request $req){
+    public function register(){
           //$newUser = new userModel;
         //$newUser->name = $req->input('username');
         //$newUser->full_name = $req->input('fullname');
