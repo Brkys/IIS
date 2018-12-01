@@ -82,7 +82,7 @@
                     <input required type="password" name="password" id="password" placeholder="Toto pole je povinné" class="form-control" />
 					@csrf
                     <br/>
-					@if ($errors->any()) && !isset($registerNotValid)
+					@if ($errors->any() && !isset($registerNotValid))
     					<div class="alert alert-danger">
         					<ul>
             					@foreach ($errors->all() as $error)
@@ -114,7 +114,7 @@
  
 					<div class="form-group">
                         <label class="col-md-4 control-label">Jméno a příjmení</label>
-                            <input required placeholder="Toto pole je povinné" value="{{old('fullname')}}" type="text" class="form-control" name="fullname">
+                            <input required placeholder="Toto pole je povinné" value="{{$registerInput['fullname']}}" type="text" class="form-control" name="fullname">
                     </div>
 
 					<div class="form-group">
@@ -154,7 +154,7 @@
                             <input required type="password" class="form-control" value="{{old('password_confirmation')}}" name="password_confirmation">
                     </div>
 
-					@if ($errors->any()) && isset($registerNotValid)
+					@if ($errors->any() && isset($registerNotValid))
     					<div class="alert alert-danger">
         					<ul>
             					@foreach ($errors->all() as $error)
