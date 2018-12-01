@@ -70,7 +70,7 @@ class registerController extends Controller
             'email'    => $email);
 
         $validatorFinal = Validator::make($req->all(), $rules, $validatorMessagesCzech);
-        if($validatorFinal->fails()) {
+        /*if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validator)->with('registerNotValid', true);
         }*/
         
