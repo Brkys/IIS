@@ -46,7 +46,7 @@ class registerController extends Controller
             }
         } 
         else {
-            unset($rules['date']);
+            
         }
 
         $username = $req->input('username');
