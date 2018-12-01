@@ -94,7 +94,7 @@ class registerController extends Controller
         $newUser->full_name = $req->input('fullname');
         $newUser->birth_date = $req->input('date');
         $newUser->email = $req->input('email');
-        $newUser->password = Hash::make($req->input('password'));
+       // $newUser->password = Hash::make($req->input('password'));
        // $newUser->save();
 
         return redirect('home');
