@@ -101,19 +101,38 @@
                 <form id="formRegister" class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
  
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Uživatelské jméno</label>
+					<div class="form-group">
+                        <label class="col-md-4 control-label">Jméno a příjmení</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="name">
-                            <small class="help-block"></small>
+                            <input required placeholder="Toto pole je povinné" type="text" class="form-control" name="fullname">
                         </div>
+                    </div>
+
+					<div class="form-group">
+                        <label class="col-md-4 control-label">Datum narození</label>
+                        <div class="col-md-6">
+                            <input placeholder="Nepovinné YYYY-MM-DD" type="text" class="form-control" name="birthdate">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">YYYY-MM-DD</span>
+							</div>
+							<label class="col-md-4 control-label">Uživatelské jméno</label>
+							<div class="col-md-6">
+								<input required placeholder="Toto pole je povinné" type="text" class="form-control" name="username">
+							</div>
+						</div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">E-Mail</label>
                         <div class="col-md-6">
                             <input type="email" class="form-control" name="email">
-                            <small class="help-block"></small>
                         </div>
                     </div>
  
@@ -121,7 +140,6 @@
                         <label class="col-md-4 control-label">Heslo</label>
                         <div class="col-md-6">
                             <input type="password" class="form-control" name="password">
-                            <small class="help-block"></small>
                         </div>
                     </div>
  
