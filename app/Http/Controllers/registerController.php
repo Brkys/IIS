@@ -89,11 +89,11 @@ class registerController extends Controller
     }
 
     public function register(Request $req){
-        $newUser = new userModel();
-        $newUser->name = $req->input('username');
-        $newUser->full_name = $req->input('fullname');
-        $newUser->birth_date = $req->input('date');
-        $newUser->email = $req->input('email');
+          $newUser = new userModel();
+        //$newUser->name = $req->input('username');
+        //$newUser->full_name = $req->input('fullname');
+        //$newUser->birth_date = $req->input('date');
+        //$newUser->email = $req->input('email');
        // $newUser->password = Hash::make($req->input('password'));
        // $newUser->save();
 
