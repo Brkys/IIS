@@ -9,6 +9,10 @@ class TestController extends Controller
  
     public function test()
     {
+        session_start();
+        if((!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)){
+            return view('login');
+        }
         return view('test');
     }
 
