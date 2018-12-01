@@ -102,7 +102,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Name</label>
+                        <label class="col-md-4 control-label">Uživatelské jméno</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="name">
                             <small class="help-block"></small>
@@ -110,7 +110,7 @@
                     </div>
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">E-Mail Address</label>
+                        <label class="col-md-4 control-label">E-Mail</label>
                         <div class="col-md-6">
                             <input type="email" class="form-control" name="email">
                             <small class="help-block"></small>
@@ -118,7 +118,7 @@
                     </div>
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Password</label>
+                        <label class="col-md-4 control-label">Heslo</label>
                         <div class="col-md-6">
                             <input type="password" class="form-control" name="password">
                             <small class="help-block"></small>
@@ -126,7 +126,7 @@
                     </div>
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Confirm Password</label>
+                        <label class="col-md-4 control-label">Zopakovat heslo</label>
                         <div class="col-md-6">
                             <input type="password" class="form-control" name="password_confirmation">
                         </div>
