@@ -175,9 +175,10 @@ $(document).ready(function() {
 @if(!empty(Session::get('registerValid')) && Session::get('registerValid') == false)
 <script>
 $(document).ready(function () {
-	$("#registerMIdal").modal('show');
+	$("#registerModal").modal('show');
 });
 </script>
 @endif
+
 </body>
 </html>
