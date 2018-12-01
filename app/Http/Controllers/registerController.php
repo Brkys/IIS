@@ -59,7 +59,7 @@ class registerController extends Controller
         }
 
         $email = $req->input('email');
-        if($email != '')){
+        if($email != ''){
             $validatorEmail = Validator::make($req->only('email'), $rules, $validatorMessagesCzech);
             if($validatorEmail->fails()) {
                 $email = '';
