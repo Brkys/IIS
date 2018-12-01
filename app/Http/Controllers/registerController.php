@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\userModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 
 class registerController extends Controller
@@ -84,10 +85,18 @@ class registerController extends Controller
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
         }
         
-        return redirect('home');
+        register($req);
     }
 
     public function register(Request $req){
-        
+        $newUser = new userModel();
+        $newUser->name = $req->input('username');
+        $newUser->full_name = $req->input('fullname');
+        $newUser->birth_date = $req->input('date');
+        $newUser->email = $req->input('email');
+        $newUser->password = Hash::make($req->input('password'));
+        $newUser->save();
+
+        return redirect('home');
     }
 }
