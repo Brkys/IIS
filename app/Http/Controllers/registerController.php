@@ -44,7 +44,10 @@ class registerController extends Controller
             if($validatorDate->fails()) {
                 $date = '';
             }
-        } else unset($rules['date']);
+        } 
+        else {
+            unset($rules['date']);
+        }
 
         $username = $req->input('username');
         $validatorUsername = Validator::make($req->only('username'), $rules, $validatorMessagesCzech);
@@ -65,7 +68,9 @@ class registerController extends Controller
                 $email = '';
             }
         }
-        else unset($rules['email']);
+        else {
+            unset($rules['email']);
+        }
 
         $validationResult = array(
             'fullname' => $fullName,
