@@ -11,7 +11,7 @@ class TestController extends Controller
     {
         session_start();
         if((!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)){
-            return view('login');
+            return view('home');
         }
         return view('test');
     }
