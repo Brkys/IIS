@@ -12,6 +12,17 @@
 </head>
 <body background="black">
 
+@php
+	if(!isset($registerInput)){
+		$registerInput = array(
+			'fullname' => '',
+            'username' => '', 
+            'date'     => '',
+            'password' => '',
+            'email'    => '');
+	}
+@endphp
+
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +82,7 @@
                     <input required type="password" name="password" id="password" placeholder="Toto pole je povinné" class="form-control" />
 					@csrf
                     <br/>
-					@if ($errors->any())
+					@if ($errors->any()) && !isset($registerNotValid)
     					<div class="alert alert-danger">
         					<ul>
             					@foreach ($errors->all() as $error)
@@ -171,7 +182,7 @@ $(document).ready(function() {
 </script>
 @endif
 
-@if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true)
+@if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) 
 <script>
 $(document).ready(function () {
 	$("#registerModal").modal('show');
