@@ -89,6 +89,7 @@ class registerController extends Controller
     }
 
     public function register(Request $req){
+        //ulozeni noveho uzivatele do databaze
         $newUser = new userModel();
         $newUser->name = $req->input('username');
         $newUser->full_name = $req->input('fullname');
@@ -97,6 +98,14 @@ class registerController extends Controller
         $newUser->password = Hash::make($req->input('password'));
         $newUser->save();
 
+        //prihlaseni noveho uzivatele
+        session_start();
+        $_SESSION['loggedIn'] = true;
+        $_SESSION['id'] = $newUser->id;
+        $_SESSION['username'] = $newUser->name;
+        $_SESSION['permission'] = $newUser->permission;
+
+        //zaverecne presmerovani
         return redirect('home');
     }
 }

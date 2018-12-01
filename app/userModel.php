@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
 
 class userModel extends Model
@@ -21,7 +22,7 @@ class userModel extends Model
         $found = false;
         $result = $this::all();
         foreach ($result as $key => $value) {
-            if($value->name == $name && $value->password == $pwd){
+            if($value->name == $name && Hash::check($pwd, $value->password)){
                 $found = $value;
                 break;
             }
