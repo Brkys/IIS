@@ -102,8 +102,6 @@
 	</div>
 </div>
 
-
-
 <!-- Modal register -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -128,7 +126,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text">YYYY-MM-DD</span>
 								</div>
-								<input placeholder="Nepovinné" type="text" value="{{$registerInput['date']}}" class="form-control" name="birthdate">
+								<input placeholder="Nepovinné" type="text" value="{{old('birthdate')}}" class="form-control" name="birthdate">
 							</div>
                     </div>
 
@@ -136,7 +134,7 @@
 
                     <div class="form-group">
 						<label class="col-md-4 control-label">Uživatelské jméno</label>
-							<input required placeholder="Toto pole je povinné" type="text" value="{{$registerInput['username']}}" class="form-control" name="username">
+							<input required placeholder="Toto pole je povinné" type="text" value="{{old('username')}}" class="form-control" name="username">
                     </div>
  
                     <div class="form-group">
@@ -145,18 +143,18 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text">mail@example.com</span>
 							</div>
-                            <input placeholder = "Nepovinné" type="email" class="form-control" value="{{$registerInput['email']}}" name="email"> 
+                            <input placeholder = "Nepovinné" type="email" class="form-control" value="{{old('email')}}" name="email"> 
 						</div>
                     </div>
  
                     <div class="form-group">
                         <label class="col-md-4 control-label">Heslo</label>
-                            <input required type="password" class="form-control" value="{{$registerInput['password']}}" name="password">
+                            <input required type="password" class="form-control" value="{{old('password')}}" name="password">
                     </div>
 					
                     <div class="form-group">
                         <label class="col-md-4 control-label">Zopakovat heslo</label>
-                            <input required type="password" class="form-control" value="{{$registerInput['password']}}" name="password_confirmation">
+                            <input required type="password" class="form-control" value="{{old('password_confirmation')}}" name="password_confirmation">
                     </div>
 
 					@if ($errors->any() && !empty(Session::get('registerNotValid')))
