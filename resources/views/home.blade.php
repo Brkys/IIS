@@ -172,13 +172,12 @@ $(document).ready(function() {
 </script>
 @endif
 
-@if(!empty(Session::get('registerValid')) && Session::get('registerValit') == false)
+@if(!empty(Session::get('registerValid')) && Session::get('registerValid') == false)
 <script>
 $(document).ready(function () {
 	$("#registerMIdal").modal('show');
 });
 </script>
 @endif
-
 </body>
 </html>
