@@ -25,9 +25,9 @@
 		$registerInput = Session::get('registerInput');
 	}
 @endphp
-
+<body>
 	<!-- Navigator panel -->
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
@@ -35,10 +35,10 @@
 	  	<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
 	    	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item active">
-	    	    	<a class="nav-link" href="#">Domů <span class="sr-only">(current)</span></a>
+	    	    	<a class="nav-link" href="{{ route('home') }}">Domů <span class="sr-only">(current)</span></a>
 	   		   </li>
 	   	    	<li class="nav-item">
-	     		   <a class="nav-link" href="#">Novinky</a>
+	     		   <a class="nav-link" href=" {{ url('news') }}">Novinky</a>
 	      		</li>
 	      		<li class="nav-item dropdown">
 	        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
@@ -184,6 +184,9 @@
     </div>
 </div>
 
+<!-- Content of page -->
+<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
+
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -196,6 +199,7 @@ $(document).ready(function() {
 });
 </script>
 @endif
+<<<<<<< HEAD
 
 @if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) 
 <script>

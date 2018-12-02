@@ -1,11 +1,16 @@
 body {
 	background-color: black !important;
-	background-image: url("../images/header.jpg");
-	background-size: 50%, 100%;
-	background-repeat: no-repeat;
 }
 
 #navbar {
 	position: fixed;
+	margin-top: 0px;
 	width: 100%;
+	z-index: 80;
+}
+
+#custom-table {
+	border-radius: 5px; 
+	margin: 0px auto; 
+	float: none; 
 }
