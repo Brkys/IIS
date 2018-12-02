@@ -47,6 +47,6 @@ Route::get('/lands', function() {
 	return view('lands');
 });
 
-Route::get('/familias', function() {
+Route::get('/members', function() {
 	return view('members');
 });
