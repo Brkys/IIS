@@ -7,8 +7,14 @@
 @endsection
 
 @section('content')
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()">
+    <!--<input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()"-->
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
             <tr>
@@ -25,27 +31,10 @@
     </table>
 </div>
 
-<script>
-function filter() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("filterTable");
-  tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
+<script>
+$(document).ready(function(){
+    $('#filterTable').dataTable();
+});
 </script>
 @endsection
