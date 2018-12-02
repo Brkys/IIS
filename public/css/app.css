@@ -2,8 +2,14 @@ body {
 	background-color: black !important;
 }
 
-.custom-table {
-	width: 80%;
+#navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 80;
+}
+
+#custom-table {
+	width: 80% !important;
 	border-radius: 5px; 
 	margin: 0px auto; 
 	float: none; 
