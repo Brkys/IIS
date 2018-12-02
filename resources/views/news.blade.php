@@ -11,7 +11,7 @@
 </head>
 <body>
 	<!-- Navigator panel -->
-	<nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #262626">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>

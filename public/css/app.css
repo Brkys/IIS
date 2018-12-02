@@ -2,8 +2,10 @@ body {
 	background-color: black !important;
 }
 
-#navbar {
-	position: fixed;
-	width: 100%;
-	z-index: 80;
+.custom-table {
+	width: 80%;
+	border-radius: 5px; 
+	margin: 0px auto; 
+	float: none; 
+	margin-top: 70px;
 }
