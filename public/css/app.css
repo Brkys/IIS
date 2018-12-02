@@ -10,9 +10,7 @@ body {
 }
 
 #custom-table {
-	width: 80% !important;
 	border-radius: 5px; 
 	margin: 0px auto; 
 	float: none; 
-	padding-top: 70px;
 }
