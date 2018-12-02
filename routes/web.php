@@ -37,26 +37,14 @@ Route::post('/register', 'registerController@validateRegister');
 
 Route::get('/news', 'NewsController@news');
 
-Route::get('/familias', function() {
-	return view('familias');
-});
+Route::get('/familias', 'FamiliasController@familias'); //todo
 
-Route::get('/lands', function() {
-	return view('lands');
-});
+Route::get('/lands', 'LandsController@lands'); //todo
 
-Route::get('/members', function() {
-	return view('members');
-});
+Route::get('/members', 'MembersController@members'); //todo
 
-Route::get('/create-criminal', function() {
-	return view('create-criminal');
-});
+Route::get('/create-criminal', 'CreateCriminalController@create');//todo
 
-Route::get('/show-criminal', function() {
-	return view('show-criminal');
-});
+Route::get('/show-criminal', 'ShowCriminalController@show');//todo
 
-Route::get('/assign-criminal', function() {
-	return view('assign-criminal');
-});
+Route::get('/assign-criminal', 'AssignCriminalController@assign');//todo
