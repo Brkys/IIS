@@ -9,6 +9,12 @@ body {
 	z-index: 80;
 }
 
+#custom-table {
+	border-radius: 5px; 
+	margin: 0px auto; 
+	float: none; 
+}
+
 #myInput {
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -18,26 +24,23 @@ body {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
-
+/*
 #filterTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-	border-radius: 5px; 
+    border-collapse: collapse;
+    width: 100%; 
+    border: 1px solid #ddd;
+    font-size: 18px; 
 }
 
 #filterTable th, #filterTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
+    text-align: left; 
+    padding: 12px;
 }
 
 #filterTable tr {
-    /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
 }
 
 #filterTable tr.header, #filterTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
-}
+}*/
