@@ -41,8 +41,8 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Adresa">
 	<h6 style="padding-top: 20px">Rozloha v m^2</h6>
 	<input class="form-control" id="myInput" type="text" placeholder="Rozloha"> <!-- check čisla -->
-	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
+	<div style="padding-top: 20px"></div>
 	<!-- CONSIGLIARE != DON -->
 
 </div>
