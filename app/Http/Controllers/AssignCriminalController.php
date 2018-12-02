@@ -15,7 +15,7 @@ class AssignCriminalController extends Controller
             if($_SESSION['permission'] < 2){
                 return redirect('home');
             }
-            else return view('assign-criminal');
+            else return redirect('assign-criminal');
         }
     }
 
