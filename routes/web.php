@@ -48,3 +48,11 @@ Route::get('/create-criminal', 'CreateCriminalController@create');
 Route::get('/show-criminal', 'ShowCriminalController@show');
 
 Route::get('/assign-criminal', 'AssignCriminalController@assign');
+
+Route::get('/free-users', function() {
+	return view('free-users');
+});
+
+Route::get('/account', function() {
+	return view('account');
+});
