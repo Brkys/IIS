@@ -14,7 +14,7 @@ class ShowCriminalController extends Controller
         else if($_SESSION['permission'] < 0){
             return view('home');
         }
-        else return view('show');
+        else return view('show-criminal');
     }
 
 }
