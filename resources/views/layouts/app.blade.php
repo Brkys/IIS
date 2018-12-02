@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="cz">
 <head>
-    <title>Mafie</title>
+    <title>Mafie - @yield('title')</title>
 
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/app.css">
