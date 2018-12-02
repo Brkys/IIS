@@ -37,14 +37,14 @@ Route::post('/register', 'registerController@validateRegister');
 
 Route::get('/news', 'NewsController@news');
 
-Route::get('/familias', 'FamiliasController@familias'); //todo
+Route::get('/familias', 'FamiliasController@familias'); 
 
-Route::get('/lands', 'LandsController@lands'); //todo
+Route::get('/lands', 'LandsController@lands');
 
-Route::get('/members', 'MembersController@members'); //todo
+Route::get('/members', 'MembersController@members');
 
-Route::get('/create-criminal', 'CreateCriminalController@create');//todo
+Route::get('/create-criminal', 'CreateCriminalController@create');
 
-Route::get('/show-criminal', 'ShowCriminalController@show');//todo
+Route::get('/show-criminal', 'ShowCriminalController@show');
 
-Route::get('/assign-criminal', 'AssignCriminalController@assign');//todo
+Route::get('/assign-criminal', 'AssignCriminalController@assign');
