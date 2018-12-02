@@ -42,3 +42,11 @@ Route::get('/news', function() {
 Route::get('/familias', function {
 	return view('familias');
 });
+
+Route::get('/lands', function {
+	return view('lands');
+});
+
+Route::get('/familias', function {
+	return view('members');
+});
