@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat..">
+    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="custom-table filterTable">
         <thead>
             <tr>
@@ -26,7 +26,7 @@
 </div>
 
 <script>
-function find() {
+function filter() {
   // Declare variables 
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
