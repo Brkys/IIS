@@ -66,3 +66,7 @@ Route::get('/assign-criminal', function() {
 Route::get('/free-members', function() {
 	return view('free-members');
 });
+
+Route::get('/account', function() {
+	return view('account');
+});

@@ -68,7 +68,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
             @else
             <span class="navbar-text my-2 my-sm-0 pr-1">
-                <a class="btn btn-sm my-2 my-sm-0" href="#">Můj účet</a>
+                <a class="btn btn-sm my-2 my-sm-0" href="{{ url('account') }}">Můj účet</a>
             </span>
             <form action="logout" method="get">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Odhlásit se</button>
