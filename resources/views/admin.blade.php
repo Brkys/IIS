@@ -25,6 +25,7 @@
 	    <option>User3</option>
 	    <option>User4</option>
 	</select>
+	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<hr>
 	<h4 style="padding-top: 20px;">Jméno území</h4>
@@ -37,10 +38,11 @@
 	    <option>User4</option>
 	</select>
 	<h6 style="padding-top: 20px">Adresa</h6>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
+	<input class="form-control" id="myInput" type="text" placeholder="Adresa">
 	<h6 style="padding-top: 20px">Rozloha v m^2</h6>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie"> <!-- check čisla -->
-	<button style="padding-top: 20px" type="button" class="btn btn-primary btn-block">Potvrdit</button>
+	<input class="form-control" id="myInput" type="text" placeholder="Rozloha"> <!-- check čisla -->
+	<div style="padding-top: 20px"></div>
+	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<!-- CONSIGLIARE != DON -->
 
 </div>
