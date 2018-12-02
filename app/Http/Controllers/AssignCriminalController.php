@@ -11,10 +11,12 @@ class AssignCriminalController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         }
-        else if($_SESSION['permission'] < 2){
-            return view('home');
+        else {
+            if($_SESSION['permission'] < 2){
+                return redirect('home');
+            }
+            else return view('assign-criminal');
         }
-        else return view('assign-criminal');
     }
 
 }

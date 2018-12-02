@@ -41,7 +41,7 @@ class loginController extends Controller
             $_SESSION['id'] = $found->id;
             $_SESSION['username'] = $found->name;
             $_SESSION['permission'] = $found->permission;
-            return redirect('home')->with('permission', $_SESSION['permission']);
+            return redirect('home');
         }
         //login se nepodaril
         return redirect('home')->with(['openLogin' => true]);

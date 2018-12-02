@@ -8,8 +8,4 @@
 
 @section('content')
 <img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
-@php 
-if(!empty($_SESSION['permission']))
-	echo $_SESSION['permission'];
-@endphp
 @endsection
