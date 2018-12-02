@@ -50,6 +50,15 @@
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kriminální činnost</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url('show-criminal') }}">Zobrazit</a>
+                        <a class="dropdown-item" href="{{ url('assign-criminal') }}">Přiřadit</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url('create-criminal') }}">Vytvořit</a>
+                    </div>
+                </li>
             </ul>
             @if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)
             <span class="navbar-text my-2 my-sm-0 pr-1">
