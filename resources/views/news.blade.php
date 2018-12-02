@@ -22,4 +22,3 @@
     </table>
 </div>
 @endsection
-<?php session_start(); ?>
