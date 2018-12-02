@@ -49,14 +49,10 @@ Route::get('/show-criminal', 'ShowCriminalController@show');
 
 Route::get('/assign-criminal', 'AssignCriminalController@assign');
 
-Route::get('/free-users', function() {
-	return view('free-users');
-});
-
-Route::get('/account', function() {
-	return view('account');
-});
+Route::get('/free-users', 'FreeUsersController@viewUsers');
 
 Route::get('/admin', function() {
 	return view('admin');
 });
+
+Route::get('/account', 'loginController@account');

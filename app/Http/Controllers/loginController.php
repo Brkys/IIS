@@ -54,4 +54,12 @@ class loginController extends Controller
         session_destroy();
         return redirect('home')->with(['openLogin' => true]);
     }
+
+    public function account(){
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);
+        }
+        else return view('account');
+    }
 }
