@@ -136,6 +136,7 @@
 </div>
 
 <!-- Content of page -->
+<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px">
 <table class="table table-hover table-dark text-centered" style="width: 80%; border-radius: 5px; margin: 0px auto; float: none;">
   	<thead>
     	<tr>
