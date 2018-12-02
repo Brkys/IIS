@@ -20,14 +20,20 @@
 	<h5>Přidat familii</h5>
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6>Don</h6>
-	<select class="selectpicker" data-live-search="true">
-	    <option>User1</option>
-	    <option>User2</option>
+	<select data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
+	    <option value="4444">4444</option>
+	    <option value="Fedex">Fedex</option>
+	    <option value="Elite">Elite</option>
+	    <option value="Interp">Interp</option>
+	    <option value="Test">Test</option>
 	</select>
 	<h6>Consigliare</h6>
-	<select class="selectpicker" data-live-search="true">
-	    <option>User1</option>
-	    <option>User2</option>
+	<select data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
+	    <option value="4444">4444</option>
+	    <option value="Fedex">Fedex</option>
+	    <option value="Elite">Elite</option>
+	    <option value="Interp">Interp</option>
+	    <option value="Test">Test</option>
 	</select>
 	<!-- CONSIGLIARE != DON -->
 
