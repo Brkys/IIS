@@ -9,7 +9,7 @@
 @section('content')
 <img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
 @php 
-if(!empty(Session::get('permission'))){
+if(!empty(Session::get('permission')))
 	echo Session::get('permission');
-}
+@endphp
 @endsection
