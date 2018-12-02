@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS --> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    @section('head')
 </head>
 <body background="black">
 
@@ -45,8 +46,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
                         <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url('free-users') }}">Volní uživatelé</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -54,7 +56,6 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('show-criminal') }}">Zobrazit</a>
                         <a class="dropdown-item" href="{{ url('assign-criminal') }}">Přiřadit</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('create-criminal') }}">Vytvořit</a>
                     </div>
                 </li>
@@ -66,7 +67,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
             @else
             <span class="navbar-text my-2 my-sm-0 pr-1">
-                <a class="btn btn-sm my-2 my-sm-0" href="#">Můj účet</a>
+                <a class="btn btn-sm my-2 my-sm-0" href="{{ url('account') }}">Můj účet</a>
             </span>
             <form action="logout" method="get">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Odhlásit se</button>
