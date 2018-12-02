@@ -7,3 +7,7 @@ body {
 	width: 100%;
 	z-index: 80;
 }
+
+th.col {
+	cursor: pointer;
+}
