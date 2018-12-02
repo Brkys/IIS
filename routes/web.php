@@ -39,14 +39,14 @@ Route::get('/news', function() {
 	return view('news');
 });
 
-Route::get('/familias', function {
+Route::get('/familias', function() {
 	return view('familias');
 });
 
-Route::get('/lands', function {
+Route::get('/lands', function() {
 	return view('lands');
 });
 
-Route::get('/familias', function {
+Route::get('/familias', function() {
 	return view('members');
 });
