@@ -51,8 +51,6 @@ Route::get('/assign-criminal', 'AssignCriminalController@assign');
 
 Route::get('/free-users', 'FreeUsersController@viewUsers');
 
-Route::get('/admin', function() {
-	return view('admin');
-});
+Route::get('/admin', 'AdminController@admin');
 
 Route::get('/account', 'loginController@account');
