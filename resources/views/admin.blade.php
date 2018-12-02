@@ -20,20 +20,18 @@
 	<h5>Přidat familii</h5>
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6>Don</h6>
-	<select class="selectpicker" multiple>
-	    <option value="4444">4444</option>
-	    <option value="Fedex">Fedex</option>
-	    <option value="Elite">Elite</option>
-	    <option value="Interp">Interp</option>
-	    <option value="Test">Test</option>
+	<select class="form-control" id="sel1">
+	    <option>1</option>
+	    <option>2</option>
+	    <option>3</option>
+	    <option>4</option>
 	</select>
 	<h6>Consigliare</h6>
-	<select class="selectpicker" multiple>
-	    <option value="4444">4444</option>
-	    <option value="Fedex">Fedex</option>
-	    <option value="Elite">Elite</option>
-	    <option value="Interp">Interp</option>
-	    <option value="Test">Test</option>
+	<select class="form-control" id="sel1">
+	  	<option>1</option>
+	    <option>2</option>
+	    <option>3</option>
+	    <option>4</option>
 	</select>
 	<!-- CONSIGLIARE != DON -->
 
