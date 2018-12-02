@@ -17,22 +17,41 @@
 @section('content')
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
-	<h5>Přidat familii</h5>
+	<h4 style="padding-top: 20px;">Přidat familii</h4>
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6>Don</h6>
 	<select class="form-control" id="sel1">
-	    <option>1</option>
-	    <option>2</option>
-	    <option>3</option>
-	    <option>4</option>
+	    <option>User1</option>
+	    <option>User2</option>
+	    <option>User3</option>
+	    <option>User4</option>
 	</select>
 	<h6>Consigliare</h6>
 	<select class="form-control" id="sel1">
-	  	<option>1</option>
-	    <option>2</option>
-	    <option>3</option>
-	    <option>4</option>
+	  	<option>User1</option>
+	    <option>User2</option>
+	    <option>User3</option>
+	    <option>User4</option>
 	</select>
+	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
+	<hr>
+	<h4 style="padding-top: 20px;">Přidat území</h4>
+	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
+	<h6>Don</h6>
+	<select class="form-control" id="sel1">
+	    <option>User1</option>
+	    <option>User2</option>
+	    <option>User3</option>
+	    <option>User4</option>
+	</select>
+	<h6>Consigliare</h6>
+	<select class="form-control" id="sel1">
+	  	<option>User1</option>
+	    <option>User2</option>
+	    <option>User3</option>
+	    <option>User4</option>
+	</select>
+	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<!-- CONSIGLIARE != DON -->
 
 </div>
