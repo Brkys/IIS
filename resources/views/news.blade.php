@@ -2,20 +2,19 @@
 
 @section('title', 'Novinky')
 
+@section('head')
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datatables/datatables.css">
+@endsection
+
 @section('navpanel')
     @parent
 @endsection
 
 @section('content')
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-    <!--<input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()"-->
-    <table class="table table-hover table-dark text-centered" id="filterTable">
+    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()">
+    <table class="table table-hover table-dark text-centered datatable" >
         <thead>
             <tr>
                 <th scope="col" style="width: 20%;">Datum</th>
@@ -31,10 +30,25 @@
     </table>
 </div>
 
-
-<script>
-$(document).ready(function(){
-    $('#filterTable').dataTable();
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="js/datatables/datatables.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.datatable').dataTable({
+        "sPaginationType": "bs_four_button"
+    }); 
+    $('.datatable').each(function(){
+        var datatable = $(this);
+        // SEARCH - Add the placeholder for Search and Turn this into in-line form control
+        var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
+        search_input.attr('placeholder', 'Search');
+        search_input.addClass('form-control input-sm');
+        // LENGTH - Inline-Form control
+        var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
+        length_sel.addClass('form-control input-sm');
+    });
 });
 </script>
 @endsection
