@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-<div class="container" style="padding-top: 100px; width: 80% !important; color: white !important"> 
+<div class="container" style="padding-top: 100px; width: 80% !important; background-color: white !important; border-radius: 4;"> 
 	<h5>Přidat familii</h5>
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6>Don</h6>
