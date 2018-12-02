@@ -9,7 +9,7 @@
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()">
-    <table class="table table-hover table-dark text-centered" id="custom-table filterTable">
+    <table class="table table-hover table-dark text-centered" id="custom-table">
         <thead>
             <tr>
                 <th scope="col" style="width: 20%;">Datum</th>

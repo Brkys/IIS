@@ -9,12 +9,6 @@ body {
 	z-index: 80;
 }
 
-#custom-table {
-	border-radius: 5px; 
-	margin: 0px auto; 
-	float: none; 
-}
-
 #myInput {
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -30,6 +24,9 @@ body {
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
     font-size: 18px; /* Increase font-size */
+	border-radius: 5px; 
+	margin: 0px auto; 
+	float: none; 
 }
 
 #filterTable th, #filterTable td {
