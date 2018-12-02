@@ -136,7 +136,7 @@
 </div>
 
 <!-- Content of page -->
-<div class="container" style="padding-top: 100px;"> 
+<div class="container" style="padding-top: 100px; width: 80% !important;"> 
 	<table class="table table-hover table-dark text-centered" id="custom-table">
 	  	<thead>
 	    	<tr>

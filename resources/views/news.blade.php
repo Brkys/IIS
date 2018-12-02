@@ -136,7 +136,7 @@
 </div>
 
 <!-- Content of page -->
-<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px">
+<img src="../images/header.jpg" width="50%" height="100%" style="margin-top: 50px;">
 
 	<!-- Bootstrap javascript -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
