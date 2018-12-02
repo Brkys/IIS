@@ -141,7 +141,7 @@
         <thead>
             <tr>
                 <th scope="col" style="width: 20%;">Datum</th>
-                <th scope="col" style="width: 80%;">Action</th>
+                <th scope="col" style="width: 80%;">Oznámení</th>
             </tr>
         </thead>
         <tbody>
