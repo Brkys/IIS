@@ -49,10 +49,6 @@ Route::get('/show-criminal', 'ShowCriminalController@show');
 
 Route::get('/assign-criminal', 'AssignCriminalController@assign');
 
-Route::get('/free-users', function() {
-	return view('free-users');
-});
+Route::get('/free-users', 'FreeUsersController@viewUsers');
 
-Route::get('/account', function() {
-	return view('account');
-});
+Route::get('/account', 'loginController@account');
