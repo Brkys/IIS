@@ -66,6 +66,11 @@
             </span>
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#loginModal">Příhlásit se</button>
             @else
+                @if(!empty($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && $_SESSION['permission'] === 5)
+                <span class="navbar-text my-2 my-sm-0 pr-1">
+                    <a class="btn btn-sm my-2 my-sm-0" href="{{ url('admin') }}">Administrace</a>
+                </span>
+                @endif
             <span class="navbar-text my-2 my-sm-0 pr-1">
                 <a class="btn btn-sm my-2 my-sm-0" href="{{ url('account') }}">Můj účet</a>
             </span>

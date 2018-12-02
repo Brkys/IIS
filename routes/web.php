@@ -56,3 +56,7 @@ Route::get('/free-users', function() {
 Route::get('/account', function() {
 	return view('account');
 });
+
+Route::get('/admin', function() {
+	return view('admin');
+});
