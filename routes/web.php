@@ -50,3 +50,15 @@ Route::get('/lands', function() {
 Route::get('/members', function() {
 	return view('members');
 });
+
+Route::get('/create-criminal', function() {
+	return view('create-criminal');
+});
+
+Route::get('/show-criminal', function() {
+	return view('show-criminal');
+});
+
+Route::get('/assign-criminal', function() {
+	return view('assign-criminal');
+});
