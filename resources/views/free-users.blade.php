@@ -14,13 +14,14 @@
             <tr>
                 <th scope="col" style="width: 40%;">Jméno</th>
                 <th scope="col" style="width: 30%;">Věk</th>
-                <th scope="col" style="width: 30%;"><button type="button" class="btn btn-primary">Pozvat</button></th>
+                <th scope="col" style="width: 30%;">Pozvat</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>23.2.1997</td>
-                <td>Území bylo přebráno rodinou xy</td>
+                <td>Test test</td>
+                <td>24</td>
+                <td><button type="button" class="btn btn-primary">Pozvat</button></td>
             </tr>
         </tbody>
     </table>

@@ -47,8 +47,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
                         <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ url('free-users') }}">Volní uživatelé</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,7 +57,6 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ url('show-criminal') }}">Zobrazit</a>
                         <a class="dropdown-item" href="{{ url('assign-criminal') }}">Přiřadit</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('create-criminal') }}">Vytvořit</a>
                     </div>
                 </li>
