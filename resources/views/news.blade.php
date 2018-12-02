@@ -11,6 +11,20 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+
+@php
+    if(empty(Session::get('registerInput'))){
+        $registerInput = array(
+            'fullname' => '',
+            'username' => '', 
+            'date'     => '',
+            'password' => '',
+            'email'    => '');
+    }
+    else{
+        $registerInput = Session::get('registerInput');
+    }
+@endphp
 	<!-- Navigator panel -->
 	<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="navbar" style="background-color: #262626">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,29 +67,39 @@
 
 
 	<!-- Modal login --> 
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modal_login">Login</h5>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labeledby="modal_login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal_login">Login</h5>
 
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			</div>
-			<div class="modal-body" id="modal_body">
-  				<form action="login" method="post">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" id="modal_body">
+                <form action="login" method="post">
 
                     <label>Uživatelské jméno</label>
-                    <input type="text" name="username" id="username" class="form-control"/>
+                    <input required type="text" name="username" id="username" placeholder="Toto pole je povinné" class="form-control"/>
                     <br/>
                     <label>Heslo</label>
-                    <input type="password" name="password" id="password" class="form-control" />
-					@csrf
+                    <input required type="password" name="password" id="password" placeholder="Toto pole je povinné" class="form-control" />
+                    @csrf
                     <br/>
+                    @if ($errors->any() && empty(Session::get('registerNotValid')))
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>  
+                    @endif
                     <button type="submit" name="login_btn" id="login_btn" class="btn btn-outline-success">Login</button>
-				</form>
-			</div>
-		</div>
-	</div>
+                    <button name="register_btn" id="register_btn" class="btn btn-outline-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Nemáte účet?</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Modal register -->
@@ -88,45 +112,67 @@
             </div>
             <div class="modal-body">
  
-                <form id="formRegister" class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <form id="formRegister" class="form-horizontal" role="form" method="post" action="register">
+                    @csrf
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Name</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="name">
-                            <small class="help-block"></small>
+                        <label class="col-md-4 control-label">Jméno a příjmení</label>
+                            <input required placeholder="Toto pole je povinné" value="{{$registerInput['fullname']}}" type="text" class="form-control" name="fullname">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Datum narození</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">YYYY-MM-DD</span>
+                                </div>
+                                <input  type="text" value="{{$registerInput['date']}}" class="form-control" name="birthdate">
+                            </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Uživatelské jméno</label>
+                            <input required placeholder="Toto pole je povinné" type="text" value="{{$registerInput['username']}}" class="form-control" name="username">
+                    </div>
+ 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">E-Mail</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">mail@example.com</span>
+                            </div>
+                            <input type="email" class="form-control" value="{{$registerInput['email']}}" name="email"> 
                         </div>
                     </div>
  
                     <div class="form-group">
-                        <label class="col-md-4 control-label">E-Mail Address</label>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control" name="email">
-                            <small class="help-block"></small>
-                        </div>
+                        <label class="col-md-4 control-label">Heslo</label>
+                            <input required placeholder="Toto pole je povinné" type="password" class="form-control" value="{{$registerInput['password']}}" name="password">
                     </div>
- 
+                    
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Password</label>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" name="password">
-                            <small class="help-block"></small>
-                        </div>
+                        <label class="col-md-4 control-label">Zopakovat heslo</label>
+                            <input required placeholder="Toto pole je povinné" type="password" class="form-control" value="{{$registerInput['password']}}" name="password_confirmation">
                     </div>
- 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Confirm Password</label>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" name="password_confirmation">
-                        </div>
-                    </div>
+
+                    @if ($errors->any() && !empty(Session::get('registerNotValid')))
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>  
+                    @endif
  
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
                             <button type="submit" class="btn btn-outline-success">
                                 Register
                             </button>
+                            <button name="register_btn" id="register_btn" class="btn btn-outline-primary" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Mám účet</button>
                         </div>
                     </div>
                 </form>                       
@@ -159,11 +205,18 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-
-@if(!empty(Session::get('openLogin')) && Session::get('openLogin') == true)
+@if((!empty(Session::get('openLogin')) && Session::get('openLogin') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) ||!empty(Session::get('validationFail')) && Session::get('validationFail') == true)
 <script>
 $(document).ready(function() {
-$("#loginModal").modal('show');
+    $("#loginModal").modal('show');
+});
+</script>
+@endif
+
+@if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) 
+<script>
+$(document).ready(function () {
+    $("#registerModal").modal('show');
 });
 </script>
 @endif

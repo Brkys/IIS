@@ -200,20 +200,6 @@ $(document).ready(function() {
 </script>
 @endif
 
-<p class="h1">
-	Per me si va ne la città dolente,<br>
-    per me si va ne l'eterno dolore,<br>
-    per me si va tra la perduta gente.<br>
-	<br>
-    Giustizia mosse il mio alto fattore;<br>
-    fecemi la divina podestate,<br>
-    la somma sapïenza e 'l primo amore.<br>
-	<br>
-    Dinanzi a me non fuor cose create<br>
-    se non etterne, e io etterno duro.<br>
-    Lasciate ogne speranza, voi ch'intrate<br>
-</p>
-
 @if(!empty(Session::get('registerNotValid')) && Session::get('registerNotValid') == true && (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true)) 
 <script>
 $(document).ready(function () {
