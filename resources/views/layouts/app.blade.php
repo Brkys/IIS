@@ -44,10 +44,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Rodiny</a>
-                        <a class="dropdown-item" href="#">Členové</a>
+                        <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
+                        <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Území</a>
+                        <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
                     </div>
                 </li>
             </ul>

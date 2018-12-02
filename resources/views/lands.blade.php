@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Novinky')
+@section('title', 'Území')
 
 @section('navpanel')
     @parent
@@ -11,8 +11,9 @@
     <table class="table table-hover table-dark text-centered" id="custom-table">
         <thead>
             <tr>
-                <th scope="col" style="width: 20%;">Datum</th>
-                <th scope="col" style="width: 80%;">Oznámení</th>
+                <th scope="col">Jméno</th>
+                <th scope="col">Adresa</th>
+                <th scope="col">Vlastník</th>
             </tr>
         </thead>
         <tbody>

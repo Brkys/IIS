@@ -38,3 +38,7 @@ Route::post('/register', 'registerController@validateRegister');
 Route::get('/news', function() {
 	return view('news');
 });
+
+Route::get('/familias', function {
+	return view('familias');
+});
