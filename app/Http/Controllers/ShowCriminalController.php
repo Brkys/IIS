@@ -11,10 +11,10 @@ class ShowCriminalController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         }
-        else if($_SESSION['permission'] === NULL){
+        else if($_SESSION['permission'] < 0){
             return view('home');
         }
-        else return view('create');
+        else return view('show');
     }
 
 }
