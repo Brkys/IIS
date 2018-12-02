@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat.." onkeyup="filter()">
+    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
             <tr>
