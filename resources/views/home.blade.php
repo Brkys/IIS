@@ -136,7 +136,7 @@
 </div>
 
 <!-- Content of page -->
-<table class="table table-hover table-dark" style="width: 80%; vertical-align: center;">
+<table class="table table-hover table-dark text-centered" style="width: 80%; border-radius: 5px; margin: 0px auto; float: none;">
   	<thead>
     	<tr>
       		<th scope="col">#</th>
