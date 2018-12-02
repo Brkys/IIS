@@ -11,7 +11,7 @@ class TestController extends Controller
     {
         session_start();
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
-            return view('home')->with('openLogin', true);
+            return redirect('home')->with('openLogin', true);
         }
         return view('test');
     }
