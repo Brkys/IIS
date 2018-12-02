@@ -8,6 +8,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
+    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat..">
     <table class="table table-hover table-dark text-centered" id="custom-table">
         <thead>
             <tr>
@@ -23,4 +24,15 @@
         </tbody>
     </table>
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 @endsection
