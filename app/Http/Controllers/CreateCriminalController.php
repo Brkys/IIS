@@ -14,7 +14,7 @@ class CreateCriminalController extends Controller
         else if($_SESSION['permission'] < 3){
             return redirect('home');
         }
-        else return redirect('create-criminal');
+        else return view('create-criminal');
     }
 
 }
