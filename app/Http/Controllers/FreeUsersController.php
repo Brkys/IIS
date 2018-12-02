@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ShowCriminalController extends Controller
+class FreeUsersController extends Controller
 {
-    public function show() {
+    public function viewUsers() {
         session_start();
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
