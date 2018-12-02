@@ -36,18 +36,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('home') }}">Domů <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ Request::segment(1) === 'home' ? 'active' : null }}">Domů <span class="sr-only">(current)</span></a>
                </li>
                 <li class="nav-item">
-                   <a class="nav-link" href=" {{ url('news') }}">Novinky</a>
+                   <a class="nav-link" href="{{ Request::segment(1) === 'news' ? 'active' : null }}">Novinky</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Přehled</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
-                        <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
+                        <a class="dropdown-item" href="{{ Request::segment(1) === 'familias' ? 'active' : null }}">Rodiny</a>
+                        <a class="dropdown-item" href="{{ Request::segment(1) === 'members' ? 'active' : null }}">Členové</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
+                        <a class="dropdown-item" href="{{ Request::segment(1) === 'lands' ? 'active' : null }}">Území</a>
                     </div>
                 </li>
             </ul>
