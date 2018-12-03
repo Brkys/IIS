@@ -70,7 +70,9 @@ class loginController extends Controller
                 $familie = Familie::where('ID_Familie', $value->ID_Familie)->get();
                 if(!empty($familie)){
                     $invite = $familie->toArray();
-                    array_push($invites, ['ID_Familie' => $invite['ID_Familie'], 'JmenoFamilie' => $invite['JmenoFamilie']]);
+                    $id = $invite['ID_Familie'];
+                    $name = $invite['JmenoFamilie'];
+                    array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name));
                 }
             }
 
