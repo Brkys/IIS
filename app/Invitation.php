@@ -10,4 +10,5 @@ class Invitation extends Model
      * tabulka spojena s modelem
      */
     protected $table = 'PozvankyDoFamilii';
+    public $timestamps = false;
 }
