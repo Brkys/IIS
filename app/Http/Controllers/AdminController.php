@@ -12,7 +12,7 @@ class AdminController extends Controller
             return redirect('home')->with('openLogin', true);   
         }
         else if($_SESSION['permission'] !== 5){
-            return redirect('home');
+            return redirect('no-permission');
         }
         else return view('admin');
     }
