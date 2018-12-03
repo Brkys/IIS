@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class userModel extends Model
+class newsModel extends Model
 {
     /**
      * tabulka spojena s modelem
