@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             @php 
-                $freeUsers = Session::get('freeUsers');
+                
                     <tr>
                         <td></td>
                         <td></td>
