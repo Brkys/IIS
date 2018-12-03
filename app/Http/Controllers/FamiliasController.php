@@ -13,10 +13,6 @@ class FamiliasController extends Controller
             if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
                 return redirect('home')->with('openLogin', true);
             }
-            return view('familias');
-    }
-
-    public function viewFamilias() {
     	$familias = Familia::all();
     	$dons = array();
     	$counts = array();
@@ -35,6 +31,6 @@ class FamiliasController extends Controller
     	array_push($result, $familiaNames)
     	array_push($result, $donNames);
     	array_push($result, $counts);
-    	return view('familias')->with('data', $result);
+            return view('familias');
     }
 }
