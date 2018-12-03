@@ -47,6 +47,7 @@
                         <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
                         <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
+                        <a class="dropdown-item" href="{{ url('aliance') }}">Aliance</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('free-users') }}">Volní uživatelé</a>
                     </div>
@@ -69,6 +70,12 @@
                 @if(!empty($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && $_SESSION['permission'] === 5)
                 <span class="navbar-text my-2 my-sm-0 pr-1">
                     <a class="btn btn-sm my-2 my-sm-0" href="{{ url('admin') }}">Administrace</a>
+                </span>
+                @endif
+
+                @if(!empty($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true && $_SESSION['permission'] === 4)
+                <span class="navbar-text my-2 my-sm-0 pr-1">
+                    <a class="btn btn-sm my-2 my-sm-0" href="{{ url('familia-editing') }}">Administrace familie</a>
                 </span>
                 @endif
             <span class="navbar-text my-2 my-sm-0 pr-1">
@@ -146,7 +153,6 @@
                                     <input  type="text" value="{{$registerInput['date']}}" class="form-control" name="birthdate">
                                 </div>
                         </div>
-
 
 
                         <div class="form-group">

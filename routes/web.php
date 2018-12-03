@@ -56,3 +56,15 @@ Route::get('/admin', function() {
 });
 
 Route::get('/account', 'loginController@account');
+
+Route::get('/familia-editing', function() {
+	return view('familia-editing');
+});
+
+Route::get('/no-permission', function() {
+	return view('no-permission');
+});
+
+Route::get('/alliance', function() {
+	return view('alliance');
+});
