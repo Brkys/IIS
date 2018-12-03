@@ -187,6 +187,12 @@
                                     @endforeach
                                 </ul>
                             </div>  
+                        @elseif (!empty(Session::get('registerNotValid')) && Session::get('userExists') == true)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>Toto uzivatelske jmeno je jiz zabrane!</li>
+                                </ul>
+                            </div>
                         @endif
      
                         <div class="form-group">

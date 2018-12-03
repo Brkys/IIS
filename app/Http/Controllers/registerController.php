@@ -84,6 +84,12 @@ class registerController extends Controller
         if($validatorFinal->fails()) {
             return redirect('home')->withErrors($validatorFinal)->with('registerNotValid', true)->with('registerInput', $validationResult);
         }
+
+        
+        $userExists = userModel::find('name', $req->input('username'));
+        if(!empty($userExists)){
+            return redirect('home')->with('registerNotValid', true)->with('registerInput', $validationResult)->with('userExists', true);
+        }
         
         return $this->register($req);
     }
