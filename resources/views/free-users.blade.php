@@ -21,7 +21,7 @@
            <?php 
            if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
-               
+               var_dump($users);
            }
            ?>
         </tbody>
