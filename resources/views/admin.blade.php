@@ -18,13 +18,6 @@
 	    <option>User3</option>
 	    <option>User4</option>
 	</select>
-	<h6 style="padding-top: 20px">Consigliare</h6>
-	<select class="form-control" id="sel1">
-	  	<option>User1</option>
-	    <option>User2</option>
-	    <option>User3</option>
-	    <option>User4</option>
-	</select>
 	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<hr>
