@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Hlavní stránka')
+@section('title', 'Administrace')
 
 @section('navpanel')
 	@parent
@@ -28,14 +28,14 @@
 	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<hr>
-	<h4 style="padding-top: 20px;">Jméno území</h4>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
+	<h4 style="padding-top: 20px;">Přidat území</h4>
+	<input class="form-control" id="myInput" type="text" placeholder="Jméno území">
 	<h6>Majitel (volitelné)</h6>
 	<select class="form-control" id="sel1">
-	    <option>User1</option>
-	    <option>User2</option>
-	    <option>User3</option>
-	    <option>User4</option>
+	    <option>Familia1</option>
+	    <option>Familia2</option>
+	    <option>Familia3</option>
+	    <option>Familia4</option>
 	</select>
 	<h6 style="padding-top: 20px">Adresa</h6>
 	<input class="form-control" id="myInput" type="text" placeholder="Adresa">

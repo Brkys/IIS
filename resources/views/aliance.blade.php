@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Vytvoření kriminální činnosti')
+@section('title', 'Aliance)
 
 @section('navpanel')
 	@parent

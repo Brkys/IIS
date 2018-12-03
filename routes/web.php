@@ -57,6 +57,14 @@ Route::get('/account', function() {
 	return view('account');
 });
 
-Route::get('/admin', function() {
-	return view('admin');
+Route::get('/familia-editing', function() {
+	return view('familia-editing');
+});
+
+Route::get('/no-permission', function() {
+	return view('no-permission');
+});
+
+Route::get('/aliance', function() {
+	return view('aliance');
 });
