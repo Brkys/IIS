@@ -21,18 +21,20 @@
             
            @if(!empty($freeUsers))
                @foreach($freeUsers as $user)
-                        <form action="free-users" method="post">
-                        <input type="hidden" value="{{$user['id']}}" name="id">
                         <tr>
                              <td>{{$user['name']}}</td>
                              <td>{{$user['fullname']}}</td>
                              @if($user['invited'])
                              <td>Pozvánka odeslána</td>
                              @else
-                             <td><button type="submit" class="btn btn-primary">Pozvat</button></td>
+                             <td>
+                                <form action="free-users" method="post">
+                                    <input type="hidden" value="{{$user['id']}}" name="id">
+                                    <button type="submit" class="btn btn-primary">Pozvat</button>
+                                </form>
+                             </td>
                              @endif
                         </tr>
-                        </form>
                 @endforeach
            @endif
         </tbody>
