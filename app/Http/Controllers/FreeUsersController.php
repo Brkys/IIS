@@ -35,8 +35,9 @@ class FreeUsersController extends Controller
         $idUzivatele = $req->input('id');
         $invite = new Invitation();
         $invite->ID_Uzivatele = $idUzivatele;
-        /*$invite->ID_Familie = $_SESSION['familia'];
-        $invite->save();*/
+        $invite->ID_Familie = $_SESSION['familia'];
+        /*$invite->save();*/
         return redirect('free-users');
     }
+    
 }
