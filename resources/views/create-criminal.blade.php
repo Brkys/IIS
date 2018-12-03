@@ -30,10 +30,11 @@
 
 
 
-<select class="selectpicker" multiple data-live-search="true">
-  <option>Mustard</option>
-  <option>Ketchup</option>
-  <option>Relish</option>
-</select>
+<div class="styled-select slate">
+  <select>
+    <option>Here is the first option</option>
+    <option>The second option</option>
+    <option>The third option</option>
+  </select>
 </div>
 @endsection

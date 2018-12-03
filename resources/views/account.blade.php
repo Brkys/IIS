@@ -34,7 +34,7 @@
 		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
 		<h6 style="padding-top: 20px">156165465</h6> <!-- Get count -->
 	@endif
-
+	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<div style="padding-top: 20px"></div>
 </div>
