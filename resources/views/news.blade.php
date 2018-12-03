@@ -13,7 +13,8 @@
         <thead>
             <tr>
                 <th scope="col" style="width: 20%;">Datum</th>
-                <th scope="col" style="width: 80%;">Oznámení</th>
+                <th scope="col" style="width: 20%;">Nadpis</th>
+                <th scope="col" style="width: 60%;">Oznámení</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
             @foreach($news as $new)
             <tr>
                 <td>{{$new['date']}}</td>
+                <td>{{$new['title']}}</td>
                 <td>{{$new['content']}}</td>
             </tr>
             @endforeach
@@ -37,7 +39,7 @@ function filter() {
   table = document.getElementById("filterTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[2];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
