@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\userModel;
 use App\Invitation;
 use App\Familie;
+use App\newsModel;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -90,6 +91,7 @@ class loginController extends Controller
             return redirect('home')->with('openLogin', true);
         } else {
             $user = userModel::find($_SESSION['id']);
+            $name = $user->full_name;
             $user->familia_id = $req->input('id');
             $user->permission = 0;
             $user->save();
@@ -97,6 +99,14 @@ class loginController extends Controller
             $invite->delete();
             $_SESSION['familia'] = $req->input('id');
             $_SESSION['permission'] = 0;
+            $news = new newsModel();
+            $nameFamilia = Familie::where('ID_Familie', $req->input('id'));
+            $nameFamilia = $nameFamilia->toArray();
+            $nameFamilia = $nameFamilia[0]['JmenoFamilie'];
+            $news->date = date("Y-m-d H:i:s");
+            $news->title = 'Nový člen';
+            $news->content = "Člen $name se připojil k familii $nameFamilia.";
+            $news->save();
         }
         return view('home');
     }
