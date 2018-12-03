@@ -20,7 +20,7 @@
         <tbody>
             @php 
                 $freeUsers = Session::get('freeUsers');
-                foreach($freeUsers as $user){
+                foreach($freeUsers as $key => $value){
                     <tr>
                         <td></td>
                         <td></td>
