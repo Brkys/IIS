@@ -22,7 +22,7 @@
             <tr>
                 <td>{{$new['date']}}</td>
                 <td>
-                  <div class="tooltip">{{$new['title']}}
+                  <div class="tooltip">{{$new['title']}}>
                     <span class="tooltiptext">{{$new['content']}}</span>
                   </div>
                 </td>
