@@ -15,11 +15,5 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Přezdívka"> <!-- GET Přezdívka/úprava? -->
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 
-
-	@if($_SESSION['permission'] < 3)		
-		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
-		<h6 style="padding-top: 20px">156165465</h6>
-	@endif
-
 </div>
 @endsection
