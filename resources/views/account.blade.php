@@ -47,6 +47,7 @@
         <tbody>
 		@if(!empty($invites))
 			@foreach($invites as $invite)
+			<?php var_dump($invite) ?>
             <tr>
                 <td>{{$invite['FamiliaName']}}</td>
 
