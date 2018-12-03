@@ -8,19 +8,25 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
+	<h4 style="padding-top: 20px;">Území</h4>
+	<h6>
+		<select style="width: 100%;">
+		    <option>Území 1</option>
+		    <option>Území 2</option>
+	    	<option>Území 3</option>
+	  	</select>
+	</h6>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
             <tr>
-                <th scope="col" style="width: 40%;">Jméno</th>
-                <th scope="col" style="width: 30%;">Věk</th>
-                <th scope="col" style="width: 30%;">Pozvat</th>
+                <th scope="col" style="width: 70%;">Jméno</th>
+                <th scope="col" style="width: 30%;">Přiřadit</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Test test</td>
-                <td>24</td>
                 <td><button type="button" class="btn btn-primary">Pozvat</button></td>
             </tr>
         </tbody>
