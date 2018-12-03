@@ -27,7 +27,7 @@ ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
 	        <div class="input-group-prepend">
 	            <span class="input-group-text">YYYY-MM-DD</span>
 	        </div>
-			<input class="form-control" id="myInput" type="text" placeholder="Datum" value="<?php echo date(YYYY-MM-DD); ?>"> 
+			<input class="form-control" id="myInput" type="text" placeholder="Datum" "> <!--value="<?php echo date(YYYY-MM-DD); ?>  Bůh ví proč nejede-->
 	    </div>
     </div>
 	<div style="padding-top: 100px"></div>
