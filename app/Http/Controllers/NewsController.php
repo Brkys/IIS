@@ -13,4 +13,14 @@ class NewsController extends Controller
     	return view('news')->with('news', $news);
         
     }
+
+    public function addNews(Request $req)
+    {
+    	$news = new newsModel();
+        $news->name = $req->input('date');
+        $news->title = $req->input('title');
+        $news->content = $req->input('content');
+        $news->save();
+        return redirect('news');
+    }
 }
