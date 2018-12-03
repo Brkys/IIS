@@ -20,7 +20,7 @@ class FreeUsersController extends Controller
             $freeUsers = userModel::FreeUser();
             foreach($freeUsers as &$users){
                 foreach($invitations as $invitation){
-                    if($users['id'] == $invitation->ID_Uzivatele && $invitation->ID_Familie == $_SESSION['familia']){
+                    if($users['id'] == $invitation->ID_User && $invitation->ID_Familie == $_SESSION['familia']){
                         $users['invited'] = true;
                     }
                 }
@@ -34,7 +34,7 @@ class FreeUsersController extends Controller
         session_start();
         $idUzivatele = $req->input('id');
         $invite = new Invitation();
-        $invite->ID_Uzivatele = $idUzivatele;
+        $invite->ID_User = $idUzivatele;
         $invite->ID_Familie = $_SESSION['familia'];
         $invite->save();
         return redirect('free-users');
