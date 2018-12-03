@@ -22,8 +22,8 @@
                 $freeUsers = Session::get('freeUsers');
                 foreach($freeUsers as $user){
                     <tr>
-                        <td>echo $user['name'];</td>
-                        <td>echo $user['fullname'];</td>
+                        <td></td>
+                        <td></td>
                         <td><button type="button" class="btn btn-primary">Pozvat</button></td>
                     <tr>
                 }
