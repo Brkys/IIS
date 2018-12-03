@@ -112,6 +112,30 @@ class loginController extends Controller
             $news->save();
         }
         
-        return view('home');
+        return view('news');
+    }
+
+    public function decline(Request $req){
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);
+        } else {
+            $news = new newsModel();
+            $nameFamilia = Familie::where('ID_Familie', $req->input('id'))->get();
+            $nameFamilia = $nameFamilia->toArray();
+            $nameFamilia = $nameFamilia[0]['JmenoFamilie'];
+            $news->date = date("Y-m-d H:i:s");
+            $news->title = 'Odmítnutí žádosti';
+            
+            $user = userModel::find($_SESSION['id']);
+            $name = $user->full_name;
+            $invite = Invitation::find($req->input('invID'));
+            $invite->delete();
+
+            $news->content = "Člen $name odmítl pozvání od familie $nameFamilia.";
+            $news->save();
+        }
+        
+        return view('news');
     }
 }

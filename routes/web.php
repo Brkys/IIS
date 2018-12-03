@@ -59,6 +59,8 @@ Route::get('/account', 'loginController@account');
 
 Route::post('/accept', 'loginController@accept');
 
+Route::post('/decline', 'loginController@decline');
+
 Route::get('/familia-editing', function() {
 	return view('familia-editing');
 });
