@@ -80,7 +80,7 @@ class loginController extends Controller
         }
     }
 
-    public function acceptInvite(){
-        //$myInvites = Invitation::where('ID_User', $_SESSION['id']);
+    public function accept(){
+        return view('home');
     }
 }

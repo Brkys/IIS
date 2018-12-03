@@ -57,6 +57,8 @@ Route::get('/admin', 'AdminController@admin');
 
 Route::get('/account', 'loginController@account');
 
+Route::post('/accept', 'loginController@accept')
+
 Route::get('/familia-editing', function() {
 	return view('familia-editing');
 });
