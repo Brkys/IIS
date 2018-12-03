@@ -21,9 +21,7 @@
            @if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
            }
-           @else {
-               $users = '';
-           }
+           @else $users = '';
            @endif
         </tbody>
     </table>
