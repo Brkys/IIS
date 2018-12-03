@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-	<h4 style="padding-top: 20px;">Území</h4>
+	<h4 style="padding-top: 20px; color: white !important;">Území</h4>
 	<h6>
 		<select style="width: 100%;">
 		    <option>Území 1</option>
@@ -27,7 +27,7 @@
         <tbody>
             <tr>
                 <td>Test test</td>
-                <td><button type="button" class="btn btn-primary">Pozvat</button></td>
+                <td><button type="button" class="btn btn-primary">Přiřadit</button></td>
             </tr>
         </tbody>
     </table>
@@ -35,22 +35,22 @@
 
 <script>
 function filter() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("filterTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
+   var input, filter, table, tr, td, i, txtValue;
+   input = document.getElementById("myInput");
+   filter = input.value.toUpperCase();
+   table = document.getElementById("filterTable");
+   tr = table.getElementsByTagName("tr");
+   for (i = 0; i < tr.length; i++) {
+   		td = tr[i].getElementsByTagName("td")[0];
+	    if (td) {
+		    txtValue = td.textContent || td.innerText;
+		    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		        tr[i].style.display = "";
+		    } else {
+		        tr[i].style.display = "none";
+		    }
+	    } 
+    }
 }
 </script>
 @endsection
