@@ -18,16 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @php 
-                
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class="btn btn-primary">Pozvat</button></td>
-                    <tr>
-                
-            @endphp
-        </tbody>
+           
     </table>
 </div>
 
