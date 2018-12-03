@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\newsModel;
 
 class NewsController extends Controller
 {
-    public function news(){
-        session_start();
-        return view('news');
+    public function viewNews()
+    {
+    	$news = newsModel::all();
+    	return view('news')->with('news', $news);
+        
+    }
+
+    public function addNews(Request $req)
+    {
+    	$news = new newsModel();
+        $news->name = $req->input('date');
+        $news->title = $req->input('title');
+        $news->content = $req->input('content');
+        $news->save();
+        return redirect('news');
     }
 }

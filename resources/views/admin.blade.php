@@ -36,6 +36,16 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Rozloha"> <!-- check čisla -->
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<div style="padding-top: 20px"></div>
+	<hr>
+	<h6 style="padding-top: 20px">Zrušit familii</h6>
+	<select class="form-control" id="sel1">
+	    <option>User1</option>
+	    <option>User2</option>
+	    <option>User3</option>
+	    <option>User4</option>
+	</select>
+    <div style="padding-top: 20px"></div>
+	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<!-- CONSIGLIARE != DON -->
 
 </div>
