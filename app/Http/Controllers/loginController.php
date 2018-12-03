@@ -71,12 +71,12 @@ class loginController extends Controller
                 if(!empty($familie)){
                     $invite = $familie->toArray();
                     $id = $invite[0];
-                    $name = $invite[1];
+                    //$name = $invite[1];
                     //array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name));
                 }
             }
 
-            return view('account')->with('invites', $invite);
+            return view('account')->with('invites', $id);
         }
     }
 
