@@ -9,6 +9,7 @@ class NewsController extends Controller
 {
     public function viewNews()
     {
+        session_start();
     	$news = newsModel::all();
     	return view('news')->with('news', $news);
         

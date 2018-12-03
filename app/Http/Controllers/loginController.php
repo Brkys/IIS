@@ -112,7 +112,7 @@ class loginController extends Controller
             $news->save();
         }
         
-        return view('news');
+        return redirect('news');
     }
 
     public function decline(Request $req){
@@ -136,6 +136,6 @@ class loginController extends Controller
             $news->save();
         }
         
-        return view('news');
+        return redirect('news');
     }
 }
