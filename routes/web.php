@@ -51,7 +51,6 @@ Route::get('/assign-criminal', 'AssignCriminalController@assign');
 
 Route::get('/free-users', 'FreeUsersController@viewUsers');
 
-
 Route::post('/free-users', 'FreeUsersController@invite');
 
 Route::get('/admin', 'AdminController@admin');

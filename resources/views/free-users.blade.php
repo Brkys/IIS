@@ -28,7 +28,7 @@
                              <td>Pozvánka odeslána</td>
                              @else
                              <td>
-                                <form action="send-invite" method="post">
+                                <form action="free-users" method="post">
                                     @csrf
                                     <input type="hidden" value="{{$user['id']}}" name="id">
                                     <button type="submit" class="btn btn-primary" name="inv">Pozvat</button>
