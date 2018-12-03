@@ -90,6 +90,14 @@ class loginController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         } else {
+            $news = new newsModel();
+            $nameFamilia = Familie::where('ID_Familie', $req->input('id'));
+            $nameFamilia = $nameFamilia->toArray();
+            $nameFamilia = $nameFamilia[0]['JmenoFamilie'];
+            $news->date = date("Y-m-d H:i:s");
+            $news->title = 'Nový člen';
+            $news->content = "Člen $name se připojil k familii $nameFamilia.";
+            $news->save();
             $user = userModel::find($_SESSION['id']);
             $name = $user->full_name;
             $user->familia_id = $req->input('id');
@@ -99,15 +107,8 @@ class loginController extends Controller
             $invite->delete();
             $_SESSION['familia'] = $req->input('id');
             $_SESSION['permission'] = 0;
-            $news = new newsModel();
-            $nameFamilia = Familie::where('ID_Familie', $req->input('id'));
-            $nameFamilia = $nameFamilia->toArray();
-            $nameFamilia = $nameFamilia[0]['JmenoFamilie'];
-            $news->date = date("Y-m-d H:i:s");
-            $news->title = 'Nový člen';
-            $news->content = "Člen $name se připojil k familii $nameFamilia.";
-            $news->save();
         }
+        
         return view('home');
     }
 }
