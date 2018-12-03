@@ -32,9 +32,9 @@ class FreeUsersController extends Controller
 
     public function invite(Request $req) {
         session_start();
-        $id = $req->input('id');
+        $idUzivatele = $req->input('id');
         $invite = new Invitation();
-        $invite->ID_Uzivatele = $id;
+        $invite->ID_Uzivatele = $idUzivatele;
         $invite->ID_Familie = $_SESSION['id'];
         $invite->save();
         return redirect('free-users');
