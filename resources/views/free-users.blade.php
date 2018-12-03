@@ -21,11 +21,14 @@
             
            @if(!empty($freeUsers))
                @foreach($freeUsers as $user)
+                        <form>
+                        <input type="hidden" value="{{$user['id']}}">
                         <tr>
-                             <td></td>
-                             <td></td>
-                             <td>data</td>
+                             <td>{{$user['name']}}</td>
+                             <td>{{$user['fullname']}}</td>
+                             <td><button type="submit" class="btn btn-primary">Pozvat</button></td>
                         </tr>
+                        </form>
                 @endforeach
            @endif
         </tbody>
