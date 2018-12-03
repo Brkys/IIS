@@ -35,12 +35,10 @@ class userModel extends Model
      */
     public function scopeFreeUser($query){
         $freeUsers = array();
-        $result = $this::all();
+        $result = $this::where('permission', -1)->get();
         foreach ($result as $key => $value) {
-            if($value->permission == -1){
-                $user = array('name' => $value->name, 'fullname' => $value->full_name);
-                array_push($freeUsers, $user);
-            }
+            $user = array('name' => $value->name, 'fullname' => $value->full_name, 'id' => $value->id);
+            array_push($freeUsers, $user);
         }
         return $freeUsers;
     }

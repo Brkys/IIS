@@ -23,8 +23,8 @@
                foreach($freeUsers as $user){
                     echo("
                         <tr>
-                             <td>data</td>
-                             <td>data</td>
+                             <td>$user['name']</td>
+                             <td>$user['fullname']</td>
                              <td>data</td>
                         </tr>
                         ");
