@@ -28,5 +28,7 @@ ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
         </div>
 		<input class="form-control" id="myInput" type="text" placeholder="Datum" value="">  <!-- php echo date(YYYY-MM-DD) nefunguje -->
     </div>
+<div style="padding-top: 20px"></div>
+<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 <div style="padding-top: 100px"></div>
 @endsection

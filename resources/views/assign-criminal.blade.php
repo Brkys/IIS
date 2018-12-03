@@ -7,13 +7,13 @@
 @endsection
 
 @section('content')
-<div class="container" style="padding-top: 100px; width: 80% !important;"> 
-	<h4 style="padding-top: 20px; color: white !important;">Území</h4>
+<div class="container" style="padding-top: 100px; width: 80% !important; background-color: white !important;"> 
+	<h4 style="padding-top: 20px; color: white !important;">Kriminální činnost</h4>
 	<h6>
 		<select style="width: 100%;">
-		    <option>Území 1</option>
-		    <option>Území 2</option>
-	    	<option>Území 3</option>
+		    <option>činnost 1</option>
+		    <option>činnost 2</option>
+	    	<option>činnost 3</option>
 	  	</select>
 	</h6>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
