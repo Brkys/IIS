@@ -27,6 +27,8 @@
 	</dd>
 	<dt>URL aplikace</dt>
 	<dd><a href="http://iis-fit.herokuapp.com/">http://iis-fit.herokuapp.com/</a></dd>
+	<dd><a href="https://db4free.net/phpMyAdmin/">https://db4free.net/phpMyAdmin/</a></dd>
+	Jméno a heslo pro DB je 'vutfitmafie'.
 </dl>
 
 <h2>Uživatelé systému pro testování</h2>
@@ -42,7 +44,14 @@
 </table>
 
 <h2>Implementace</h2>
-<p>Stručná dokumentace k implementaci, která popisuje, které PHP skripty implementují jednotlivé případy použití uvedené v use-case diagramu z IDS. V případě, že bylo nutno při implementaci učinit změny v návrhu, musí být v dokumentaci zdůvodněny. Bohužel jsme až poslední den zjistili, že laravel má debugování v sobě, tak jsme byli omezeni nevypsáním chybových hlášek a museli hledat vše ručně, což byl důvod, proč jsme neimplementovali aliance.</p>
+<p>
+	Implementace probíhala v kombinaci bootstrapu s frameworkem laravelem. <br>
+	Databáze je napsána v MySQL. <br>
+	Soubor /resources/views/layouts/app.blade.php obsahuje základní rozvržení stránky, které je pak importováno do ostatních stránek <br>
+	Složka /resources/views obsahuje php soubory s obsahem pro jednotlivé stránky (nastavení účtu, administrace, práce s kriminálnímí činnostmi, stránku s územími, ...)<br>
+	Složka /app/Http/Controllers obsahuje kontrolery (téměř pro každý view je jeden kontroler) <br>
+	Složka /app obsahuje modely
+</p>
 
 <h2>Instalace</h2>
 <ul>
@@ -56,11 +65,11 @@
 <li>Ctype PHP Extension</li>
 <li>JSON PHP Extension</li>
 <li>BCMath PHP Extension</li>
-<li>Pro vytvoření databáze stačí zprovoznit mysql admin, nastavit v </li>
+<li>Pro vytvoření databáze stačí zprovoznit mysql databázi, nastavit v config/database.php ip hostujícího serveru, port, jméno databáze, jméno uživatele a heslo</li>
 </ul>
 
 <h2>Známé problémy</h2>
-<p>Zde popište, které body zadání (IDS a IIS) nejsou implementovány a z jakého důvodu. Např. &bdquo;Z časových důvodů nebyla implementována správa uživatelů.&rdquo; Pomůžete tím zrychlit opravování, když neimplementované funkce nebudeme muset dlouze hledat.</p>
+<p>Vzhledem k první zkušenosti s laravelem implementace nemusí být dokonalá. Usoudili jsme, že je zbytečné uchovávat, zda li je uživatel Caporegime, nebo Řádový člen, toto jsme specifikovali pouze v tabulce users ve sloupci permission, kde číslo se uchovává číslo práv; čím vyšší práva, tím vyšší pozice (až na výjimku s právem 5, což je admin) a uchovávat, zda-li je činnost vraždou, což stačí napsat v popisku kriminální činnosti. Bohužel jsme až poslední den zjistili, že laravel má debugování v sobě, tak jsme byli omezeni nevypsáním chybových hlášek a museli hledat vše ručně, což byl důvod, proč jsme neimplementovali aliance a pozvání na setkání donů.</p>
 
 </body>
 </html>
