@@ -7,8 +7,6 @@
 @endsection
 
 @section('content')
-ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
-
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Území</h4>
