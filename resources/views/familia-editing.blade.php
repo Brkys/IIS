@@ -31,7 +31,7 @@
             </tr>
         </tbody>
     </table>
-    <div style="padding-top: 100px"></div>
+    <div style="padding-top: 20px"></div>
 </div>
 
 <script>

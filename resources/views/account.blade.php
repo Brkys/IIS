@@ -52,6 +52,7 @@
             </tr>
         </tbody>
     </table>
+    <div style="padding-top: 20px"></div>
     @endif
 </div>
 @endsection
