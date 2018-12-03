@@ -14,6 +14,21 @@
 	<h6 style="padding-top: 20px">Přezdívka</h6>
 	<input class="form-control" id="myInput" type="text" placeholder="Přezdívka"> <!-- GET Přezdívka/úprava? -->
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
+	@if($_SESSION['permission'] === 5)
+		Administrátor
+	@elseif ($_SESSION['permission'] === 4)
+		Don
+	@elseif ($_SESSION['permission'] === 3)
+		Consigliare
+	@elseif ($_SESSION['permission'] === 2)
+		Caporegime
+	@elseif ($_SESSION['permission'] === 1)
+		Caporegime
+	@elseif ($_SESSION['permission'] === 0)
+		Člen
+	@else
+		Chyba!
+	@endif
 
 </div>
 @endsection
