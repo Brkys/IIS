@@ -34,7 +34,7 @@ class FreeUsersController extends Controller
         session_start();
         $idUzivatele = $req->input('id');
         $invite = new Invitation();
-        $invite->ID_Uzivatele = $idUzivatele;
+        $invite->ID_User = $idUzivatele;
         $invite->ID_Familie = $_SESSION['familia'];
         $invite->save();
         return redirect('free-users');
