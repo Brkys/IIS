@@ -18,11 +18,14 @@
             </tr>
         </thead>
         <tbody>
-           @if(!empty(Session::get('freeUsers'))){
+           <?php 
+           if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
            }
-           @else $users = '';
-           @endif
+           else{
+                $users = '';
+           }
+           ?>
         </tbody>
     </table>
 </div>
