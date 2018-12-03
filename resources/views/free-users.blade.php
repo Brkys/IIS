@@ -26,7 +26,11 @@
                         <tr>
                              <td>{{$user['name']}}</td>
                              <td>{{$user['fullname']}}</td>
+                             @if($user['invited'])
+                             <td>Pozvánka odeslána</td>
+                             @else
                              <td><button type="submit" class="btn btn-primary">Pozvat</button></td>
+                             @endif
                         </tr>
                         </form>
                 @endforeach
