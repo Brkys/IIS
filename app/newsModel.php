@@ -12,6 +12,6 @@ class newsModel extends Model
     protected $table = 'news';
     protected $primaryKey = 'date';
     public $incrementing = false;
-    protected $keyType = string;
+    protected $keyType = 'string';
     public $timestamps = false;
 }
