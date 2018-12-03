@@ -15,7 +15,7 @@ class FreeUsersController extends Controller
             return redirect('home');
         }
         else {
-            //$freeUsers = userModel::FreeUser();
+            $freeUsers = userModel::FreeUser();
             return view('free-users')->with('freeUsers', true);
         }
     }
