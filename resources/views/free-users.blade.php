@@ -29,8 +29,9 @@
                              @else
                              <td>
                                 <form action="send-invite" method="post">
+                                    @csrf
                                     <input type="hidden" value="{{$user['id']}}" name="id">
-                                    <button type="submit" class="btn btn-primary">Pozvat</button>
+                                    <button type="submit" class="btn btn-primary" name="inv">Pozvat</button>
                                 </form>
                              </td>
                              @endif
