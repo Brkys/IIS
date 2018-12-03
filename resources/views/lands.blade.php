@@ -18,8 +18,9 @@
         </thead>
         <tbody>
             <tr>
-                <td>23.2.1997</td>
-                <td>Území bylo přebráno rodinou xy</td>
+                <td>ab/td>
+                <td>yz</td>
+                <td>xy</td>
             </tr>
         </tbody>
     </table>
