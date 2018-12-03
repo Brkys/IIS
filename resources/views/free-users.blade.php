@@ -21,16 +21,13 @@
            <?php 
            if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
-           }
-           else{
-                $users = '';
-           }
-           foreach($users as $user){
-               <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-               </tr>
+               foreach($users as $user){
+                <tr>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                </tr>
+                }
            }
            ?>
         </tbody>
