@@ -49,12 +49,12 @@
 			@foreach($invites as $invite)
 			<?php var_dump($invite) ?>
             <tr>
-                <td>{{$invite['FamiliaName']}}</td>
+                <td>{{$invite['JmenoFamilie']}}</td>
 
                 <td>
 					<form action="accept" method="post">
                         @csrf
-                        <input type="hidden" value="{{$invite['Familia']}}" name="id">
+                        <input type="hidden" value="{{$invite['ID_Familie']}}" name="id">
                         <button type="submit" class="btn btn-primary" name="accept">Přijmout</button>
                 	</form>
 				</td>
@@ -62,7 +62,7 @@
 				<td>
 					<form action="decline" method="post">
                         @csrf
-                        <input type="hidden" value="{{$invite['Familia']}}" name="id">
+                        <input type="hidden" value="{{$invite['ID_Familie']}}" name="id">
                         <button type="submit" class="btn btn-primary" name="decline">Odmítnout</button>
                 	</form>
 				</td>

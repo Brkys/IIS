@@ -65,7 +65,6 @@ class loginController extends Controller
         }
         else {
             $myInvites = Invitation::where('ID_User', $_SESSION['id'])->get();
-            $invite = array ();
             $invites = array();
             foreach ($myInvites as $key => $value){
                 $familie = Familie::where('ID_Familie', $value->ID_Familie)->get();
