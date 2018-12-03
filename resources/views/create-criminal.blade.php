@@ -22,11 +22,13 @@ ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
 	<h4 style="padding-top: 20px;">Popis činnosti</h4>
 	<input class="form-control" id="myInput" type="text" placeholder="Typ činnosti"> 
 	<h6 style="padding-top: 20px">Datum začátku</h6>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text">YYYY-MM-DD</span>
-        </div>
-		<input class="form-control" id="myInput" type="text" placeholder="Datum" value="<?php echo date(YYYY-MM-DD) ?>"> 
+	<div class="form-group">
+	    <div class="input-group mb-3">
+	        <div class="input-group-prepend">
+	            <span class="input-group-text">YYYY-MM-DD</span>
+	        </div>
+			<input class="form-control" id="myInput" type="text" placeholder="Datum" value="<?php echo date(YYYY-MM-DD) ?>"> 
+	    </div>
     </div>
 	<div style="padding-top: 100px"></div>
 @endsection
