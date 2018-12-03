@@ -21,8 +21,8 @@
             
            @if(!empty($freeUsers))
                @foreach($freeUsers as $user)
-                        <form>
-                        <input type="hidden" value="{{$user['id']}}">
+                        <form action="free-users" method="post">
+                        <input type="hidden" value="{{$user['id']}}" name="id">
                         <tr>
                              <td>{{$user['name']}}</td>
                              <td>{{$user['fullname']}}</td>

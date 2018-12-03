@@ -37,7 +37,7 @@ class userModel extends Model
         $freeUsers = array();
         $result = $this::where('permission', -1)->get();
         foreach ($result as $key => $value) {
-            $user = array('name' => $value->name, 'fullname' => $value->full_name, 'id' => $value->id);
+            $user = array('name' => $value->name, 'fullname' => $value->full_name, 'id' => $value->id, 'invited' => false);
             array_push($freeUsers, $user);
         }
         return $freeUsers;

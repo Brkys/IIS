@@ -40,6 +40,7 @@ class loginController extends Controller
             $_SESSION['loggedIn'] = true;
             $_SESSION['id'] = $found->id;
             $_SESSION['username'] = $found->name;
+            $_SESSION['familia'] = $found->familia_id;
             $_SESSION['permission'] = $found->permission;
             return redirect('home');
         }

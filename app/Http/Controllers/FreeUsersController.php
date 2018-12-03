@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\userModel;
+use App\Invitation;
 use Illuminate\Http\Request;
 
 class FreeUsersController extends Controller
@@ -18,6 +19,11 @@ class FreeUsersController extends Controller
             $freeUsers = userModel::FreeUser();
             return view('free-users')->with('freeUsers', $freeUsers);
         }
+    }
+
+    public function invite(Request $req) {
+        session_start();
+
     }
 
 }
