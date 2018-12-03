@@ -53,6 +53,7 @@
                 <td>
 					<form action="accept" method="post">
                         @csrf
+						<input type="hidden" value="{{$invite['ID_Inv']}}" name="invID">
                         <input type="hidden" value="{{$invite['ID_Familie']}}" name="id">
                         <button type="submit" class="btn btn-primary" name="accept">Přijmout</button>
                 	</form>
@@ -61,6 +62,7 @@
 				<td>
 					<form action="decline" method="post">
                         @csrf
+						<input type="hidden" value="{{$invite['ID_Inv']}}" name="invID">
                         <input type="hidden" value="{{$invite['ID_Familie']}}" name="id">
                         <button type="submit" class="btn btn-primary" name="decline">Odmítnout</button>
                 	</form>

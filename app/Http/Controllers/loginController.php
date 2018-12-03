@@ -72,7 +72,8 @@ class loginController extends Controller
                     $invite = $familie->toArray();
                     $id = $invite[0]['ID_Familie'];
                     $name = $invite[0]['JmenoFamilie'];
-                    array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name));
+                    $invID = $value->id;
+                    array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name, 'ID_Inv' => $invID));
                 }
             }
 
@@ -80,7 +81,7 @@ class loginController extends Controller
         }
     }
 
-    public function accept(){
+    public function accept(Request $req){
         //odstranit z invites
         //zmenit permission
         //zmenit familii
@@ -88,7 +89,14 @@ class loginController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         } else {
-            $user = new userModel();
+            $user = userModel::find($_SESSION['id']);
+            $user->familia_id = $req->input('id');
+            $user->permission = 0;
+            $user->save();
+            $invite = Invitation::find($req->input('inv_ID'));
+            $invite->delete();
+            $_SESSION['familia'] = $req->input('id');
+            $_SESSION['permission'] = 0;
         }
         return view('home');
     }
