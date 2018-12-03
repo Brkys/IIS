@@ -18,19 +18,16 @@
             </tr>
         </thead>
         <tbody>
-           <?php 
-           if(!empty($freeUsers)){
-               foreach($freeUsers as $user){
-                    echo("
+            
+           @if(!empty($freeUsers))
+               @foreach($freeUsers as $user)
                         <tr>
                              <td></td>
                              <td></td>
                              <td>data</td>
                         </tr>
-                        ");
-                }
-           }
-           ?>
+                @endforeach
+           @endif
         </tbody>
     </table>
 </div>
