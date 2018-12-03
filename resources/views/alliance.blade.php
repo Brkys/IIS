@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Aliance)
+@section('title', 'Aliance')
 
 @section('navpanel')
 	@parent
