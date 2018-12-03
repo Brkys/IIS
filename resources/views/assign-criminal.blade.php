@@ -15,6 +15,7 @@
 	    <option>činnost 2</option>
     	<option>činnost 3</option>
   	</select>
+	<div style="padding-top: 100px"></div>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
@@ -30,6 +31,7 @@
             </tr>
         </tbody>
     </table>
+	<div style="padding-top: 100px"></div>
 </div>
 
 <script>
