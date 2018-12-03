@@ -25,7 +25,7 @@
            else{
                 $users = '';
            }
-           foreach($users){
+           foreach($users as $user){
                <tr>
                     <td></td>
                     <td></td>
