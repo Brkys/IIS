@@ -19,9 +19,9 @@
 	@elseif ($_SESSION['permission'] === 4)
 		Don
 	@elseif ($_SESSION['permission'] === 3)
-		Consigliare
+		Consigliare - vyšší
 	@elseif ($_SESSION['permission'] === 2)
-		Caporegime
+		Caporegime - nižší
 	@elseif ($_SESSION['permission'] === 1)
 		Caporegime
 	@elseif ($_SESSION['permission'] === 0)
@@ -30,5 +30,12 @@
 		Chyba!
 	@endif
 
+	@if($_SESSION['permission'] < 3)		
+		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
+		<h6 style="padding-top: 20px">156165465</h6> <!-- Get count -->
+	@endif
+
+	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
+	<div style="padding-top: 20px"></div>
 </div>
 @endsection
