@@ -81,6 +81,15 @@ class loginController extends Controller
     }
 
     public function accept(){
+        //odstranit z invites
+        //zmenit permission
+        //zmenit familii
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);
+        } else {
+            $user = new userModel();
+        }
         return view('home');
     }
 }
