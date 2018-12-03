@@ -8,6 +8,6 @@
 
 @section('content')
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
-    <h1 style="text-align: center;">Nedostatečná oprávnění</h1>
+    <h1 style="text-align: center; color: white !important;">Nedostatečná oprávnění</h1>
 </div>
 @endsection

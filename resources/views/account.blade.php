@@ -7,8 +7,6 @@
 @endsection
 
 @section('content')
-	-> pocet splnenych KC
-	$_SESSION['permission'] === 5
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Jméno</h4>
@@ -32,7 +30,7 @@
 		Chyba!
 	@endif
 
-	@if($_SESSION['permission'] < 4)		
+	@if($_SESSION['permission'] < 3)		
 		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
 		<h6 style="padding-top: 20px">156165465</h6>
 	@endif
