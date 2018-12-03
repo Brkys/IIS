@@ -93,7 +93,7 @@ class loginController extends Controller
             $user->familia_id = $req->input('id');
             $user->permission = 0;
             $user->save();
-            $invite = Invitation::find($req->input('inv_ID'));
+            $invite = Invitation::find($req->input('invID'));
             $invite->delete();
             $_SESSION['familia'] = $req->input('id');
             $_SESSION['permission'] = 0;
