@@ -12,7 +12,7 @@ class CreateCriminalController extends Controller
             return redirect('home')->with('openLogin', true);
         }
         else if($_SESSION['permission'] < 3 || $_SESSION['permission'] > 4){
-            return redirect('home');
+            return redirect('no-permission');
         }
         else return view('create-criminal');
     }

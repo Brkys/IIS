@@ -12,7 +12,7 @@ class ShowCriminalController extends Controller
             return redirect('home')->with('openLogin', true);
         }
         else if($_SESSION['permission'] < 0 || $_SESSION['permission'] > 4){
-            return redirect('home');
+            return redirect('no-permission');
         }
         else return view('show-criminal');
     }
