@@ -12,17 +12,22 @@
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
             <tr>
-                <th scope="col" style="width: 40%;">Jméno</th>
-                <th scope="col" style="width: 30%;">Věk</th>
+                <th scope="col" style="width: 40%;">Krycí jméno</th>
+                <th scope="col" style="width: 30%;">Civilní jméno</th>
                 <th scope="col" style="width: 30%;">Pozvat</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Test test</td>
-                <td>24</td>
-                <td><button type="button" class="btn btn-primary">Pozvat</button></td>
-            </tr>
+            @php 
+                $freeUsers = Session::get('freeUsers');
+                foreach($freeUsers as $user){
+                    <tr>
+                        <td>echo $user['name']</td>
+                        <td>echo $user['fullname']</td>
+                        <td><button type="button" class="btn btn-primary">Pozvat</button></td>
+                    <tr>
+                }
+            @endphp
         </tbody>
     </table>
 </div>
