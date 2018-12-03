@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\userModel;
 use Illuminate\Http\Request;
 
 class FreeUsersController extends Controller
@@ -14,7 +14,10 @@ class FreeUsersController extends Controller
         else if($_SESSION['permission'] !== 4){
             return redirect('home');
         }
-        else return view('free-users');
+        else {
+            $freeUsers = userModel::FreeUser();
+            return view('free-users')->with('freeUsers', $freeUsers);
+        }
     }
 
 }

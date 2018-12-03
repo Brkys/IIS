@@ -29,4 +29,17 @@ class userModel extends Model
         }
         return $found;
     }
+
+    /**
+     * 
+     */
+    public function scopeFreeUser($query){
+        $freeUsers = array();
+        $result = $this::where('permission', -1)->get();
+        foreach ($result as $key => $value) {
+            $user = array('name' => $value->name, 'fullname' => $value->full_name);
+            array_push($freeUsers, $user);
+        }
+        return $freeUsers;
+    }
 }
