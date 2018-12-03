@@ -18,7 +18,14 @@
             </tr>
         </thead>
         <tbody>
-           
+           @if(!empty(Session::get('freeUsers'))){
+               $users = Session::get('freeUsers');
+           }
+           @else {
+               $users = '';
+           }
+           @endif
+        </tbody>
     </table>
 </div>
 

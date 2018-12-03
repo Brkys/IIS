@@ -16,7 +16,7 @@ class FreeUsersController extends Controller
         }
         else {
             $freeUsers = userModel::FreeUser();
-            return view('free-users')->with('freeUsers', true);
+            return view('free-users')->with('freeUsers', $freeUsers);
         }
     }
 
