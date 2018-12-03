@@ -8,15 +8,13 @@
 
 @section('content')
 <div style="padding-top: 100px"></div>
-<div class="container" style="padding-top: 100px; width: 80% !important; background-color: white !important;"> 
-	<h4 style="padding-top: 20px; color: white !important;">Kriminální činnost</h4>
-	<h6>
-		<select style="width: 100%;">
-		    <option>činnost 1</option>
-		    <option>činnost 2</option>
-	    	<option>činnost 3</option>
-	  	</select>
-	</h6>
+<div class="container" style="; width: 80% !important; background-color: white !important;"> 
+	<h4 style="padding-top: 20px;">Kriminální činnost</h4>
+	<select style="width: 100%;">
+	    <option>činnost 1</option>
+	    <option>činnost 2</option>
+    	<option>činnost 3</option>
+  	</select>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
