@@ -31,23 +31,6 @@
             </tr>
         </tbody>
     </table>
-	<h4 style="padding-top: 20px;">Aliance</h4>
-    <table class="table table-hover table-dark text-centered">
-        <thead>
-            <tr>
-                <th scope="col" style="width: 60%;">Aliance od familie</th>
-                <th scope="col" style="width: 20%;"></th>
-                <th scope="col" style="width: 20%;"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Alfons skočdopole</td>
-                <td><button type="button" class="btn btn-primary">Potvrdit</button></td>
-                <td><button type="button" class="btn btn-danger">Odebrat</button></td>
-            </tr>
-        </tbody>
-    </table>
     <div style="padding-top: 100px"></div>
 </div>
 

@@ -10,9 +10,9 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Jméno</h4>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno"> <!-- GET Jméno/úprava? -->
+	<!-- jméno -->
 	<h6 style="padding-top: 20px">Přezdívka</h6>
-	<input class="form-control" id="myInput" type="text" placeholder="Přezdívka"> <!-- GET Přezdívka/úprava? -->
+	<!-- přezdívka -->
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 	@if($_SESSION['permission'] === 5)
 		Administrátor
@@ -32,10 +32,26 @@
 
 	@if($_SESSION['permission'] < 3)		
 		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
-		<h6 style="padding-top: 20px">156165465</h6> <!-- Get count -->
-	@endif
-	<div style="padding-top: 20px"></div>
-	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
-	<div style="padding-top: 20px"></div>
+		<h6 style="padding-top: 20px">156165465</h6> 
+	@endif	
+	@if($_SESSION['permission'] === -1)
+	<h4 style="padding-top: 20px;">Pozvánky</h4>
+    <table class="table table-hover table-dark text-centered">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 60%;">Pozvánka od</th>
+                <th scope="col" style="width: 20%;"></th>
+                <th scope="col" style="width: 20%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>test</td>
+                <td><button type="button" class="btn btn-primary">Potvrdit</button></td>
+                <td><button type="button" class="btn btn-danger">Odebrat</button></td>
+            </tr>
+        </tbody>
+    </table>
+    @endif
 </div>
 @endsection

@@ -47,7 +47,6 @@
                         <a class="dropdown-item" href="{{ url('familias') }}">Rodiny</a>
                         <a class="dropdown-item" href="{{ url('members') }}">Členové</a>
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
-                        <a class="dropdown-item" href="{{ url('alliance') }}">Aliance</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('free-users') }}">Volní uživatelé</a>
                     </div>
