@@ -20,7 +20,7 @@
         <tbody>
            <?php 
            if(!empty($freeUsers)){
-               foreach($users as $user){
+               foreach($freeUsers as $user){
                     echo("
                         <tr>
                              <td>data</td>
