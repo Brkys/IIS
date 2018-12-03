@@ -21,11 +21,7 @@
             @foreach($news as $new)
             <tr>
                 <td>{{$new['date']}}</td>
-                <td>
-                  <div class="tooltip">{{$new['title']}}>
-                    <span class="tooltiptext">{{$new['content']}}</span>
-                  </div>
-                </td>
+                <td>{{$new['content']}}</td>
             </tr>
             @endforeach
           @endif
