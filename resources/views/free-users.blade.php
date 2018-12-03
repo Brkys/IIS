@@ -21,7 +21,13 @@
            <?php 
            if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
-               var_dump($users);
+               foreach($users as $user){
+               echo(<tr>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                </tr>);
+                }
            }
            ?>
         </tbody>
