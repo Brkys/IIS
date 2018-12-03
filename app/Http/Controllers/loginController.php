@@ -108,7 +108,7 @@ class loginController extends Controller
             $_SESSION['familia'] = $req->input('id');
             $_SESSION['permission'] = 0;
 
-            $news->content = "Člen $name se připojil k familii $nameFamilia.";
+            $news->content = "$name se připojil k familii $nameFamilia.";
             $news->save();
         }
         
@@ -132,7 +132,7 @@ class loginController extends Controller
             $invite = Invitation::find($req->input('invID'));
             $invite->delete();
 
-            $news->content = "Člen $name odmítl pozvání od familie $nameFamilia.";
+            $news->content = "$name odmítl pozvání od familie $nameFamilia.";
             $news->save();
         }
         
