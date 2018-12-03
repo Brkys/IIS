@@ -60,6 +60,7 @@ Route::get('/familia-editing', function() {
 });
 
 Route::get('/no-permission', function() {
+	session_start();
 	return view('no-permission');
 });
 
