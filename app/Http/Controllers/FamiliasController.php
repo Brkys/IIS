@@ -13,24 +13,24 @@ class FamiliasController extends Controller
             if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
                 return redirect('home')->with('openLogin', true);
             }
-    	$familias = Familia::all();
-    	$dons = array();
-    	$counts = array();
-    	$iterator = 0;
-    	$familiaNames = array();
-    	foreach ($familia as $familias) {
-    		array_push($familiaNames, $familias['JmenoFamilie'])
-    		array_push($dons, $familias['ID_Dona']);
-    		$counts[$iterator] = userModel::where('familia_id', '=', $familia['ID_Familie'])->count();
-    	}
-    	$users = Familia::all();
-    	foreach ($id as $dons) {
-    		$donNames = userModel::find($id)['name']->get();
-    	}
-    	$result = array();
-    	array_push($result, $familiaNames)
-    	array_push($result, $donNames);
-    	array_push($result, $counts);
+	    	$familias = Familia::all();
+	    	$dons = array();
+	    	$counts = array();
+	    	$iterator = 0;
+	    	$familiaNames = array();
+	    	foreach ($familia as $familias) {
+	    		array_push($familiaNames, $familias['JmenoFamilie'])
+	    		array_push($dons, $familias['ID_Dona']);
+	    		$counts[$iterator] = userModel::where('familia_id', '=', $familia['ID_Familie'])->count();
+	    	}
+	    	$users = Familia::all();
+	    	foreach ($id as $dons) {
+	    		$donNames = userModel::find($id)['name']->get();
+	    	}
+	    	$result = array();
+	    	array_push($result, $familiaNames)
+	    	array_push($result, $donNames);
+	    	array_push($result, $counts);
             return view('familias');
     }
 }
