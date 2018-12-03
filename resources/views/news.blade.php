@@ -17,17 +17,24 @@
             </tr>
         </thead>
         <tbody>
+          @if(!empty($news))
+            @foreach($news as $new)
             <tr>
-                <td>23.2.1997</td>
-                <td>Území bylo přebráno rodinou xy</td>
+                <td>{{$new['date']}}</td>
+                <td>
+                  <div class="tooltip">{{$new['title']}}
+                    <span class="tooltiptext">{{$new['content']}}</span>
+                  </div>
+                </td>
             </tr>
+            @endforeach
+          @endif
         </tbody>
     </table>
 </div>
 
 <script>
-function filter() {
-  // Declare variables 
+function filter() { 
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();

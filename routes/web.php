@@ -35,7 +35,7 @@ Route::get('/register', function(){
 
 Route::post('/register', 'registerController@validateRegister');
 
-Route::get('/news', 'NewsController@news');
+Route::get('/news', 'NewsController@viewNews');
 
 Route::get('/familias', 'FamiliasController@familias'); 
 
