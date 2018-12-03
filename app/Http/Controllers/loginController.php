@@ -92,8 +92,8 @@ class loginController extends Controller
         } else {
             $news = new newsModel();
             $nameFamilia = Familie::where('ID_Familie', $req->input('id'));
-            $nameFamilia = $nameFamilia->toArray();
-            $nameFamilia = $nameFamilia[0]['JmenoFamilie'];
+            $name = $nameFamilia->toArray();
+            $name = $name[0]['JmenoFamilie'];
             $news->date = date("Y-m-d H:i:s");
             $news->title = 'Nový člen';
             $news->content = "Člen $name se připojil k familii $nameFamilia.";
@@ -108,7 +108,7 @@ class loginController extends Controller
             $_SESSION['familia'] = $req->input('id');
             $_SESSION['permission'] = 0;
         }
-        
+
         return view('home');
     }
 }
