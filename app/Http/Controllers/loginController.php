@@ -69,8 +69,8 @@ class loginController extends Controller
             foreach ($myInvites as $key => $value){
                 $familie = Familie::where('ID_Familie', $value->ID_Familie)->get();
                 if(!empty($familie)){
-                    $invite = $familie->toArray();
-                    $id = $invite('ID_Familie');
+                    $familie->toArray();
+                    $id = $familie['ID_Familie'];
                     //$name = $invite['JmenoFamilie'];
                     //array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name));
                 }
