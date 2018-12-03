@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\userModel;
+use App\Invitation;
+use App\Familie;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -61,6 +63,23 @@ class loginController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         }
-        else return view('account');
+        else {
+            $myInvites = Invitation::where('ID_User', $_SESSION['id'])->get();
+            $invite = array ();
+            $invites = array();
+            foreach ($myInvites as $key => $value){
+                $familie = Familie::where('ID_Familie', $value->ID_Familie)->get();
+                if(!empty($familie)){
+                    $invite = ('Familia' => $familie->ID_Familie, 'FamiliaName' => $familie->JmenoFamilie);
+                    array_push($invites, $invite);
+                }
+            }
+
+            return view('account')->with('invites', $invites);
+        }
+    }
+
+    public function acceptInvite(){
+        //$myInvites = Invitation::where('ID_User', $_SESSION['id']);
     }
 }

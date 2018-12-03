@@ -27,7 +27,7 @@
 	@elseif ($_SESSION['permission'] === 0)
 		Člen
 	@else
-		Chyba!
+		Uživatel bez rodiny
 	@endif
 
 	@if($_SESSION['permission'] < 3)		
@@ -45,11 +45,29 @@
             </tr>
         </thead>
         <tbody>
+		@if(!empty($invites))
+			@foreach($invites as $invite)
             <tr>
-                <td>test</td>
-                <td><button type="button" class="btn btn-primary">Potvrdit</button></td>
-                <td><button type="button" class="btn btn-danger">Odebrat</button></td>
+                <td>{{$invite['FamiliaName']}}</td>
+
+                <td>
+					<form action="accept" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$invite['Familia']}}" name="id">
+                        <button type="submit" class="btn btn-primary" name="accept">Přijmout</button>
+                	</form>
+				</td>
+
+				<td>
+					<form action="decline" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$invite['Familia']}}" name="id">
+                        <button type="submit" class="btn btn-primary" name="decline">Odmítnout</button>
+                	</form>
+				</td>
             </tr>
+			@endforeach
+		@endif
         </tbody>
     </table>
     <div style="padding-top: 20px"></div>
