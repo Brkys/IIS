@@ -22,7 +22,13 @@
            if(!empty(Session::get('freeUsers'))){
                $users = Session::get('freeUsers');
                foreach($users as $user){
-               
+                    echo("
+                        <tr>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                        </tr>
+                        ");
                 }
            }
            ?>
