@@ -9,8 +9,8 @@
 @section('content')
 ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
 
-<div style="padding-top: 100px"></div>
-<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
+	<div style="padding-top: 100px"></div>
+	<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Území</h4>
 	<h6>
 		<select style="width: 100%;">
@@ -26,8 +26,7 @@ ID_Cinnosti	ID_Uzemi	TypCinnosti	DatumZacatku	DatumUkonceni
         <div class="input-group-prepend">
             <span class="input-group-text">YYYY-MM-DD</span>
         </div>
-		<input class="form-control" id="myInput" type="text" placeholder="Datum"> 
+		<input class="form-control" id="myInput" type="text" placeholder="Datum" value="<?php echo date(YYYY-MM-DD) ?>"> 
     </div>
-
-	<!-- do přidávání do tabulky zakomponovat i datum začátku, což by mělo být now() -->
+	<div style="padding-top: 100px"></div>
 @endsection
