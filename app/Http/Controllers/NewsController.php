@@ -10,7 +10,7 @@ class NewsController extends Controller
     public function viewNews()
     {
         session_start();
-    	$news = newsModel::all()->orderBy('date', 'desc');
+    	$news = newsModel::all()->sortByDesc('date');
     	return view('news')->with('news', $news);
         
     }
