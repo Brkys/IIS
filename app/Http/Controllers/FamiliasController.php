@@ -21,7 +21,8 @@ class FamiliasController extends Controller
 			foreach($dons as $key2 => $value2)
 			{
 				if($value->ID_Dona == $value2->id){
-					array_push($results, ['ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name]);
+					return view('home');
+					array_push($results, array ('ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name);
 				}
 			}
 		}/*
