@@ -13,8 +13,7 @@ class MembersController extends Controller
             return redirect('home')->with('openLogin', true);
         }
 
-		$members = DB::select('SELECT full_name as 'Jmeno', JmenoFamilie, YEAR(CURDATE()) - YEAR(birth_date) AS 'Vek' FROM users INNER JOIN Familie ON users.familia_id=Familie.ID_Familie', [1]);
+		$members = DB::select("SELECT full_name as 'Jmeno', JmenoFamilie, YEAR(CURDATE()) - YEAR(birth_date) AS 'Vek' FROM users INNER JOIN Familie ON users.familia_id=Familie.ID_Familie", [1]);
         return view('members')->with('members', $members);
     }
-
 }
