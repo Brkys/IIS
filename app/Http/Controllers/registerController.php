@@ -86,8 +86,8 @@ class registerController extends Controller
         }
 
         
-        $userExists = userModel::where('name', $req->input('username'));
-        if(!empty($userExists)){
+        $userExists = userModel::where('name', $req->input('username'))->count();
+        if($userExists !== 0){
             return redirect('home')->with('registerNotValid', true)->with('registerInput', $validationResult)->with('userExists', true);
         }
         
