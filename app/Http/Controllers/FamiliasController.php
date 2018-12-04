@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Familia;
+use App\Familie;
 use App\userModel;
 
 class FamiliasController extends Controller
@@ -12,8 +12,9 @@ class FamiliasController extends Controller
         session_start();
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
-        }
-		$familias = Familia::all();
+		}
+		
+		$familias = Familie::all();
 		$dons = userModel::where('permission', 4);
 		$result = array();
     	foreach($familias as $key => $value){
