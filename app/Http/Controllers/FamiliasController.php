@@ -33,4 +33,18 @@ class FamiliasController extends Controller
 		
         return view('familias')->with('results', $results);
 	}
+
+	public function editFamilia () {
+		session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);
+		}
+		if($_SESSION['permission'] != 4) {
+			return view('no-permission');
+		}
+
+		$usersAndPermissions = DB::select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
+
+		return view('familia-editing')->with('users', $users);
+	}
 }

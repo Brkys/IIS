@@ -23,12 +23,20 @@
             </tr>
         </thead>
         <tbody>
+          @if(!empty(users))
+            @foreach($users as $user)
             <tr>
-                <td>Alfons skočdopole</td>
+                <td>{{$user['fullName']}}." - ".{{$user['permission']}}</td>
                 <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                 <td><button type="button" class="btn btn-primary">Povýšit</button></td>
                 <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
             </tr>
+            @endforeach
+          @else
+            <tr>
+              <td colspan="3">Nenalezení uživatelé</td>
+            </tr>
+          @endif
         </tbody>
     </table>
     <div style="padding-top: 20px"></div>
