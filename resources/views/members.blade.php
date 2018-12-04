@@ -20,9 +20,9 @@
             @if(!empty($members))
                 @foreach($members as $member)
                     <tr>
-                        <th>{{$member->Jmeno}}</th>
-                        <th>{{$member->JmenoFamilie}}</th>
-                        <th>{{$member->Vek}}</th>
+                        <td>{{$member->Jmeno}}</td>
+                        <td>{{$member->JmenoFamilie}}</td>
+                        <td>{{$member->Vek}}</td>
                     </tr>
                 @endforeach
             @endif
