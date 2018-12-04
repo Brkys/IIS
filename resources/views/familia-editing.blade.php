@@ -9,7 +9,6 @@
 @section('content')
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important;"> 
-
 	<h1>Jméno familie</h1>
 	<h4 style="padding-top: 20px;">Členové</h4>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat člena.." onkeyup="filter()">
@@ -27,10 +26,19 @@
             @foreach($users as $user)
               @if($user->permission !== 4)
                 <tr>
-                    <td>{{$user->full_name}} - {{$user->permission === 3 ? return "Consigliere" : 
-                                                 $user->permission === 2 ? return "Caporegime (vyšší)" :
-                                                 $user->permission === 1 ? return "Caporegime (nižší)" :
-                                                 return "Běžný člen"}}</td>
+                    <td>{{$user->full_name}} - 
+                      @if ($user->permission === 3)
+                        Consigliare
+                      @elseif ($user->permission === 2)
+                        Caporegime - vyšší
+                      @elseif ($user->permission === 1)
+                        Caporegime - nižší
+                      @elseif ($user->permission === 0)
+                        Člen
+                      @else
+                        Uživatel bez rodiny
+                      @endif
+                    </td>
                     <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                     <td><button type="button" class="btn btn-primary">Povýšit</button></td>
                     <td><button type="button" class="btn btn-secondary">Degradovat</button></td>

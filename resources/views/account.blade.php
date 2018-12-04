@@ -19,11 +19,11 @@
 	@elseif ($_SESSION['permission'] === 4)
 		Don
 	@elseif ($_SESSION['permission'] === 3)
-		Consigliare - vyšší
+		Consigliare 
 	@elseif ($_SESSION['permission'] === 2)
-		Caporegime - nižší
+		Caporegime - vyšší
 	@elseif ($_SESSION['permission'] === 1)
-		Caporegime
+		Caporegime- nižší
 	@elseif ($_SESSION['permission'] === 0)
 		Člen
 	@else
