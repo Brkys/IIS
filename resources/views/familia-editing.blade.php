@@ -43,7 +43,7 @@
                     <td>
                       <form action="kick" method="post">
                         @csrf
-                        <input type="hidden" value="{{$user->['id']}}" name="id_familie">
+                        <input type="hidden" value="{{$user->id}}" name="id">
                         <button type="button" class="btn btn-danger" name="kick">Vyhodit</button>
                       </form>
                     </td>
