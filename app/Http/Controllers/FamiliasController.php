@@ -22,7 +22,7 @@ class FamiliasController extends Controller
 			{
 				if($value->ID_Dona == $value2->id){
 					return view('home');
-					array_push($results, array ('ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name);
+					array_push($results, array ('ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name));
 				}
 			}
 		}/*
