@@ -41,7 +41,11 @@
                       )
                     </td>
                     <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
-                    <td><button type="button" class="btn btn-primary">Povýšit</button></td>
+                    <td>
+                      @if($user->permission !== 3)
+                        <button type="button" class="btn btn-primary">Povýšit</button>
+                      @endif
+                    </td>
                     <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
                 </tr>
               @endif
