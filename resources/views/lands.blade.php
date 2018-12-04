@@ -14,7 +14,7 @@
                 @foreach($lands as $land)
                     <tr>
                         <th scope="col">{{$land->Adresa}}</th>
-                        <th scope="col">{{$land->Majitel}}</th>
+                        <th scope="col">{{$land->JmenoFamilie}}</th>
                     </tr>
                 @endforeach
             @endif

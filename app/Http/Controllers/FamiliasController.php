@@ -45,7 +45,7 @@ class FamiliasController extends Controller
 			return view('no-permission');
 		}
 
-		$usersAndPermissions = DB::select("SELECT id, full_name, permission FROM users WHERE familia_id = $_SESSION['familia']", [1]);
+		$usersAndPermissions = DB::select("SELECT id, full_name, permission FROM users WHERE familia_id = ".$_SESSION['familia'], [1]);
 
 		return view('familia-editing')->with('users', $usersAndPermissions);
 	}
