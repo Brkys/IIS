@@ -95,8 +95,6 @@ class FamiliasController extends Controller
 			$user->familia_id = NULL;
 			$user->permission = -1;
 			$user->save();
-			$_SESSION['familia'] = NULL;
-			$_SESSION['permission'] = -1;
 
 			$name = $user->full_name;
 
