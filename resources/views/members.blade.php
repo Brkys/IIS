@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             @if(!empty($members))
-                @foreach($lands as $member)
+                @foreach($members as $member)
                     <tr>
                         <th>{{$member->Jmeno}}</th>
                         <th>{{$member->JmenoFamilie}}</th>
