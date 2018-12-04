@@ -27,7 +27,10 @@
             @foreach($users as $user)
               @if($user->permission !== 4)
                 <tr>
-                    <td>{{$user->full_name}} - {{$user->permission}}</td>
+                    <td>{{$user->full_name}} - {{$user->permission === 3 ? echo "Consigliere" : 
+                                                 $user->permission === 2 ? echo "Caporegime (vyšší)" :
+                                                 $user->permission === 1 ? echo "Caporegime (nižší)" :
+                                                 echo "Běžný člen"}}</td>
                     <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                     <td><button type="button" class="btn btn-primary">Povýšit</button></td>
                     <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
