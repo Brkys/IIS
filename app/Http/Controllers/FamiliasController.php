@@ -61,6 +61,7 @@ class FamiliasController extends Controller
 				return view('no-permission');
 			}   	
         }
+		return editFamilia();
 
 	}
 
@@ -76,6 +77,7 @@ class FamiliasController extends Controller
 			}
 
         }
+		return editFamilia();
 
 	}
 
@@ -104,6 +106,6 @@ class FamiliasController extends Controller
             $news->content = "Člen $name byl vyhozen z familie.";
             $news->save();
         }
-		
+		return editFamilia();
 	}
 }
