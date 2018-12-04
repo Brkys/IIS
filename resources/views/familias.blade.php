@@ -18,6 +18,7 @@
         </thead>
         <tbody>
             <tr>
+                <?php var_dump($results); ?>
                 <td>Quatro formagi</td>
                 <td>Servesa de pub</td>
                 <td>456</td>

@@ -29,7 +29,8 @@ class FamiliasController extends Controller
 			$members = userModel::where('familia_id', $result['ID_Familie'])->count();
 			$result['members'] = $members;
 		}
+		unset($result);
 
-        return view('familias');
+        return view('familias')->with('results', $results);
 	}
 }
