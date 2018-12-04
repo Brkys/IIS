@@ -19,8 +19,8 @@
             @if(!empty($lands))
                 @foreach($lands as $land)
                     <tr>
-                        <th scope="col">{{$land->Adresa}}</th>
-                        <th scope="col">{{$land->JmenoFamilie}}</th>
+                        <th>{{$land->Adresa}}</th>
+                        <th>{{$land->JmenoFamilie}}</th>
                     </tr>
                 @endforeach
             @endif
