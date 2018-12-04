@@ -10,6 +10,12 @@
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
     <table class="table table-hover table-dark text-centered" id="custom-table">
         <thead>
+            <tr>
+                <th scope="col">Adresa</th>
+                <th scope="col">Majitel</th>
+            </tr>
+        </thead>
+        <tbody>
             @if(!empty($lands))
                 @foreach($lands as $land)
                     <tr>
@@ -18,12 +24,6 @@
                     </tr>
                 @endforeach
             @endif
-        </thead>
-        <tbody>
-            <tr>
-                <td>yz</td>
-                <td>xy</td>
-            </tr>
         </tbody>
     </table>
 </div>
