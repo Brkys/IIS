@@ -17,12 +17,15 @@
             </tr>
         </thead>
         <tbody>
+        @if(!empty($results))
+            @foreach $results as $result
             <tr>
-                <?php var_dump($results); ?>
-                <td>Quatro formagi</td>
-                <td>Servesa de pub</td>
-                <td>456</td>
+                <td>$result['JmenoFamilie']</td>
+                <td>$result['JmenoDona']</td>
+                <td>$result['members']</td>
             </tr>
+            @endforeach
+        @endif
         </tbody>
     </table>
 </div>
