@@ -44,15 +44,19 @@
                       <form action="kick" method="post">
                         @csrf
                         <input type="hidden" value="{{$user->id}}" name="id">
-                        <button type="button" class="btn btn-danger" name="kick">Vyhodit</button>
+                        <button type="submit" class="btn btn-danger" name="kick">Vyhodit</button>
                       </form>
                     </td>
                     <td>
                       @if($user->permission !== 3)
-                        <button type="button" class="btn btn-primary" name="promote">Povýšit</button>
+                        <button type="submit" class="btn btn-primary" name="promote">Povýšit</button>
                       @endif
                     </td>
-                    <td><button type="button" class="btn btn-secondary" name="degrade">Degradovat</button></td>
+                    <td>
+                      @if($user->permission != 0)
+                        <button type="submit" class="btn btn-secondary" name="degrade">Degradovat</button>
+                      @endif
+                    </td>
                 </tr>
               @endif
             @endforeach
