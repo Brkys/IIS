@@ -18,11 +18,11 @@
         </thead>
         <tbody>
         @if(!empty($results))
-            @foreach $results as $result
+            @foreach($results as $result)
             <tr>
-                <td>$result['JmenoFamilie']</td>
-                <td>$result['JmenoDona']</td>
-                <td>$result['members']</td>
+                <td>{{$result['JmenoFamilie']}}</td>
+                <td>{{$result['JmenoDona']}}</td>
+                <td>{{$result['members']}}</td>
             </tr>
             @endforeach
         @endif
