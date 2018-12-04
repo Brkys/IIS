@@ -27,10 +27,10 @@
             @foreach($users as $user)
               @if($user->permission !== 4)
                 <tr>
-                    <td>{{$user->full_name}} - {{$user->permission === 3 ? echo "Consigliere" : 
-                                                 $user->permission === 2 ? echo "Caporegime (vyšší)" :
-                                                 $user->permission === 1 ? echo "Caporegime (nižší)" :
-                                                 echo "Běžný člen"}}</td>
+                    <td>{{$user->full_name}} - {{$user->permission === 3 ? echo(Consigliere) : 
+                                                 $user->permission === 2 ? echo(Caporegime (vyšší)) :
+                                                 $user->permission === 1 ? echo(Caporegime (nižší) :
+                                                 echo(Běžný člen)}}</td>
                     <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                     <td><button type="button" class="btn btn-primary">Povýšit</button></td>
                     <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
@@ -56,7 +56,7 @@ function filter() {
   table = document.getElementById("filterTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
