@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,10 @@ class LandsController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         }
-        return view('lands');
+
+		$lands = DB::select('SELECT Adresa, JmenoFamilie FROM Uzemi INNER JOIN Familie ON Familie.ID_Familie=Uzemi.Majitel', [1]);
+
+        return view('lands')->with('lands', $lands);
     }
 
 }

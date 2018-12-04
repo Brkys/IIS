@@ -45,7 +45,7 @@ class FamiliasController extends Controller
 			return view('no-permission');
 		}
 
-		$usersAndPermissions = DB::select('SELECT id, full_name, permission FROM users WHERE familia_id = 2', [1]);
+		$usersAndPermissions = DB::select("SELECT id, full_name, permission FROM users WHERE familia_id = $_SESSION['familia']", [1]);
 
 		return view('familia-editing')->with('users', $usersAndPermissions);
 	}
@@ -68,8 +68,8 @@ class FamiliasController extends Controller
 
 			$news = new newsModel();
 			$news->date = date("Y-m-d H:i:s");
-            $news->title = "Člen degradován";
-            $news->content = "Člen $name byl degradován.";
+            $news->title = "Člen povýšen";
+            $news->content = "Člen $name byl povýšen.";
             $news->save();	
         }
 		return redirect('familia-editing');

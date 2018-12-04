@@ -10,15 +10,17 @@
 <div class="container" style="padding-top: 100px; width: 80% !important;"> 
     <table class="table table-hover table-dark text-centered" id="custom-table">
         <thead>
-            <tr>
-                <th scope="col">Jméno</th>
-                <th scope="col">Adresa</th>
-                <th scope="col">Vlastník</th>
-            </tr>
+            @if(!empty($lands))
+                @foreach($lands as $land)
+                    <tr>
+                        <th scope="col">{{$land->Adresa}}</th>
+                        <th scope="col">{{$land->Majitel}}</th>
+                    </tr>
+                @endforeach
+            @endif
         </thead>
         <tbody>
             <tr>
-                <td>ab/td>
                 <td>yz</td>
                 <td>xy</td>
             </tr>
