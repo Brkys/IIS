@@ -25,12 +25,14 @@
         <tbody>
           @if(!empty($users))
             @foreach($users as $user)
-            <tr>
-                <td>{{$user->full_name}} - {{$user->permission}}</td>
-                <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
-                <td><button type="button" class="btn btn-primary">Povýšit</button></td>
-                <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
-            </tr>
+              @if($user->permission !== 4)
+                <tr>
+                    <td>{{$user->full_name}} - {{$user->permission}}</td>
+                    <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
+                    <td><button type="button" class="btn btn-primary">Povýšit</button></td>
+                    <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
+                </tr>
+              @endif
             @endforeach
           @else
             <tr>
