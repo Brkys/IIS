@@ -16,15 +16,20 @@ class FamiliasController extends Controller
 		
 		$familias = Familie::all();
 		$dons = userModel::where('permission', 4);
-		$result = array();
+		$results = array();
     	foreach($familias as $key => $value){
 			foreach($dons as $key2 => $value2)
 			{
 				if($value->ID_Dona == $value2->id){
-					array_push($result, ['JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name]);
+					array_push($results, ['ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name]);
 				}
 			}
 		}
+		foreach($results as &$result) {
+			$members = userModel::where('familia_id', $result['ID_Familie'])->count();
+			$result['members'] = $members;
+		}
+
         return view('familias');
 	}
 }
