@@ -26,7 +26,7 @@
             @foreach($users as $user)
               @if($user->permission !== 4)
                 <tr>
-                    <td>{{$user->full_name}} - 
+                    <td>{{$user->full_name}} (
                       @if ($user->permission === 3)
                         Consigliare
                       @elseif ($user->permission === 2)
@@ -38,6 +38,7 @@
                       @else
                         Uživatel bez rodiny
                       @endif
+                      )
                     </td>
                     <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                     <td><button type="button" class="btn btn-primary">Povýšit</button></td>
