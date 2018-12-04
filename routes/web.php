@@ -63,6 +63,12 @@ Route::post('/decline', 'loginController@decline');
 
 Route::get('/familia-editing', 'FamiliasController@editFamilia');
 
+Route::get('/promote', 'FamiliasController@promote')
+
+Route::get('/degrade', 'FamiliasController@degrade')
+
+Route::get('/kick', 'FamiliasController@kick')
+
 Route::get('/no-permission', function() {
 	session_start();
 	return view('no-permission');

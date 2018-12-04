@@ -40,13 +40,19 @@
                       @endif
                       )
                     </td>
-                    <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
+                    <td>
+                      <form action="kick" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$user->['id']}}" name="id_familie">
+                        <button type="button" class="btn btn-danger" name="kick">Vyhodit</button>
+                      </form>
+                    </td>
                     <td>
                       @if($user->permission !== 3)
-                        <button type="button" class="btn btn-primary">Povýšit</button>
+                        <button type="button" class="btn btn-primary" name="promote">Povýšit</button>
                       @endif
                     </td>
-                    <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
+                    <td><button type="button" class="btn btn-secondary" name="degrade">Degradovat</button></td>
                 </tr>
               @endif
             @endforeach
