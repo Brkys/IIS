@@ -45,7 +45,7 @@ class FamiliasController extends Controller
 		}
 
 		$usersAndPermissions = DB::select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
-
+		echo "<script type='text/javascript'>alert('$usersAndPermissions');</script>";
 		return view('familia-editing')->with('users', $usersAndPermissions);
 	}
 }
