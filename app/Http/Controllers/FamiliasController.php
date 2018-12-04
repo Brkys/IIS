@@ -59,7 +59,18 @@ class FamiliasController extends Controller
         else {
     		if($_SESSION['permission'] != 4) {
 				return view('no-permission');
-			}   	
+			}   
+			$user = userModel::find($req->input('id'));
+			$user->permission = $user->permission+1;
+			$user->save();
+
+			$name = $user->full_name;
+
+			$news = new newsModel();
+			$news->date = date("Y-m-d H:i:s");
+            $news->title = "Člen degradován";
+            $news->content = "Člen $name byl degradován.";
+            $news->save();	
         }
 		return redirect('familia-editing');
 
@@ -75,7 +86,17 @@ class FamiliasController extends Controller
 			if($_SESSION['permission'] != 4) {
 				return view('no-permission');
 			}
+			$user = userModel::find($req->input('id'));
+			$user->permission = $user->permission-1;
+			$user->save();
 
+			$name = $user->full_name;
+
+			$news = new newsModel();
+			$news->date = date("Y-m-d H:i:s");
+            $news->title = "Člen degradován";
+            $news->content = "Člen $name byl degradován.";
+            $news->save();
         }
 		return redirect('familia-editing');
 

@@ -49,12 +49,20 @@
                     </td>
                     <td>
                       @if($user->permission !== 3)
+                      <form action="promote" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$user->id}}" name="id">
                         <button type="submit" class="btn btn-primary" name="promote">Povýšit</button>
+                      </form>
                       @endif
                     </td>
                     <td>
                       @if($user->permission != 0)
+                      <form action="degrade" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$user->id}}" name="id">
                         <button type="submit" class="btn btn-secondary" name="degrade">Degradovat</button>
+                      </form>
                       @endif
                     </td>
                 </tr>
