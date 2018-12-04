@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Familie;
 use App\userModel;
+use Illuminate\Support\Facades\DB;
 
 class FamiliasController extends Controller
 {
@@ -43,7 +44,7 @@ class FamiliasController extends Controller
 			return view('no-permission');
 		}
 
-		$usersAndPermissions = DB::connection('vutfitmafie')->select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
+		$usersAndPermissions = DB::select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
 
 		return view('familia-editing')->with('users', $users);
 	}
