@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-          @if(!empty(users))
+          @if(!empty($users))
             @foreach($users as $user)
             <tr>
                 <td>{{$user['fullName']}}." - ".{{$user['permission']}}</td>
