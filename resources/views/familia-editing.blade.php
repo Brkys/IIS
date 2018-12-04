@@ -26,7 +26,7 @@
           @if(!empty($users))
             @foreach($users as $user)
             <tr>
-                <td>{{$user['fullName']}}." - ".{{$user['permission']}}</td>
+                <td>{{$user->fullName}} - {{$user->permission}}</td>
                 <td><button type="button" class="btn btn-danger">Vyhodit</button></td>
                 <td><button type="button" class="btn btn-primary">Povýšit</button></td>
                 <td><button type="button" class="btn btn-secondary">Degradovat</button></td>
