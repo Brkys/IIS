@@ -24,13 +24,13 @@ class FamiliasController extends Controller
 					array_push($results, array ('ID_Familie' => $value->ID_Familie, 'JmenoFamilie' => $value->JmenoFamilie,'JmenoDona' => $value2->full_name));
 				}
 			}
-		}/*
+		}
 		foreach($results as &$result) {
 			$members = userModel::where('familia_id', $result['ID_Familie'])->count();
 			$result['members'] = $members;
 		}
 		unset($result);
-*/
+		
         return view('familias')->with('results', $results);
 	}
 }
