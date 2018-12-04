@@ -17,10 +17,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>23.2.1997</td>
-                <td>Území bylo přebráno rodinou xy</td>
-            </tr>
+            @if(!empty($members))
+                @foreach($lands as $member)
+                    <tr>
+                        <th>{{$member->Jmeno}}</th>
+                        <th>{{$member->JmenoFamilie}}</th>
+                        <th>{{$member->Vek}}</th>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
     </table>
 </div>
