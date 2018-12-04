@@ -43,7 +43,7 @@ class FamiliasController extends Controller
 			return view('no-permission');
 		}
 
-		$usersAndPermissions = DB::select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
+		$usersAndPermissions = DB::connection('vutfitmafie')->select('SELECT full_name, permission FROM users WHERE familia_id = 2', [1]);
 
 		return view('familia-editing')->with('users', $users);
 	}
