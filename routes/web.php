@@ -73,7 +73,7 @@ Route::post('/create-familia', 'FamiliasController@createNew');
 
 Route::post('/create-land', 'LandsController@createNew');
 
-Route::post('/delete-familia', 'FamiliasController@deleteFamilia')
+Route::post('/delete-familia', 'FamiliasController@deleteFamilia');
 
 Route::get('/no-permission', function() {
 	session_start();
