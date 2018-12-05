@@ -13,9 +13,9 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6 style="padding-top: 20px">Don</h6>
 	<select class="form-control" id="sel1">
-		@if(!empty($result->freeUsers))
+		@if(!empty($freeUsers))
 			<option>Jsemtu</option>
-			@foreach($result->freeUsers as $user)
+			@foreach($freeUsers as $user)
 	    		<option>{{$user->full_name}}</option>
 	    	@endforeach
 	    @endif
@@ -28,9 +28,9 @@
 	<h6>Majitel (volitelné)</h6>
 	<select class="form-control" id="sel1">
 	    <option>Bez majitele</option>
-		@if(!empty($result->familias))
+		@if(!empty($familias))
 			<option>Jsemtu</option>
-			@foreach($result->familias as $familia)
+			@foreach($familias as $familia)
 	    		<option>{{$familia->JmenoFamilie}}</option>
 	    	@endforeach
 	    @endif
@@ -44,8 +44,8 @@
 	<hr>
 	<h6 style="padding-top: 20px">Zrušit familii</h6>
 	<select class="form-control" id="sel1">
-		@if(!empty($result->familias))
-			@foreach($result->familias as $familia)
+		@if(!empty($familias))
+			@foreach($familias as $familia)
 	    		<option>{{$familia->JmenoFamilie}}</option>
 	    	@endforeach
 	    @endif

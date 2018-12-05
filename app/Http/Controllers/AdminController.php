@@ -22,12 +22,8 @@ class AdminController extends Controller
             $familias = DB::select("SELECT ID_Familie, JmenoFamilie FROM Familie", [1]);
             $freeUsers = DB::select("SELECT id, full_name FROM users WHERE familia_id IS NULL");
 
-            $result = [
-                'familias' => $familias,
-                'freeUsers' => $freeUsers
-            ];
 
-            return view('admin')->with('result', $result);
+            return view('admin')->with('familias', $familias)->with('freeUsers', $freeUsers);
         }
     }
 
