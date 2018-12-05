@@ -10,6 +10,7 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;">
 	<form action="createNewFamilia" method="post">
+    	@csrf
 		<h4 style="padding-top: 20px;">Přidat familii</h4>
 		<input class="form-control" id="myInput" type="text" placeholder="Jméno familie" name="familia_name">
 		<h6 style="padding-top: 20px">Don</h6>
