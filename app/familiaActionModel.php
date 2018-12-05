@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CProvadiK extends Model
+class familiaActionModel extends Model
 {
     /**
      * tabulka spojena s modelem
      */
-    protected $table = 'CProvadiK';
-    public $timestamps = false;
+    protected $table = 'CinnostFamilii';
+    protected $primaryKey = 'id';
 }

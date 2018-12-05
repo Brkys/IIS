@@ -13,7 +13,7 @@ class LandsController extends Controller
             return redirect('home')->with('openLogin', true);
         }
 
-		$lands = DB::select('SELECT Adresa, JmenoFamilie FROM Uzemi INNER JOIN Familie ON Familie.ID_Familie=Uzemi.Majitel', [1]);
+		$lands = DB::select('SELECT Adresa, JmenoFamilie FROM Uzemi LEFT JOIN Familie ON Familie.ID_Familie=Uzemi.Majitel', [1]);
 
         return view('lands')->with('lands', $lands);
     }

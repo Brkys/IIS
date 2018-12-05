@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\criminal;
+use App\familiaActionModel;
 
 class CreateCriminalController extends Controller
 {
@@ -42,7 +43,12 @@ class CreateCriminalController extends Controller
             $criminal->DatumUkonceni = $req->input('end_date');
             $criminal->save();
 
-            return view('create-criminal')->with('lands', $lands);
+            $familiaAction = new familiaActionModel();
+            $familiaAction->ID_Familie = $_SESSION['familia'];
+            $familiaAction->ID_Cinnosti = $criminal->ID_Cinnosti;
+            $familiaAction->save();
+
+            return redirect('create-criminal');
         }
     }
 
