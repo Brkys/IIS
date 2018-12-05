@@ -24,7 +24,7 @@ class AssignCriminalController extends Controller
             }
 
             $usersAndPermissions = DB::select("SELECT id, full_name, permission FROM users WHERE familia_id = ".$_SESSION['familia'], [1]);
-            $actions = DB::select("SELECT Kriminalni_cinnost.ID_Cinnosti AS ID, TypCinnosti FROM Kriminalni_cinnost INNER JOIN CinnostFamilii ON Kriminalni_cinnost.ID_Cinnosti=CinnostFamilii.ID_Cinnosti WHERE familia_id = ".$_SESSION['familia'], [1]);
+            $actions = DB::select("SELECT Kriminalni_cinnost.ID_Cinnosti AS ID, TypCinnosti FROM Kriminalni_cinnost INNER JOIN CinnostFamilii ON Kriminalni_cinnost.ID_Cinnosti=CinnostFamilii.ID_Cinnosti WHERE ID_Familie = ".$_SESSION['familia'], [1]);
 
             return view('assign-criminal')->with('users', $usersAndPermissions)->with('actions', $actions);
             }
