@@ -52,10 +52,13 @@ class AdminController extends Controller
         $newDon->familia_id = $newFamilia->ID_Familie;
         $newDon->save();
 
+        $familia_name = $newFamilia->JmenoFamilie;
+        $don_name = $newDon->full_name;
+
         $new = new newsModel();
         $new->date = date("Y-m-d H:i:s");
         $new->title = "Nová familie";
-        $new->content = "Vznikla familie $newFamilie->JmenoFamilie, jejím donem je $newDon->full_name";
+        $new->content = "Vznikla familie $familia_name, jejím donem je $don_name";
         $new->save();
     }
 
