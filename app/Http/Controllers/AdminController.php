@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Familie;
+use App\userModel;
+use App\newsModel;
+
 class AdminController extends Controller
 {
     public function admin() {
@@ -25,6 +29,35 @@ class AdminController extends Controller
 
             return view('admin')->with('familias', $familias)->with('freeUsers', $freeUsers);
         }
+    }
+
+    public function createNewFamilia(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 5){
+            return redirect('no-permission');
+        }
+
+        $newFamilia = new Familie();
+        $newFamilia->JmenoFamilie = $req->input('familia_name');
+        $newFamilia->ID_Dona = $req->input('don_id');
+        $newFamilia->save();
+
+        $newFamiliaId = DB::select("SELECT ID_Familie FROM Familie WHERE ID_Dona = ".$newFamilia->ID_Dona, [1]);
+
+        $newDon = userModel::find($req->input('don_id'));
+        $newDon->permission = 4;
+        $newDon->familia_id = $newFamiliaId->ID_Familie;
+        $newDon->save();
+
+        $new = new newsModel();
+        $new->date = date("Y-m-d H:i:s");
+        $new->title = "Nová familie";
+        $new->content = "Vznikla familie $newFamilie->JmenoFamilie, jejím donem je $newDon->full_name";
+        $new->save();
     }
 
 }

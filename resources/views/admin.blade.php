@@ -8,20 +8,21 @@
 
 @section('content')
 <div style="padding-top: 100px"></div>
-<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
-	<h4 style="padding-top: 20px;">Přidat familii</h4>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
-	<h6 style="padding-top: 20px">Don</h6>
-	<select class="form-control" id="sel1">
-		@if(!empty($freeUsers))
-			<option>Jsemtu</option>
-			@foreach($freeUsers as $user)
-	    		<option>{{$user->full_name}}</option>
-	    	@endforeach
-	    @endif
-	</select>
-	<div style="padding-top: 20px"></div>
-	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
+<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;">
+	<form action="createNewFamilia" method="post">
+		<h4 style="padding-top: 20px;">Přidat familii</h4>
+		<input class="form-control" id="myInput" type="text" placeholder="Jméno familie" name="familia_name">
+		<h6 style="padding-top: 20px">Don</h6>
+		<select class="form-control" id="sel1" name="don_id">
+			@if(!empty($freeUsers))
+				@foreach($freeUsers as $user)
+		    		<option value="{{$user->id}}">{{$user->full_name}}</option>
+		    	@endforeach
+		    @endif
+		</select>
+		<div style="padding-top: 20px"></div>
+		<button type="submit" class="btn btn-primary btn-block" name="createNewFamilia">Potvrdit</button>
+	</form>
 	<hr>
 	<h4 style="padding-top: 20px;">Přidat území</h4>
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno území">
