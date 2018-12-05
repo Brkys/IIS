@@ -25,7 +25,7 @@ class AdminController extends Controller
             $result = [
                 'familias' => $familias,
                 'freeUsers' => $freeUsers
-            ]
+            ];
 
             return view('admin')->with('result', $result);
         }
