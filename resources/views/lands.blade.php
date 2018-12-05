@@ -16,14 +16,12 @@
             </tr>
         </thead>
         <tbody>
-            @if(!empty($lands->Adresa))
-                @foreach($lands as $land)
-                    <tr>
-                        <td>{{$land->Adresa}}</td>
-                        <td>{{$land->JmenoFamilie}}</td>
-                    </tr>
-                @endforeach
-            @endif
+            @foreach($lands as $land)
+                <tr>
+                    <td>{{$land->Adresa}}</td>
+                    <td>{{$land->JmenoFamilie}}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
