@@ -101,11 +101,12 @@ class AdminController extends Controller
         }
 
         $familiaToDelete = Familie::find($req->input('familia_id'));
-        $usersInFamilia = userModel::where('familia_id', $req->input('familia_id'));
+        $usersInFamilia =  DB::select("SELECT id FROM users WHERE familia_id = ".$req->input('familia_id'));
         foreach ($usersInFamilia as $user) {
-            $user->familia_id = NULL;
-            $user->permission = -1;
-            $user->save();
+            $userToUpdate = userModel::find($user->id);
+            $userToUpdate->familia_id = NULL;
+            $userToUpdate->permission = -1;
+            $userToUpdate->save();
         }
         $familiaToDelete->delete();
         return redirect('admin');
