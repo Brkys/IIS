@@ -47,6 +47,7 @@
 	<div style="padding-top: 20px"></div>
 	<hr>
 	<form action="deleteFamilia" method="post">
+		@csrf
 		<h6 style="padding-top: 20px">Zrušit familii</h6>
 		<select class="form-control" id="sel1" name="familia_id">
 			@if(!empty($familias))
