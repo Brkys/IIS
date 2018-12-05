@@ -9,7 +9,7 @@
 @section('content')
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
-	<form action="create-criminal" method="post">
+	<form action="createCriminal" method="post">
     	@csrf
 	    <h4 style="padding-top: 20px;">Území</h4>
 		<select class="form-control" id="sel1" name="land_id">
@@ -27,7 +27,7 @@
 			<input class="form-control" id="myInput" type="text" placeholder="Datum" name="end_date"> 
 	    </div>
 		<div style="padding-top: 20px"></div>
-		<button type="submit" class="btn btn-primary btn-block" name="create-criminal">Potvrdit</button>
+		<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Potvrdit</button>
 	</form>
 <div style="padding-top: 20px"></div>
 @endsection

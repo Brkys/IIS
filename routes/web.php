@@ -71,7 +71,9 @@ Route::post('/kick', 'FamiliasController@kick');
 
 Route::post('/createNewFamilia', 'AdminController@createNewFamilia');
 
-Route::post('/createNewLand', 'AdminController@createNewLand');
+Route::post('/createCriminal', 'CreateCriminalController@createCriminal');
+
+Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
 Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 

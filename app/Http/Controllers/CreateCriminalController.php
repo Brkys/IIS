@@ -24,7 +24,7 @@ class CreateCriminalController extends Controller
         }
     }
 
-    public function create-criminal(Request $req)
+    public function createCriminal(Request $req)
     {
         session_start();
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
