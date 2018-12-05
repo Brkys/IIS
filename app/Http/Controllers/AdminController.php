@@ -80,13 +80,34 @@ class AdminController extends Controller
         $newLand->Rozloha = $req->input('land_size');
         $newLand->save();
 
-        $landSize = $newLand->Rozloha;
+        $landSize = $newLand->Adresa;
 
         $new = new newsModel();
         $new->date = date("Y-m-d H:i:s");
         $new->title = "Nové území";
         $new->content = "Vzniklo nové území s adresou $landSize";
         $new->save();
+        return redirect('admin');
+    }
+
+    public function deleteFamilia(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 5){
+            return redirect('no-permission');
+        }
+
+        $familiaToDelete = Familie::find($req->input('familia_id'));
+        $usersInFamilia = userModel::where('familia_id', $req->input('familia_id'));
+        foreach ($usersInFamilia as $user) {
+            $user->familia_id = NULL;
+            $user->permission = -1;
+            $user->save();
+        }
+        $familiaToDelete->delete();
         return redirect('admin');
     }
 }

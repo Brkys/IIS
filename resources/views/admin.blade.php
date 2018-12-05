@@ -25,7 +25,7 @@
 		<button type="submit" class="btn btn-primary btn-block" name="createNewFamilia">Potvrdit</button>
 	</form>
 	<hr>
-	<form action="createNewLand" onsubmit="checkInput()" method="post" name="land_adding">
+	<form action="createNewLand" onsubmit="return checkInput()" method="post" name="land_adding">
 		@csrf
 		<h4 style="padding-top: 20px;">Přidat území</h4>
 		<input class="form-control" id="myInput" type="text" placeholder="Jméno území" name="land_name">
@@ -33,7 +33,6 @@
 		<select class="form-control" id="sel1" name="land_owner">
 		    <option value="NULL">Bez majitele</option>
 			@if(!empty($familias))
-				<option>Jsemtu</option>
 				@foreach($familias as $familia)
 		    		<option value="{{$familia->ID_Familie}}">{{$familia->JmenoFamilie}}</option>
 		    	@endforeach
@@ -47,27 +46,29 @@
 	</form>
 	<div style="padding-top: 20px"></div>
 	<hr>
-	<h6 style="padding-top: 20px">Zrušit familii</h6>
-	<select class="form-control" id="sel1">
-		@if(!empty($familias))
-			@foreach($familias as $familia)
-	    		<option>{{$familia->JmenoFamilie}}</option>
-	    	@endforeach
-	    @endif
-	</select>
-    <div style="padding-top: 20px"></div>
-	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
-	<!-- CONSIGLIARE != DON -->
-<script type="text/javascript">
-function checkInput()
-{
-  	var x=document.forms["land_adding"]["land_size"].value;
-  	if (isNaN(x)) 
-    {
-    	alert("Rozloha území musí být číslo!");
-    	return false;
+	<form action="deleteFamilia" method="post">
+		<h6 style="padding-top: 20px">Zrušit familii</h6>
+		<select class="form-control" id="sel1" name="familia_id">
+			@if(!empty($familias))
+				@foreach($familias as $familia)
+		    		<option value="{{$familia->ID_Familie}}">{{$familia->JmenoFamilie}}</option>
+		    	@endforeach
+		    @endif
+		</select>
+	    <div style="padding-top: 20px"></div>
+		<button type="button" class="btn btn-primary btn-block" name="deleteFamilia">Potvrdit</button>
+	</form>
+
+	<script type="text/javascript">
+	function checkInput()
+	{
+	  	var x=document.forms["land_adding"]["land_size"].value;
+	  	if (isNaN(x)) 
+	    {
+	    	alert("Rozloha území musí být číslo!");
+	    	return false;
+		}
 	}
-}
-</script>
+	</script>
 </div>
 @endsection
