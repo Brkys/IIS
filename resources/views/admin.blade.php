@@ -57,7 +57,7 @@
 		    @endif
 		</select>
 	    <div style="padding-top: 20px"></div>
-		<button type="button" class="btn btn-primary btn-block" name="deleteFamilia">Potvrdit</button>
+		<button type="submit" class="btn btn-primary btn-block" name="deleteFamilia">Potvrdit</button>
 	</form>
 
 	<script type="text/javascript">
