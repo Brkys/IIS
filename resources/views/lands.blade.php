@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            @if(!empty($lands))
+            @if(!empty($lands->Adresa))
                 @foreach($lands as $land)
                     <tr>
                         <td>{{$land->Adresa}}</td>
