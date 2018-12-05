@@ -46,11 +46,10 @@ class AdminController extends Controller
         $newFamilia->ID_Dona = $req->input('don_id');
         $newFamilia->save();
 
-        $newFamiliaId = DB::select("SELECT ID_Familie FROM Familie WHERE ID_Dona = ".$newFamilia->ID_Dona, [1]);
 
         $newDon = userModel::find($req->input('don_id'));
         $newDon->permission = 4;
-        $newDon->familia_id = $newFamiliaId;
+        $newDon->familia_id = $newFamilia->ID_Familie;
         $newDon->save();
 
         $new = new newsModel();
