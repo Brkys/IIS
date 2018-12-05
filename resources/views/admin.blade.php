@@ -13,10 +13,11 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno familie">
 	<h6 style="padding-top: 20px">Don</h6>
 	<select class="form-control" id="sel1">
-	    <option>User1</option>
-	    <option>User2</option>
-	    <option>User3</option>
-	    <option>User4</option>
+		@if(!empty($result->freeUsers))
+			@foreach($result->freeUsers as $user)
+	    		<option>{{$user->full_name}}</option>
+	    	@endforeach
+	    @endif
 	</select>
 	<div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
@@ -25,10 +26,12 @@
 	<input class="form-control" id="myInput" type="text" placeholder="Jméno území">
 	<h6>Majitel (volitelné)</h6>
 	<select class="form-control" id="sel1">
-	    <option>Familia1</option>
-	    <option>Familia2</option>
-	    <option>Familia3</option>
-	    <option>Familia4</option>
+	    <option>Bez majitele</option>
+		@if(!empty($result->familias))
+			@foreach($result->familias as $familia)
+	    		<option>{{$familia->JmenoFamilie}}</option>
+	    	@endforeach
+	    @endif
 	</select>
 	<h6 style="padding-top: 20px">Adresa</h6>
 	<input class="form-control" id="myInput" type="text" placeholder="Adresa">
@@ -39,10 +42,11 @@
 	<hr>
 	<h6 style="padding-top: 20px">Zrušit familii</h6>
 	<select class="form-control" id="sel1">
-	    <option>User1</option>
-	    <option>User2</option>
-	    <option>User3</option>
-	    <option>User4</option>
+		@if(!empty($result->familias))
+			@foreach($result->familias as $familia)
+	    		<option>{{$familia->JmenoFamilie}}</option>
+	    	@endforeach
+	    @endif
 	</select>
     <div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>

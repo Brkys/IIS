@@ -69,6 +69,10 @@ Route::post('/degrade', 'FamiliasController@degrade');
 
 Route::post('/kick', 'FamiliasController@kick');
 
+Route::post('/create-familia', 'FamiliasController@createNew');
+
+Route::post('/create-land', 'LandsController@createNew');
+
 Route::get('/no-permission', function() {
 	session_start();
 	return view('no-permission');
