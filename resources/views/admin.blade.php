@@ -52,7 +52,9 @@
 		<select class="form-control" id="sel1" name="familia_id">
 			@if(!empty($familias))
 				@foreach($familias as $familia)
-		    		<option value="{{$familia->ID_Familie}}">{{$familia->JmenoFamilie}}</option>
+					@if($familia->ID_Dona !== NULL)
+		    			<option value="{{$familia->ID_Familie}}">{{$familia->JmenoFamilie}}</option>
+		    		@endif
 		    	@endforeach
 		    @endif
 		</select>

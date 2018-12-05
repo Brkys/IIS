@@ -27,7 +27,7 @@ class AdminController extends Controller
         else 
         {
 
-            $familias = DB::select("SELECT ID_Familie, JmenoFamilie FROM Familie", [1]);
+            $familias = DB::select("SELECT ID_Familie, JmenoFamilie, ID_Dona FROM Familie", [1]);
             $freeUsers = DB::select("SELECT id, full_name FROM users WHERE familia_id IS NULL");
 
 
@@ -104,29 +104,14 @@ class AdminController extends Controller
         }
 
         $familiaToDelete = Familie::find($req->input('familia_id'));
-        $usersInFamilia =  DB::select("SELECT id FROM users WHERE familia_id = ".$req->input('familia_id'));
-        $invitationFromFamilia = DB::select("SELECT id FROM PozvankyDoFamilii WHERE ID_Familie = ".$req->input('familia_id'));
-        $operations = DB::select("SELECT id FROM OperaceNaUzemi WHERE ID_Familie = ".$req->input('familia_id'));
-        $familiaActions = DB::select("SELECT id FROM CinnostFamilii WHERE ID_Familie = ".$req->input('familia_id'));
         foreach ($usersInFamilia as $user) {
             $userToUpdate = userModel::find($user->id);
             $userToUpdate->familia_id = NULL;
             $userToUpdate->permission = -1;
             $userToUpdate->save();
         }
-        foreach ($invitationFromFamilia as $invitation) {
-            $invitationToDelete = Invitation::find($invitation->id);
-            $invitationToDelete->delete();
-        }
-        foreach ($operations as $operation) {
-            $userToUpdate = operationModel::find($operation->id);
-            $userToUpdate->delete();
-        }
-        foreach ($familiaActions as $action) {
-            $action = familiaActionsModel::find($action->id);
-            $action->delete();
-        }
-        $familiaToDelete->delete();
+        $familiaToDelete->ID_Dona = NULL;
+        $familiaToDelete->save();
         return redirect('admin');
     }
 }
