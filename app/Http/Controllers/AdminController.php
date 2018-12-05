@@ -16,16 +16,19 @@ class AdminController extends Controller
         else if($_SESSION['permission'] !== 5){
             return redirect('no-permission');
         }
+        else 
+        {
 
-        $familias = DB::select("SELECT ID_Familie, JmenoFamilie FROM Familie", [1]);
-        $freeUsers = DB::select("SELECT id, full_name FROM users WHERE familia_id IS NULL");
+            $familias = DB::select("SELECT ID_Familie, JmenoFamilie FROM Familie", [1]);
+            $freeUsers = DB::select("SELECT id, full_name FROM users WHERE familia_id IS NULL");
 
-        $result = [
-            'familias' => $familias,
-            'freeUsers' => $freeUsers
-        ]
+            $result = [
+                'familias' => $familias,
+                'freeUsers' => $freeUsers
+            ]
 
-        else return view('admin')->with('result', $result);
+            return view('admin')->with('result', $result);
+        }
     }
 
 }
