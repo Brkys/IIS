@@ -87,6 +87,6 @@ class AdminController extends Controller
         $new->title = "Nové území";
         $new->content = "Vzniklo nové území s adresou $landSize";
         $new->save();
-        return redirect('admin')
+        return redirect('admin');
     }
 }
