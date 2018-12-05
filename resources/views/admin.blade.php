@@ -25,23 +25,26 @@
 		<button type="submit" class="btn btn-primary btn-block" name="createNewFamilia">Potvrdit</button>
 	</form>
 	<hr>
-	<h4 style="padding-top: 20px;">Přidat území</h4>
-	<input class="form-control" id="myInput" type="text" placeholder="Jméno území">
-	<h6>Majitel (volitelné)</h6>
-	<select class="form-control" id="sel1">
-	    <option>Bez majitele</option>
-		@if(!empty($familias))
-			<option>Jsemtu</option>
-			@foreach($familias as $familia)
-	    		<option>{{$familia->JmenoFamilie}}</option>
-	    	@endforeach
-	    @endif
-	</select>
-	<h6 style="padding-top: 20px">Adresa</h6>
-	<input class="form-control" id="myInput" type="text" placeholder="Adresa">
-	<h6 style="padding-top: 20px">Rozloha v m^2</h6>
-	<input class="form-control" id="myInput" type="text" placeholder="Rozloha"> <!-- check čisla -->
-	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
+	<form action="createNewLand" onsubmit="checkInput()" method="post" name="land_adding">
+		@csrf
+		<h4 style="padding-top: 20px;">Přidat území</h4>
+		<input class="form-control" id="myInput" type="text" placeholder="Jméno území" name="land_name">
+		<h6>Majitel (volitelné)</h6>
+		<select class="form-control" id="sel1" name="land_owner">
+		    <option value="NULL">Bez majitele</option>
+			@if(!empty($familias))
+				<option>Jsemtu</option>
+				@foreach($familias as $familia)
+		    		<option value="{{$familia->ID_Familie}}">{{$familia->JmenoFamilie}}</option>
+		    	@endforeach
+		    @endif
+		</select>
+		<h6 style="padding-top: 20px">Adresa</h6>
+		<input class="form-control" id="myInput" type="text" placeholder="Adresa" name="land_address">
+		<h6 style="padding-top: 20px">Rozloha v m^2</h6>
+		<input class="form-control" id="myInput" type="text" placeholder="Rozloha" name="land_size"> <!-- check čisla -->
+		<button type="submit" class="btn btn-primary btn-block" name="createNewLand">Potvrdit</button>
+	</form>
 	<div style="padding-top: 20px"></div>
 	<hr>
 	<h6 style="padding-top: 20px">Zrušit familii</h6>
@@ -55,6 +58,16 @@
     <div style="padding-top: 20px"></div>
 	<button type="button" class="btn btn-primary btn-block">Potvrdit</button>
 	<!-- CONSIGLIARE != DON -->
-
+<script type="text/javascript">
+function checkInput()
+{
+  	var x=document.forms["land_adding"]["land_size"].value;
+  	if (isNaN(x)) 
+    {
+    	alert("Rozloha území musí být číslo!");
+    	return false;
+	}
+}
+</script>
 </div>
 @endsection

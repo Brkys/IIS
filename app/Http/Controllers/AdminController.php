@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Familie;
 use App\userModel;
 use App\newsModel;
+use App\landModel;
 
 class AdminController extends Controller
 {
@@ -60,6 +61,32 @@ class AdminController extends Controller
         $new->title = "Nová familie";
         $new->content = "Vznikla familie $familia_name, jejím donem je $don_name";
         $new->save();
+        return redirect('admin')
     }
 
+    public function createNewLand(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 5){
+            return redirect('no-permission');
+        }
+
+        $newLand = new landModel();
+        $newLand->Majitel = $req->input('land_owner');
+        $newLand->Adresa = $req->input('land_address');
+        $newLand->Rozloha = $req->input('land_size');
+        $newLand->save();
+
+        $landSize = $newLand->Rozloha;
+
+        $new = new newsModel();
+        $new->date = date("Y-m-d H:i:s");
+        $new->title = "Nové území";
+        $new->content = "Vzniklo nové území s adresou $landSize";
+        $new->save();
+        return redirect('admin')
+    }
 }
