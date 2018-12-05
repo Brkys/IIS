@@ -61,7 +61,7 @@ class AdminController extends Controller
         $new->title = "Nová familie";
         $new->content = "Vznikla familie $familia_name, jejím donem je $don_name";
         $new->save();
-        return redirect('admin')
+        return redirect('admin');
     }
 
     public function createNewLand(Request $req)
