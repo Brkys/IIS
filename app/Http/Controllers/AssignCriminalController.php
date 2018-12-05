@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CProvadiK;
+use Illuminate\Support\Facades\DB;
 
 class AssignCriminalController extends Controller
 {
