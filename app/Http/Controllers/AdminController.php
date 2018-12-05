@@ -11,8 +11,6 @@ use App\userModel;
 use App\newsModel;
 use App\landModel;
 use App\Invitation;
-use App\familiaActionsModel;
-use App\operationModel;
 
 class AdminController extends Controller
 {
@@ -105,11 +103,17 @@ class AdminController extends Controller
 
         $familiaToDelete = Familie::find($req->input('familia_id'));
         $usersInFamilia =  DB::select("SELECT id FROM users WHERE familia_id = ".$req->input('familia_id'));
+        $landsOfFamilia = DB::select("SELECT id FROM Uzemi WHERE familia_id = ".$req->input('familia_id'));
         foreach ($usersInFamilia as $user) {
             $userToUpdate = userModel::find($user->id);
             $userToUpdate->familia_id = NULL;
             $userToUpdate->permission = -1;
             $userToUpdate->save();
+        }
+        foreach ($landsOfFamilia as $land) {
+            $landToChange = landModel::find($land->id);
+            $landToChange->Majitel = NULL;
+            $landToChange->save();
         }
         $familiaToDelete->ID_Dona = NULL;
         $familiaToDelete->save();
