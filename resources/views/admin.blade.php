@@ -14,6 +14,7 @@
 	<h6 style="padding-top: 20px">Don</h6>
 	<select class="form-control" id="sel1">
 		@if(!empty($result->freeUsers))
+			<option>Jsemtu</option>
 			@foreach($result->freeUsers as $user)
 	    		<option>{{$user->full_name}}</option>
 	    	@endforeach
@@ -28,6 +29,7 @@
 	<select class="form-control" id="sel1">
 	    <option>Bez majitele</option>
 		@if(!empty($result->familias))
+			<option>Jsemtu</option>
 			@foreach($result->familias as $familia)
 	    		<option>{{$familia->JmenoFamilie}}</option>
 	    	@endforeach
