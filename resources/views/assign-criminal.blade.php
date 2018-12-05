@@ -8,14 +8,16 @@
 
 @section('content')
 <div style="padding-top: 100px"></div>
-<div class="container" style="; width: 80% !important; background-color: white !important;"> 
-	<h4 style="padding-top: 20px;">Kriminální činnost</h4>
-	<select style="width: 100%;">
-	    <option>činnost 1</option>
-	    <option>činnost 2</option>
-    	<option>činnost 3</option>
-  	</select>
-	<div style="padding-top: 20px"></div>
+<div class="container" style="; width: 80% !important; background-color: white !important;">
+  <form name="assignCriminal" method="post">
+    @csrf
+  	<h4 style="padding-top: 20px;">Kriminální činnost</h4>
+      <select style="width: 100%;" name="action_id">
+      @foreach($actions as $action)
+  	    <option value="{{$action->ID}}">{{$action->ID}} - {{$action->TypCinnosti}}</option>
+      @endforeach
+    </select>
+  	<div style="padding-top: 20px"></div>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
@@ -25,13 +27,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Test test</td>
-                <td><button type="button" class="btn btn-primary">Přiřadit</button></td>
-            </tr>
+          @foreach($users as $user)
+            @if($user->permission < 4)
+              <tr>
+                  <td>{{$user->full_name}}</td>
+                  <td>
+                    <input type="hidden" value="{{$user->id}}" name="user_id">
+                    <button type="submit" class="btn btn-primary" name="assignCriminal">Přiřadit</button>
+                  </td>
+              </tr>
+            @endif
+          @endforeach
         </tbody>
     </table>
-	<div style="padding-top: 20px"></div>
+  </form> 
+  <div style="padding-top: 20px"></div>
 </div>
 
 <script>

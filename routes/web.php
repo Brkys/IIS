@@ -77,6 +77,8 @@ Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
 Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
+Route::post('/assignCriminal', 'AssignCriminalController@assignCriminal');
+
 Route::get('/no-permission', function() {
 	session_start();
 	return view('no-permission');
