@@ -50,7 +50,7 @@ class AdminController extends Controller
 
         $newDon = userModel::find($req->input('don_id'));
         $newDon->permission = 4;
-        $newDon->familia_id = $newFamiliaId->ID_Familie;
+        $newDon->familia_id = $newFamiliaId;
         $newDon->save();
 
         $new = new newsModel();
