@@ -77,7 +77,7 @@ class loginController extends Controller
                     array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name, 'ID_Inv' => $invID));
                 }
             }
-            //todo
+            //todod
             return view('account')->with('invites', $invites);
         }
     }
