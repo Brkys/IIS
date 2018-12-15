@@ -78,7 +78,7 @@
     </table>
     @endif
     <div style="padding-top: 20px"></div>
-	<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Potvrdit</button>
+	<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Uložit změny</button>
 	<div style="padding-top: 20px"></div>
 </div>
 @endsection
