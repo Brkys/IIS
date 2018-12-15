@@ -79,9 +79,9 @@ class loginController extends Controller
                 }
             }
             $count = DB::select("SELECT COUNT(*) AS count FROM CProvadiK WHERE ID_Clena = ".$_SESSION['id'], [1]);
-            $name = DB::select("SELECT name, full_name FROM users WHERE id = ".$_SESSION['id'], [1]);
-            
-            return view('account')->with('invites', $invites)->with('crimCount', $count)->with('userName', $name);
+            $user = DB::select("SELECT name, full_name FROM users WHERE id = ".$_SESSION['id'], [1]);
+
+            return view('account')->with('invites', $invites)->with('count', $count)->with('user', $user);
         }
     }
 
