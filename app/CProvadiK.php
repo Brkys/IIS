@@ -10,5 +10,4 @@ class CProvadiK extends Model
      * tabulka spojena s modelem
      */
     protected $table = 'CProvadiK';
-    public $timestamps = false;
 }
