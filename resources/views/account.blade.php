@@ -32,7 +32,7 @@
 
 	@if($_SESSION['permission'] < 3)		
 		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
-		<h6 style="padding-top: 20px">{{ $count->count }}</h6> 
+		<h6 style="padding-top: 20px">{{ $count[0]->count }}</h6> 
 	@endif	
 	@if($_SESSION['permission'] === -1)
 	<h4 style="padding-top: 20px;">Pozvánky</h4>
