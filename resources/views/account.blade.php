@@ -10,7 +10,12 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Jméno</h4>
-	{{ $user[0]->full_name }}
+	<div class="input-group mb-3">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2">
+	  	<div class="input-group-append">
+	    	<button class="btn btn-outline-secondary" type="button">Button</button>
+	  	</div>
+	</div>
 	<h6 style="padding-top: 20px">Přezdívka</h6>
 	{{ $user[0]->name }}
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
