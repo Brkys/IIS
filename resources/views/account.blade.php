@@ -10,9 +10,9 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Jméno</h4>
-	{{ $user->full_name }}
+	{{ $user[0]->full_name }}
 	<h6 style="padding-top: 20px">Přezdívka</h6>
-	{{ $user->name }}
+	{{ $user[0]->name }}
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 	@if($_SESSION['permission'] === 5)
 		Administrátor
