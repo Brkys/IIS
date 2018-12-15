@@ -5,6 +5,16 @@
 @section('navpanel')
 	@parent
 @endsection
+@php if(empty(Session::get('criminalInput'))){
+	$criminalInput = array(
+		'activity_content' => '',
+		'end_date' => ''
+	);
+  }
+  else {
+	$criminalInput = Session::get('criminalInput');
+  }
+@endphp
 
 @section('content')
 <div style="padding-top: 100px"></div>
@@ -18,13 +28,13 @@
     	@endforeach
 		</select>
 		<h4 style="padding-top: 20px;">Popis činnosti</h4>
-		<input class="form-control" id="myInput" type="text" placeholder="Typ činnosti" name="activity_content"> 
+		<input class="form-control" id="myInput" type="text" value="{{$criminalInput['activity_content']}}" placeholder="Typ činnosti" name="activity_content"> 
 		<h6 style="padding-top: 20px">Datum ukončení</h6>
 	    <div class="input-group mb-3">
 	        <div class="input-group-prepend">
 	            <span class="input-group-text">YYYY-MM-DD</span>
 	        </div>
-			<input class="form-control" id="myInput" type="text" placeholder="Datum" name="end_date"> 
+			<input class="form-control" id="myInput" type="text" value="{{$criminalInput['end_date']}}" placeholder="Datum" name="end_date"> 
 	    </div>
 		<div style="padding-top: 20px"></div>
 		<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Potvrdit</button>

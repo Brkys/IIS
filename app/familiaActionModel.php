@@ -11,4 +11,5 @@ class familiaActionModel extends Model
      */
     protected $table = 'CinnostFamilii';
     protected $primaryKey = 'id';
+    public $timestamps = false;
 }
