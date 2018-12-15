@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\criminal;
 use App\familiaActionModel;
+use Validator;
 
 class CreateCriminalController extends Controller
 {
