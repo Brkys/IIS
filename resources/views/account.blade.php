@@ -12,12 +12,11 @@
 	<h4 style="padding-top: 20px;">Jméno</h4>
 	<div class="input-group mb-3">
 	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2">
-	  	<div class="input-group-append">
-	    	<button class="btn btn-outline-secondary" type="button">Button</button>
-	  	</div>
 	</div>
 	<h6 style="padding-top: 20px">Přezdívka</h6>
-	{{ $user[0]->name }}
+	<div class="input-group mb-3">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->name }}" aria-label="Přezdívka..." aria-describedby="basic-addon2">
+	</div>
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 	@if($_SESSION['permission'] === 5)
 		Administrátor
@@ -79,5 +78,7 @@
     </table>
     @endif
     <div style="padding-top: 20px"></div>
+	<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Potvrdit</button>
+	<div style="padding-top: 20px"></div>
 </div>
 @endsection
