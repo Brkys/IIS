@@ -55,7 +55,7 @@ class CreateCriminalController extends Controller
 
             //odstranovani spatnych vstupu
             $type = $req->input('activity_content');
-            $validatorType = Validator::make($req->only('activity-content'), ['activity-content' => 'required|max:60']);
+            $validatorType = Validator::make($req->only('activity_content'), ['activity_content' => 'required|max:60']);
             if($validatorType->fails()){
                 $type = '';
             }
