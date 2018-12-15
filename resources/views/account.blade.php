@@ -10,9 +10,13 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
 	<h4 style="padding-top: 20px;">Jméno</h4>
-	<!-- jméno -->
+	<div class="input-group mb-3">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2">
+	</div>
 	<h6 style="padding-top: 20px">Přezdívka</h6>
-	<!-- přezdívka -->
+	<div class="input-group mb-3">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->name }}" aria-label="Přezdívka..." aria-describedby="basic-addon2">
+	</div>
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 	@if($_SESSION['permission'] === 5)
 		Administrátor
@@ -32,7 +36,7 @@
 
 	@if($_SESSION['permission'] < 3)		
 		<h5 style="padding-top: 20px">Počet splněných kriminálních činností</h5>
-		<h6 style="padding-top: 20px">156165465</h6> 
+		<h6 style="padding-top: 20px">{{ $count[0]->count }}</h6> 
 	@endif	
 	@if($_SESSION['permission'] === -1)
 	<h4 style="padding-top: 20px;">Pozvánky</h4>
@@ -72,7 +76,9 @@
 		@endif
         </tbody>
     </table>
-    <div style="padding-top: 20px"></div>
     @endif
+    <div style="padding-top: 20px"></div>
+	<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Uložit změny</button>
+	<div style="padding-top: 20px"></div>
 </div>
 @endsection

@@ -9,7 +9,7 @@
 @section('content')
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important;"> 
-	<h1>Jméno familie</h1>
+	<h1>{{ $familiaName }}</h1>
 	<h4 style="padding-top: 20px;">Členové</h4>
     <input class="form-control" id="myInput" type="text" placeholder="Vyhledat člena.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">

@@ -7,6 +7,7 @@ use App\Invitation;
 use App\Familie;
 use App\newsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Validator;
 
 class loginController extends Controller
@@ -77,8 +78,10 @@ class loginController extends Controller
                     array_push($invites, array('ID_Familie' => $id, 'JmenoFamilie' => $name, 'ID_Inv' => $invID));
                 }
             }
+            $count = DB::select("SELECT COUNT(*) AS count FROM CProvadiK WHERE ID_Clena = ".$_SESSION['id'], [1]);
+            $user = DB::select("SELECT name, full_name FROM users WHERE id = ".$_SESSION['id'], [1]);
 
-            return view('account')->with('invites', $invites);
+            return view('account')->with('invites', $invites)->with('count', $count)->with('user', $user);
         }
     }
 
