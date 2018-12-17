@@ -47,7 +47,7 @@ Route::get('/create-criminal', 'CreateCriminalController@create');
 
 Route::get('/show-criminal', 'ShowCriminalController@show');
 
-Route::get('/assign-criminal', 'AssignCriminalController@assign');
+Route::get('/assign-criminal', 'AssignCriminalController@assign'); 
 
 Route::get('/free-users', 'FreeUsersController@viewUsers');
 
@@ -77,7 +77,7 @@ Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
 Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
-Route::post('/assignCriminal', 'AssignCriminalController@assignCriminal');
+Route::post('/assign-criminal', 'AssignCriminalController@assignCriminal');  
 
 Route::get('/no-permission', function() {
 	session_start();

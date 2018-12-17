@@ -9,7 +9,7 @@
 @section('content')
 <div style="padding-top: 100px"></div>
 <div class="container" style="; width: 80% !important; background-color: white !important;">
-  <form name="assignCriminal" method="post">
+  <form action="assign-criminal" method="post">
     @csrf
   	<h4 style="padding-top: 20px;">Kriminální činnost</h4>
       <select style="width: 100%;" name="action_id">
