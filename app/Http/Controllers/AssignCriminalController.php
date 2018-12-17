@@ -42,10 +42,10 @@ class AssignCriminalController extends Controller
         }
         else 
         {
-            $newUserAction = new CProvadiK();
+          /*  $newUserAction = new CProvadiK();
             $newUserAction->ID_Clena = $req->input('user_id');
             $newUserAction->ID_Cinnosti = $req->input('action_id');
-            $newUserAction->save();
+            $newUserAction->save();*/
             return redirect('show-criminal');
         }
     }
