@@ -49,7 +49,7 @@
                         <a class="dropdown-item" href="{{ url('lands') }}">Území</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('free-users') }}">Volní uživatelé</a>
-                        <a class="dropdown-item" href="{{ url('') }}">Volní uživatelé</a>
+                        <a class="dropdown-item" href="{{ url('show-alliance') }}">Aliance</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

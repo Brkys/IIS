@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Hlavní stránka')
+@section('title', 'Aliance')
 
 @section('navpanel')
 	@parent
