@@ -36,15 +36,15 @@
 	        </div>
 			<input class="form-control" id="myInput" type="text" value="{{$criminalInput['end_date']}}" placeholder="Datum" name="end_date"> 
 	    </div>
-		@if $errors->any()
-		<div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>  
-                        @endif
+		@if($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>  
+        @endif
 		<div style="padding-top: 20px"></div>
 		<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Potvrdit</button>
 	</form>
