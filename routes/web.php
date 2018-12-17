@@ -83,3 +83,5 @@ Route::get('/no-permission', function() {
 	session_start();
 	return view('no-permission');
 });
+
+Route::get('/show-alliance', 'AlianceController@showAliances')
