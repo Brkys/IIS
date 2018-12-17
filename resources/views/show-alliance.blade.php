@@ -23,8 +23,8 @@
         </thead>
         <tbody>
         	@foreach($familie as $familia)
-                @foreach($notShow as $result)
-                	@if($result->PozvankaOd != $_SESSION['familia'] && !empty($notShow))
+                <!--@foreach($notShow as $result)
+                	@if($result->PozvankaOd != $_SESSION['familia'] && !empty($notShow))-->
 	                <tr>
 	                    <td>{{ $familia->JmenoFamilie }}</td>
 	                    <td>
@@ -32,8 +32,8 @@
 	                        <button type="submit" class="btn btn-primary" name="aliance-request">Nabídnout alianci</button>
 	                    </td>
 	                </tr>
-	                @endif
-                @endforeach
+	                <!--@endif
+                @endforeach-->
             @endforeach
         </tbody>
     </table>
