@@ -46,7 +46,7 @@ class AssignCriminalController extends Controller
             $newUserAction->ID_Clena = $req->input('user_id');
             $newUserAction->ID_Cinnosti = $req->input('action_id');
             $newUserAction->save();
-            return redirect('assign-criminal');
+            return redirect('show-criminal');
         }
     }
 }
