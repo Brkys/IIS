@@ -18,7 +18,7 @@ class AlianceController extends Controller
             return redirect('no-permission');
         }
         $notShow = DB::select("SELECT a.ID_Familie AS PozvankaOd, a.JmenoFamilie AS JmenoOd, b.ID_Familie AS PozvankaPro, b.JmenoFamilie AS JmenoPro
-				FROM PozvankaDoAliance
+				FROM PozvankaDoAliance AS c
 				INNER JOIN Familie as a
 				    ON c.ID_Familie1 = a.ID_Familie
 				INNER JOIN Familie as b
