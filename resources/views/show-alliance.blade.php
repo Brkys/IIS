@@ -24,7 +24,7 @@
         <tbody>
         	@foreach($familie as $familia)
                 @foreach($notShow as $result)
-                	@if($result->PozvankaOd != $_SESSION['familia'] || $result->PozvankaPro != $_SESSION['familia'])
+                	@if(($result->PozvankaOd != $_SESSION['familia'] || $result->PozvankaPro != $_SESSION['familia']) && !empty($notShow))
 	                <tr>
 	                    <td>{{ $familia->JmenoFamilie }}</td>
 	                    <td>
