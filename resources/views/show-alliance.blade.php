@@ -23,17 +23,13 @@
         </thead>
         <tbody>
         	@foreach($familie as $familia)
-                <!--@foreach($notShow as $result)
-                	@if($result->PozvankaOd != $_SESSION['familia'] && !empty($notShow))-->
-	                <tr>
-	                    <td>{{ $familia->JmenoFamilie }}</td>
-	                    <td>
-	                        <input type="hidden" value="{{ $familia->ID_Familie }}" name="familia_id">
-	                        <button type="submit" class="btn btn-primary" name="aliance-request">Nabídnout alianci</button>
-	                    </td>
-	                </tr>
-	                <!--@endif
-                @endforeach-->
+              <tr>
+                  <td>{{ $familia->JmenoFamilie }}</td>
+                  <td>
+                    <input type="hidden" value="{{ $familia->ID_Familie }}" name="familia_id">
+                    <button type="submit" class="btn btn-primary" name="aliance-request">Nabídnout alianci</button>
+                  </td>
+              </tr>
             @endforeach
         </tbody>
     </table>
