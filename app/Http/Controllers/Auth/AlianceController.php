@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\AlianceRequest;
+use App\newsModel;
 
 class AlianceController extends Controller
 {
@@ -44,6 +45,15 @@ class AlianceController extends Controller
         $request->ID_Familie1 = $_SESSION['familia'];
         $request->ID_Familie2 = $req->input('familia_id');
         $request->save();
+
+        $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$_SESSION['familia'])[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$req->input('familia_id'))[0]->JmenoFamilie
+
+		$news = new newsModel();
+		$news->date = date("Y-m-d H:i:s");
+        $news->title = "Aliance";
+        $news->content = "Familie $familiaFrom navrhnula alianci familii $familiaTo.";
+        $news->save();	
 
         return redirect('show-alliance');
     }
