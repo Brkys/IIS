@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\AlianceRequest;
 
 class AlianceController extends Controller
 {
@@ -27,6 +28,24 @@ class AlianceController extends Controller
         $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Familie != ".$_SESSION['familia']);
 
         return view('show-alliance')->with('familie', $familie)->with('notShow', $notShow);
+    }
+
+    public function alianceRequest(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 4){
+            return redirect('no-permission');
+        }
+
+        $request = new AlianceRequest();
+        $request->ID_Familie1 = $_SESSION['familia'];
+        $request->ID_Familie2 = $req->input('familia_id');
+        $request->save();
+
+        return redirect('show-alliance');
     }
 
 }
