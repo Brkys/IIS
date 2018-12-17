@@ -13,7 +13,7 @@
     @csrf
   	<h4 style="padding-top: 20px;">Aliance</h4>
   	<div style="padding-top: 20px"></div>
-    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle jména.." onkeyup="filter()">
+    <input class="form-control" id="myInput" type="text" placeholder="Vyhledat podle familie.." onkeyup="filter()">
     <table class="table table-hover table-dark text-centered" id="filterTable">
         <thead>
             <tr>
@@ -22,13 +22,15 @@
             </tr>
         </thead>
         <tbody>
+        	@foreach($familie as $familia)
               <tr>
-                  <td></td>
+                  <td>{{ $familia->JmenoFamilie }}</td>
                   <td>
-                    <input type="hidden" value="TODO" name="user_id">
+                    <input type="hidden" value="{{ $familia->ID_Familie }}" name="familia_id">
                     <button type="submit" class="btn btn-primary" name="aliance-request">Nabídnout alianci</button>
                   </td>
               </tr>
+            @endforeach
         </tbody>
     </table>
   </form> 
