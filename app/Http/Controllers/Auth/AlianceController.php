@@ -24,7 +24,7 @@ class AlianceController extends Controller
 				INNER JOIN Familie as b
 				    ON c.ID_Familie2 = b.ID_Familie", [1]);
 
-        $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Familie != ".$_SESSION['familia'])
+        $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Familie != ".$_SESSION['familia']);
 
         return view('show-alliance')->with('familie', $familie)->with('notShow', $notShow);
     }
