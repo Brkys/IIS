@@ -75,7 +75,7 @@
           @endif
         </tbody>
     </table>
-    <!--@if(!empty($alianceRequests))-->
+    <@if(!empty($alianceRequests))
     <h4 style="padding-top: 20px;">Aliance</h4>
     <div style="padding-top: 20px"></div>
     <table class="table table-hover table-dark text-centered">
@@ -87,7 +87,7 @@
           </tr>
       </thead>
       <tbody>
-        @foreach($alianceRequests as &request)
+        <!--@foreach($alianceRequests as &request)
           <tr>
             <td>
               {{ $request->JmenoFamilie }}
@@ -107,10 +107,10 @@
               </form>
             </td>
           </tr>
-        @endforeach
+        @endforeach-->
       </tbody>
     </table>
-    <!--@endif-->
+    @endif
     <div style="padding-top: 20px"></div>
 </div>
 
