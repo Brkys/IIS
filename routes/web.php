@@ -89,3 +89,5 @@ Route::post('/aliance-request', 'AlianceController@alianceRequest');
 Route::post('/accept-aliance', 'AlianceController@acceptAliance');
 
 Route::post('/decline-aliance', 'AlianceController@declineAliance');
+
+Route::post('/change-account', 'loginController@changeAccount')

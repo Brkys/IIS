@@ -8,14 +8,15 @@
 
 @section('content')
 <div style="padding-top: 100px"></div>
-<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;"> 
+<div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;">
+	<form action="change-account" method="post">
 	<h4 style="padding-top: 20px;">Jméno</h4>
 	<div class="input-group mb-3">
-	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2" name="fullName">
 	</div>
 	<h6 style="padding-top: 20px">Přezdívka</h6>
 	<div class="input-group mb-3">
-	    <input type="text" class="form-control" placeholder="{{ $user[0]->name }}" aria-label="Přezdívka..." aria-describedby="basic-addon2">
+	    <input type="text" class="form-control" placeholder="{{ $user[0]->name }}" aria-label="Přezdívka..." aria-describedby="basic-addon2" name="nickName">
 	</div>
 	<h6 style="padding-top: 20px">Úroveň účtu</h6>
 	@if($_SESSION['permission'] === 5)
@@ -78,7 +79,8 @@
     </table>
     @endif
     <div style="padding-top: 20px"></div>
-	<button type="submit" class="btn btn-primary btn-block" name="createCriminal">Uložit změny</button>
+	<button type="submit" class="btn btn-primary btn-block" name="change-account">Uložit změny</button>
 	<div style="padding-top: 20px"></div>
+	</form>
 </div>
 @endsection

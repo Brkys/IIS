@@ -141,4 +141,24 @@ class loginController extends Controller
         
         return redirect('news');
     }
+
+
+    public function changeAccount(Request $req){
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);
+        } else {
+            $test = userModel::where('name', '=', $req->input('nickName'));
+            if(!empty($test))
+                return redirect('account');
+
+            $user = userModel::find($_SESSION['id']);
+            $user->full_name = $req->input('fullName');
+            $user->name = $req->input('nickName');
+            $user->save();
+        }
+        
+        return redirect('account');
+
+    }
 }
