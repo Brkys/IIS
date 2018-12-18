@@ -149,7 +149,7 @@ class loginController extends Controller
             return redirect('home')->with('openLogin', true);
         } else {
             $test = userModel::where('name', '=', $req->input('nickName'));
-            if(!empty($test))
+            if(!empty($test) && count($test) > 1)
                 return redirect('account');
 
             $user = userModel::find($_SESSION['id']);
