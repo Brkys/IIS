@@ -95,14 +95,14 @@
             <td>
               <form action="accept-aliance" method="post">
                 @csrf
-                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="id">
+                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="ID_Familie">
                 <button type="submit" class="btn btn-primary" name="accept-aliance">Přijmout</button>
               </form>
             </td>
             <td>
               <form action="decline-aliance" method="post">
                 @csrf
-                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="id">
+                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="ID_Familie">
                 <button type="submit" class="btn btn-danger" name="decline-aliance">Odmítnout</button>
               </form>
             </td>

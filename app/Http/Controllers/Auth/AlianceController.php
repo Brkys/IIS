@@ -79,13 +79,10 @@ class AlianceController extends Controller
             return redirect('no-permission');
         }
 
-        $removeRequest = AlianceRequest::where('ID_Familie1', '=', $req->input('id'))
-                ->where('ID_Familie2', '=', $_SESSION['familia'])
-                ->first();
-        $removeRequest->delete();
+        $removeRequest = DB::delete("DELETE FROM PozvankaDoAliance WHERE ID_Familie1 = ".$req->input('ID_Familie')." AND ID_Familie2 = ".$_SESSION['familia']);
 
         $aliance = new Aliance();
-        $aliance->Aliance1 = $req->input('id');
+        $aliance->Aliance1 = $req->input('ID_Familie');
         $aliance->Aliance2 = $_SESSION['familia'];
         $aliance->DatumZacatku = date("Y-m-d H:i:s");
         $aliance->DatumUkonceni = date("Y-m-d H:i:s");
@@ -93,7 +90,7 @@ class AlianceController extends Controller
         $aliance->save();
 
         $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'])[0]->JmenoFamilie;
-        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('id'))[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('ID_Familie'))[0]->JmenoFamilie;
 
         $news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
@@ -101,7 +98,7 @@ class AlianceController extends Controller
         $news->content = "Familie $familiaTo přijmula požadavek familii $familiaFrom.";
         $news->save();
 
-        redirect('show-alliance');
+        redirect('familia-editing');
     }
 
 	public function declineAliance(Request $req)
@@ -114,13 +111,10 @@ class AlianceController extends Controller
             return redirect('no-permission');
         }
 
-        $removeRequest = AlianceRequest::where('ID_Familie1', '=', $req->input('id'))
-                ->where('ID_Familie2', '=', $_SESSION['familia'])
-                ->first();
-        $removeRequest->delete();
+        $removeRequest = DB::delete("DELETE FROM PozvankaDoAliance WHERE ID_Familie1 = ".$req->input('ID_Familie')." AND ID_Familie2 = ".$_SESSION['familia']);
 
 		$familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'])[0]->JmenoFamilie;
-        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('id'))[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('ID_Familie'))[0]->JmenoFamilie;
 
         $news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
@@ -128,6 +122,6 @@ class AlianceController extends Controller
         $news->content = "Familie $familiaTo odmítnula požadavek familii $familiaFrom.";
         $news->save();
 
-        redirect('show-alliance');
+        redirect('familia-editing');
     }
 }
