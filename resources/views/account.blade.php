@@ -10,6 +10,7 @@
 <div style="padding-top: 100px"></div>
 <div class="container" style="width: 80% !important; background-color: white !important; border-radius: 4 !important;">
 	<form action="change-account" method="post">
+		@csrf
 	<h4 style="padding-top: 20px;">Jméno</h4>
 	<div class="input-group mb-3">
 	    <input type="text" class="form-control" placeholder="{{ $user[0]->full_name }}" aria-label="Celé jméno..." aria-describedby="basic-addon2" name="fullName">
