@@ -29,7 +29,7 @@ class AlianceController extends Controller
 
         $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Dona IS NOT NULL AND ID_Familie != ".$_SESSION['familia']);
         $isInAliance = DB::select("SELECT * FROM Aliance WHERE Aliance1 = ".$_SESSION['familia']." OR Aliance2 = ".$_SESSION['familia']);
-        $aliances = array();
+
         foreach ($isInAliance as $aliance) {
         	if($aliance->Aliance1 == $_SESSION['familia'])
         	{
