@@ -148,10 +148,12 @@ class loginController extends Controller
         if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
             return redirect('home')->with('openLogin', true);
         } else {
-            $test = userModel::where('name', '=', $req->input('nickName'));
-            if(!empty($test) && count($test) > 1)
-                return redirect('account');
-
+            if($req->input('nickName') != "")
+            {
+                $test = userModel::where('name', '=', $req->input('nickName'));
+                if(!empty($test))
+                    return redirect('account');
+            }
             $user = userModel::find($_SESSION['id']);
             $user->full_name = empty($req->input('fullName')) ? $user->full_name : $req->input('fullName');
             $user->name = empty($req->input('nickName')) ? $user->name : $req->input('fullName');
