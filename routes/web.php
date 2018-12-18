@@ -90,4 +90,4 @@ Route::post('/accept-aliance', 'AlianceController@acceptAliance');
 
 Route::post('/decline-aliance', 'AlianceController@declineAliance');
 
-Route::post('/change-account', 'loginController@changeAccount')
+Route::post('/change-account', 'loginController@changeAccount');
