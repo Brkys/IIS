@@ -47,7 +47,7 @@ class AlianceController extends Controller
         $request->save();
 
         $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$_SESSION['familia'])[0]->JmenoFamilie;
-        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$req->input('familia_id'))[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$request->ID_Familie2)[0]->JmenoFamilie;
 
 		$news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
