@@ -75,7 +75,17 @@
           @endif
         </tbody>
     </table>
+    <h4 style="padding-top: 20px;">Aliance</h4>
     <div style="padding-top: 20px"></div>
+    <table class="table table-hover table-dark text-centered">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 60%;">Pozvánka od</th>
+                <th scope="col" style="width: 20%;"></th>
+                <th scope="col" style="width: 20%;"></th>
+            </tr>
+        </thead>
+    </table>
 </div>
 
 <script>
