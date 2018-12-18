@@ -27,7 +27,34 @@ class AlianceController extends Controller
 				INNER JOIN Familie as b
 				    ON c.ID_Familie2 = b.ID_Familie", [1]);
 
+        $
         $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Dona IS NOT NULL AND ID_Familie != ".$_SESSION['familia']);
+        $isInAliance = DB::select("SELECT * FROM Aliance WHERE Aliance1 = ".$_SESSION['familia']." OR Aliance2 = ".$_SESSION['familia']);
+        $aliances = array();
+        foreach ($isInAliance as $aliance) {
+        	if($aliance->Aliance1 == $_SESSION['familia'])
+        	{
+        		$i = 0;
+        		foreach ($familie as $familia) {
+        			if($familia->ID_Familie == $aliance->Aliance2)
+        			{
+        				unset($familie[$i]);
+        			}
+        			$i++;
+        		}
+        	}
+        	else
+        	{
+        		$i = 0;
+        		foreach ($familie as $familia) {
+        			if($familia->ID_Familie == $aliance->Aliance1)
+        			{
+        				unset($familie[$i]);
+        			}
+        			$i++;
+        		}
+        	}
+        }
 
         $iterator = 0;
         foreach ($familie as $familia) {
@@ -95,7 +122,7 @@ class AlianceController extends Controller
         $news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
         $news->title = "Aliance";
-        $news->content = "Familie $familiaTo přijmula požadavek familii $familiaFrom.";
+        $news->content = "Familie $familiaFrom přijmula požadavek familii $familiaTo.";
         $news->save();
 
         redirect('familia-editing');
@@ -119,7 +146,7 @@ class AlianceController extends Controller
         $news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
         $news->title = "Aliance";
-        $news->content = "Familie $familiaTo odmítnula požadavek familii $familiaFrom.";
+        $news->content = "Familie $familiaFrom odmítnula požadavek familii $familiaTo.";
         $news->save();
 
         redirect('familia-editing');
