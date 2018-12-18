@@ -26,7 +26,7 @@ class AlianceController extends Controller
 				INNER JOIN Familie as b
 				    ON c.ID_Familie2 = b.ID_Familie", [1]);
 
-        $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Familie != ".$_SESSION['familia']);
+        $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Dona IS NOT NULL AND ID_Familie != ".$_SESSION['familia']);
 
         return view('show-alliance')->with('familie', $familie)->with('notShow', $notShow);
     }
@@ -46,8 +46,8 @@ class AlianceController extends Controller
         $request->ID_Familie2 = $req->input('familia_id');
         $request->save();
 
-        $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$_SESSION['familia'])[0]->JmenoFamilie;
-        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie != ".$request->ID_Familie2)[0]->JmenoFamilie;
+        $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'])[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$request->ID_Familie2)[0]->JmenoFamilie;
 
 		$news = new newsModel();
 		$news->date = date("Y-m-d H:i:s");
