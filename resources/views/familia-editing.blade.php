@@ -87,7 +87,9 @@
           </tr>
       </thead>
       <tbody>
-        
+        @foreach($alianceRequests as &request)
+          <tr></tr>
+        @endforeach
       </tbody>
     </table>
     @endif
