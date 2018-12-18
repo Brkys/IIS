@@ -75,6 +75,42 @@
           @endif
         </tbody>
     </table>
+    @if(!empty($alianceRequests))
+    <h4 style="padding-top: 20px;">Aliance</h4>
+    <div style="padding-top: 20px"></div>
+    <table class="table table-hover table-dark text-centered">
+      <thead>
+          <tr>
+              <th scope="col" style="width: 60%;">Pozvánka od</th>
+              <th scope="col" style="width: 20%;"></th>
+              <th scope="col" style="width: 20%;"></th>
+          </tr>
+      </thead>
+      <tbody>
+        @foreach($alianceRequests as &request)
+          <tr>
+            <td>
+              {{ $request->JmenoFamilie }}
+            </td>
+            <td>
+              <form action="accept-aliance" method="post">
+                @csrf
+                <input type="hidden" value="{{ $request->PozvankaOd }}" name="id">
+                <button type="submit" class="btn btn-primary" name="accept-aliance">Přijmout</button>
+              </form>
+            </td>
+            <td>
+              <form action="decline-aliance" method="post">
+                @csrf
+                <input type="hidden" value="{{ $request->PozvankaOd }}" name="id">
+                <button type="submit" class="btn btn-danger" name="decline-aliance">Odmítnout</button>
+              </form>
+            </td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+    @endif
     <div style="padding-top: 20px"></div>
 </div>
 

@@ -75,8 +75,6 @@ Route::post('/createCriminal', 'CreateCriminalController@createCriminal');
 
 Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
 
-Route::post('/deleteFamilia', 'AdminController@deleteFamilia');
-
 Route::post('/assign-criminal', 'AssignCriminalController@assignCriminal');  
 
 Route::get('/no-permission', function() {
@@ -87,3 +85,7 @@ Route::get('/no-permission', function() {
 Route::get('/show-alliance', 'AlianceController@showAliances');
 
 Route::post('/aliance-request', 'AlianceController@alianceRequest');
+
+Route::post('/accept-aliance', 'AlianceController@acceptAliance');
+
+Route::post('/decline-aliance', 'AlianceController@declineAliance');

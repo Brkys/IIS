@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\AlianceRequest;
+use App\Aliance;
 use App\newsModel;
 
 class AlianceController extends Controller
@@ -68,4 +69,65 @@ class AlianceController extends Controller
         return redirect('show-alliance');
     }
 
+    public function acceptAliance(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 4){
+            return redirect('no-permission');
+        }
+
+        $removeRequest = AlianceRequest::where('ID_Familie1', '=', $req->input('id'))
+                ->where('ID_Familie2', '=', $_SESSION['familia'])
+                ->first();
+        $removeRequest->delete();
+
+        $aliance = new Aliance();
+        $aliance->Aliance1 = $req->input('id');
+        $aliance->Aliance2 = $_SESSION['familia'];
+        $aliance->DatumZacatku = date("Y-m-d H:i:s");
+        $aliance->DatumUkonceni = date("Y-m-d H:i:s");
+        $aliance->DatumUkonceni = date('Y-m-d H:i:s', strtotime("+1 month", strtotime($aliance->DatumUkonceni)));
+        $aliance->save();
+
+        $familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'])[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('id'))[0]->JmenoFamilie;
+
+        $news = new newsModel();
+		$news->date = date("Y-m-d H:i:s");
+        $news->title = "Aliance";
+        $news->content = "Familie $familiaTo přijmula požadavek familii $familiaFrom.";
+        $news->save();
+
+        redirect('show-alliance');
+    }
+
+	public function declineAliance(Request $req)
+    {
+        session_start();
+        if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true){
+            return redirect('home')->with('openLogin', true);   
+        }
+        else if($_SESSION['permission'] !== 4){
+            return redirect('no-permission');
+        }
+
+        $removeRequest = AlianceRequest::where('ID_Familie1', '=', $req->input('id'))
+                ->where('ID_Familie2', '=', $_SESSION['familia'])
+                ->first();
+        $removeRequest->delete();
+
+		$familiaFrom = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'])[0]->JmenoFamilie;
+        $familiaTo = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$req->input('id'))[0]->JmenoFamilie;
+
+        $news = new newsModel();
+		$news->date = date("Y-m-d H:i:s");
+        $news->title = "Aliance";
+        $news->content = "Familie $familiaTo odmítnula požadavek familii $familiaFrom.";
+        $news->save();
+
+        redirect('show-alliance');
+    }
 }

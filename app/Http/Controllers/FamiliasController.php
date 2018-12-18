@@ -47,8 +47,9 @@ class FamiliasController extends Controller
 
 		$usersAndPermissions = DB::select("SELECT id, full_name, permission FROM users WHERE familia_id = ".$_SESSION['familia'], [1]);
 		$familiaName = DB::select("SELECT JmenoFamilie FROM Familie WHERE ID_Familie = ".$_SESSION['familia'], [1]);
+		$alianceRequests = DB::select("SELECT ID_Familie1 AS PozvankaOd, JmenoFamilie FROM PozvankaDoAliance INNER JOIN Familie WHERE ID_Familie=ID_Familie1 AND ID_Familie2 = ".$_SESSION['familia']);
 
-		return view('familia-editing')->with('users', $usersAndPermissions)->with('familiaName', $familiaName[0]->JmenoFamilie);
+		return view('familia-editing')->with('users', $usersAndPermissions)->with('familiaName', $familiaName[0]->JmenoFamilie)->with('alianceRequests', $alianceRequests);
 	}
 
 	public function promote(Request $req)
