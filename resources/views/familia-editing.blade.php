@@ -75,7 +75,7 @@
           @endif
         </tbody>
     </table>
-    @if(!empty($alianceRequests))
+   @if(!empty($alianceRequests))
     <h4 style="padding-top: 20px;">Aliance</h4>
     <div style="padding-top: 20px"></div>
     <table class="table table-hover table-dark text-centered">
@@ -87,8 +87,26 @@
           </tr>
       </thead>
       <tbody>
-        @foreach($alianceRequests as &request)
-        
+        @foreach($alianceRequests as $alianceRequest)
+          <tr>
+            <td>
+              {{ $alianceRequest->JmenoFamilie }}
+            </td>
+            <td>
+              <form action="accept-aliance" method="post">
+                @csrf
+                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="id">
+                <button type="submit" class="btn btn-primary" name="accept-aliance">Přijmout</button>
+              </form>
+            </td>
+            <td>
+              <form action="decline-aliance" method="post">
+                @csrf
+                <input type="hidden" value="{{ $alianceRequest->PozvankaOd }}" name="id">
+                <button type="submit" class="btn btn-danger" name="decline-aliance">Odmítnout</button>
+              </form>
+            </td>
+          </tr>
         @endforeach
       </tbody>
     </table>
