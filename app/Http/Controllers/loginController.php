@@ -153,8 +153,8 @@ class loginController extends Controller
                 return redirect('account');
 
             $user = userModel::find($_SESSION['id']);
-            $user->full_name = $req->input('fullName');
-            $user->name = $req->input('nickName');
+            $user->full_name = empty($req->input('fullName')) ? $user->full_name : $req->input('fullName');
+            $user->name = empty($req->input('nickName')) ? $user->name : $req->input('fullName');
             $user->save();
         }
         
