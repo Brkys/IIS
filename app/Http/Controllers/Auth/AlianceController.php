@@ -28,7 +28,17 @@ class AlianceController extends Controller
 
         $familie = DB::select("SELECT JmenoFamilie, ID_Familie FROM Familie WHERE ID_Dona IS NOT NULL AND ID_Familie != ".$_SESSION['familia']);
 
-        return view('show-alliance')->with('familie', $familie)->with('notShow', $notShow);
+        $iterator = 0;
+        foreach ($familie as $familia) {
+	        foreach ($notShow as $result) {
+	        	if($familia->ID_Familie == $result->PozvankaOd || $familia->ID_Familie == $result->PozvankaPro)
+	        		unset($familie[$iterator]);
+	        }
+        	$iterator++;
+        }
+        
+
+        return view('show-alliance')->with('familie', $familie);
     }
 
     public function alianceRequest(Request $req)
